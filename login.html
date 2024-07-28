@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Welcome to Mucon!</title>
+
+    <!-- favicon -->
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="img/fav/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="img/fav/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="img/fav/favicon-16x16.png"
+    />
+    <link rel="manifest" href="img/fav/site.webmanifest" />
+
+    <!-- bootstrap 5 -->
+    <link
+      rel="stylesheet"
+      href="node_modules/bootstrap/dist/css/bootstrap.min.css"
+    />
+
+    <!-- google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cookie&family=Labrada:ital,wght@0,500;1,500&family=Lato:ital,wght@0,400;0,700;0,900;1,400&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- external-link -->
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <section class="login_page">
+      <div class="login_wrap">
+        <div class="login_wrap_top">
+          <div class="login_title">
+            <h2>Welcome Back!</h2>
+          </div>
+
+          <form action="#" id="login_form">
+            <div class="questionBlock">
+              <label class="question" for="loginEmail">Email Address</label>
+              <input
+                type="email"
+                id="loginEmail"
+                name="email"
+                placeholder="johndoe@gmail.com *"
+                required
+              />
+            </div>
+
+            <div class="questionBlock">
+              <label class="question" for="loginPassword">Password</label>
+
+              <input
+                type="password"
+                id="loginPassword"
+                name="password"
+                placeholder="password"
+                required
+              />
+            </div>
+            <div class="questionBlock">
+              <input type="checkbox" checked="checked" name="remember" />
+              Remember me
+            </div>
+
+            <button type="submit" class="button">Sign In</button>
+          </form>
+        </div>
+        <div class="login_wrap_bottom">
+          <p>
+            Or <a href="register.html">Click here</a> to create your free
+            account.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <div id="success_login" class="sucess-contact-msg"></div>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+      integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script src="js/auth.js"></script>
+  </body>
+</html>

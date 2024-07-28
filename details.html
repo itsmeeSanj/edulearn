@@ -1,0 +1,906 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Description</title>
+
+    <!-- favicon -->
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="img/fav/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="img/fav/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="img/fav/favicon-16x16.png"
+    />
+    <link rel="manifest" href="img/fav/site.webmanifest" />
+
+    <!-- bootstrap 5 -->
+    <link
+      rel="stylesheet"
+      href="node_modules/bootstrap/dist/css/bootstrap.min.css"
+    />
+
+    <!-- lineawesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/line-awesome/1.3.0/line-awesome/css/line-awesome.min.css"
+    />
+
+    <!-- fancy-box -->
+    <link rel="stylesheet" href="css/fancybox.css" />
+
+    <!-- owl-carousel -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css"
+    />
+
+    <!-- google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cookie&family=Labrada:ital,wght@0,500;1,500&family=Lato:ital,wght@0,400;0,700;0,900;1,400&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- external-link -->
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <!-- header -->
+    <header id="header">
+      <div class="main_header">
+        <div class="container-fluid">
+          <nav class="d-flex w-full align-items-center column-gap-md-3">
+            <div
+              class="header-left d-md-flex align-items-md-center gap-md-3 gap-lg-5"
+            >
+              <div class="logo">
+                <a href="index.html">
+                  <img src="img/logo/orange.png" alt="LOGO" />
+                </a>
+              </div>
+              <div class="header-left_nav d-none d-xl-block">
+                <ul>
+                  <li><a href="register.html">Explore Courses</a></li>
+                  <li><a href="register.html">Special Offer</a></li>
+                  <li><a href="register.html">Free Courses</a></li>
+                  <li><a href="blog.html">Blogs</a></li>
+                </ul>
+              </div>
+            </div>
+
+            <div
+              class="header-right ms-lg-auto d-none d-md-flex column-gap-md-2 align-items-center align-items-lg-center gap-lg-3"
+              id="main_nav"
+            >
+              <div id="search-wrapper">
+                <i class="search-icon las la-search"></i>
+                <input
+                  class="search"
+                  type="search"
+                  placeholder="What do you want to learn?"
+                />
+              </div>
+              <div class="header_login gx-5">
+                <a href="login.html" class="btn btn-outline-primary"> Login </a>
+                <a href="register.html" class="btn btn-primary"
+                  >Join for Free</a
+                >
+              </div>
+            </div>
+
+            <!-- hamburger -->
+            <div
+              class="hamburger hamburger_open ms-lg-3 d-block d-xl-none"
+              id="hamburger_open"
+              data-bs-toggle="offcanvas"
+              data-bs-target="#offcanvasNavbar"
+            >
+              <i class="las la-bars"></i>
+            </div>
+          </nav>
+        </div>
+      </div>
+    </header>
+
+    <!-- main starts here -->
+    <main>
+      <!-- <div class="common_banner"></div> -->
+
+      <!-- contact_page -->
+      <section class="details_page">
+        <div class="details_info">
+          <div class="container">
+            <div class="details_block">
+              <div class="meta-item d-flex">
+                <div class="meta-item__image me-2">
+                  <img
+                    alt="User Avatar"
+                    class="avatar"
+                    src="https://secure.gravatar.com/avatar/ff7411aa595f41253c93a296342c5d9d?s=96&amp;d=mm&amp;r=g"
+                  />
+                </div>
+                <div class="meta-item__value">
+                  <label>Instructor</label>
+                  <div>
+                    <span class="instructor-display-name">Jonas Darius</span>
+                  </div>
+                </div>
+              </div>
+              <h2>Crash Course: Build a Full-Stack Web App in a Weekend!</h2>
+
+              <div class="course_items d-flex column-gap-2 gap-md-3 gap-lg-4">
+                <div class="course_item">
+                  <i class="las la-clock"></i>
+                  <div>08 hr 15 mins</div>
+                </div>
+                <div class="course_item">
+                  <i class="las la-signal"></i>
+                  <div>All Levels</div>
+                </div>
+                <div class="course_item">
+                  <i class="las la-book"></i>
+                  <div>6 Lessons</div>
+                </div>
+                <div class="course_item">
+                  <i class="las la-clock"></i>
+                  <div>0 Quizes</div>
+                </div>
+                <div class="course_item">
+                  <i class="las la-user-graduate"></i>
+                  <div>21,784 Students</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="details_bottom_info">
+          <div class="container">
+            <div class="row">
+              <div class="col-12 col-md-8 col-lg-9">
+                <div class="details_page_left">
+                  <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+                    <li class="nav-item" role="presentation">
+                      <button
+                        class="nav-link active"
+                        id="pills-home-tab"
+                        data-bs-toggle="pill"
+                        data-bs-target="#pills-home"
+                        type="button"
+                        role="tab"
+                        aria-controls="pills-home"
+                        aria-selected="true"
+                      >
+                        Overview
+                      </button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                      <button
+                        class="nav-link"
+                        id="pills-profile-tab"
+                        data-bs-toggle="pill"
+                        data-bs-target="#pills-profile"
+                        type="button"
+                        role="tab"
+                        aria-controls="pills-profile"
+                        aria-selected="false"
+                      >
+                        Curriculum
+                      </button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                      <button
+                        class="nav-link"
+                        id="pills-contact-tab"
+                        data-bs-toggle="pill"
+                        data-bs-target="#pills-contact"
+                        type="button"
+                        role="tab"
+                        aria-controls="pills-contact"
+                        aria-selected="false"
+                      >
+                        Descriptions
+                      </button>
+                    </li>
+                  </ul>
+                  <div class="tab-content" id="pills-tabContent">
+                    <div
+                      class="tab-pane fade show active"
+                      id="pills-home"
+                      role="tabpanel"
+                      aria-labelledby="pills-home-tab"
+                      tabindex="0"
+                    >
+                      <h2>What you'll learn</h2>
+                      <ul>
+                        <li>
+                          You WILL build a fun web application in just a few
+                          days! No experience needed
+                        </li>
+                        <li>
+                          You WILL learn the very fundamentals of modern web
+                          development (fast!)
+                        </li>
+                        <li>
+                          You WILL get the experience of building a complete web
+                          app
+                        </li>
+                        <li>
+                          You WILL discover if web development is a good career
+                          path for you
+                        </li>
+                        <li>
+                          You will NOT want to pause the course once you start
+                          :)
+                        </li>
+                        <li>
+                          You will NOT master web technologies (that takes
+                          years...)
+                        </li>
+                        <li>
+                          Research Niche and Product Ideas utilizing Free Google
+                          Tools
+                        </li>
+                        <li>
+                          You will NOT be able to build complex applications on
+                          your own, but small ones
+                        </li>
+                      </ul>
+                    </div>
+                    <div
+                      class="tab-pane fade"
+                      id="pills-profile"
+                      role="tabpanel"
+                      aria-labelledby="pills-profile-tab"
+                      tabindex="0"
+                    >
+                      <h2>Course Content</h2>
+                      <div class="accordion" id="accordionExample">
+                        <div class="accordion-item">
+                          <div
+                            class="accordion-button"
+                            data-bs-toggle="collapse"
+                            data-bs-target="#collapseOne"
+                            aria-expanded="true"
+                            aria-controls="collapseOne"
+                          >
+                            <div class="curri_block">
+                              <div>Welcome Welcome Welcome!</div>
+                              <div class="curri_block_bold">
+                                4 Lectures . 26mins
+                              </div>
+                            </div>
+                          </div>
+                          <div
+                            id="collapseOne"
+                            class="accordion-collapse collapse show"
+                            data-bs-parent="#accordionExample"
+                          >
+                            <div class="accordion-body">
+                              <strong
+                                >This is the first item's accordion
+                                body.</strong
+                              >
+                              It is shown by default, until the collapse plugin
+                              adds the appropriate classes that we use to style
+                              each element. These classes control the overall
+                              appearance, as well as the showing and hiding via
+                              CSS transitions. You can modify any of this with
+                              custom CSS or overriding our default variables.
+                              It's also worth noting that just about any HTML
+                              can go within the <code>.accordion-body</code>,
+                              though the transition does limit overflow.
+                            </div>
+                          </div>
+                        </div>
+                        <div class="accordion-item">
+                          <div
+                            class="accordion-button collapsed"
+                            data-bs-toggle="collapse"
+                            data-bs-target="#collapseTwo"
+                            aria-expanded="false"
+                            aria-controls="collapseTwo"
+                          >
+                            <div class="curri_block">
+                              <div>
+                                HTML – Building the App Skeleton [DAY 1]
+                              </div>
+                              <div class="curri_block_bold">
+                                7 Lectures . 52mins
+                              </div>
+                            </div>
+                          </div>
+                          <div
+                            id="collapseTwo"
+                            class="accordion-collapse collapse"
+                            data-bs-parent="#accordionExample"
+                          >
+                            <div class="accordion-body">
+                              <strong
+                                >This is the second item's accordion
+                                body.</strong
+                              >
+                              It is hidden by default, until the collapse plugin
+                              adds the appropriate classes that we use to style
+                              each element. These classes control the overall
+                              appearance, as well as the showing and hiding via
+                              CSS transitions. You can modify any of this with
+                              custom CSS or overriding our default variables.
+                              It's also worth noting that just about any HTML
+                              can go within the <code>.accordion-body</code>,
+                              though the transition does limit overflow.
+                            </div>
+                          </div>
+                        </div>
+                        <div class="accordion-item">
+                          <div
+                            class="accordion-button collapsed"
+                            data-bs-toggle="collapse"
+                            data-bs-target="#collapseThree"
+                            aria-expanded="false"
+                            aria-controls="collapseThree"
+                          >
+                            <div class="curri_block">
+                              <div>CSS – Styling the App [DAY 1]</div>
+                              <div class="curri_block_bold">
+                                17 Lectures . 3hrs 22mins
+                              </div>
+                            </div>
+                          </div>
+                          <div
+                            id="collapseThree"
+                            class="accordion-collapse collapse"
+                            data-bs-parent="#accordionExample"
+                          >
+                            <div class="accordion-body">
+                              <strong
+                                >This is the third item's accordion
+                                body.</strong
+                              >
+                              It is hidden by default, until the collapse plugin
+                              adds the appropriate classes that we use to style
+                              each element. These classes control the overall
+                              appearance, as well as the showing and hiding via
+                              CSS transitions. You can modify any of this with
+                              custom CSS or overriding our default variables.
+                              It's also worth noting that just about any HTML
+                              can go within the <code>.accordion-body</code>,
+                              though the transition does limit overflow.
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      class="tab-pane fade"
+                      id="pills-contact"
+                      role="tabpanel"
+                      aria-labelledby="pills-contact-tab"
+                      tabindex="0"
+                    >
+                      <h2>Description</h2>
+                      <div>
+                        <p><b>*** Just released in December 2022 *** </b></p>
+                        <p>
+                          I have already learned more in this class than in a
+                          $12,000 coding BootCamp (...). Before taking one of
+                          the Bootcamp on Udemy, you should take this class
+                          first" – Robert
+                        </p>
+                        <p>
+                          Do you want to learn the fundamentals of modern web
+                          development fast?
+                        </p>
+                        <p>
+                          Do you want to find out if building websites and apps
+                          is the right career path for you? Or maybe you just
+                          want to know what your web developer friends do all
+                          day?
+                        </p>
+                        In any of these cases...
+                        <p>
+                          <b>
+                            Welcome to my "Web Development Crash Course"!
+                            Together, we will build a fun, small, but full-stack
+                            web application in just a few days.</b
+                          >
+                        </p>
+                        <p>
+                          But why this course? And why is it so short? Well,
+                          there are so many 60 and 80-hour-long "complete" web
+                          development courses out there, which are great if you
+                          want to invest 3 months of your life into finding out
+                          if web dev is even right for you or not... I wanted to
+                          offer a different approach. A short and fast crash
+                          course, where you can dip your toes into the world of
+                          HTML, CSS, JavaScript, and even React (the most used
+                          JavaScript library in the world).
+                        </p>
+                        <p>
+                          You can finish it in a weekend (if you have nothing
+                          else planned), or you can take a week. But the point
+                          is that you can learn the very fundamentals of web
+                          development quite fast, and in an engaging, 99%
+                          project-based way. And even though this is called a
+                          "crash course", this course teaches you more in 12
+                          hours than I learned in my first 2 years as a web
+                          developer! That's how condensed, and how valuable, the
+                          material is. And the course still maintains the
+                          high-quality standard of all my other courses, so that
+                          you actually understand what you are learning! But you
+                          might be thinking:
+                        </p>
+                        <p>
+                          "Is a crash course really right for me?" Well, it all
+                          depends on your goals. Sure, you will not become a web
+                          developer after this short course, and you will not be
+                          able to build big web projects (but sometimes that's
+                          true even for those huge 80-hour courses). But, at the
+                          end of this course, you will have learned and
+                          understood the fundamentals of the most important web
+                          technologies (HTML, CSS, JavaScript, React). And even
+                          more importantly, you will have discovered if you
+                          actually like web development and want to pursue it as
+                          a (lucrative) career! Plus, you will walk away from
+                          this course with a super cool web application that you
+                          can show to all your friends (please tell them I sent
+                          you ;)
+                        </p>
+                        <p>
+                          All this will enable you to go deeper into the topics
+                          that you actually liked, and keep learning and
+                          progressing on your own if you like (or of course, you
+                          can purchase more specialized courses). So, have you
+                          never written a single line of code in your life? You
+                          have come to the right place! We will start slowly,
+                          step-by-step, and then speed up the pace as we
+                          progress through the course. So here's what we're
+                          gonna do in this course:
+                        </p>
+                        <p>
+                          We will set up your code editor and coding environment
+                          together (all for free!) I will guide you through the
+                          basics of the web and web development Then we slowly
+                          start our project, by writing the HTML code (for the
+                          page content) We then style the page and create a
+                          layout using CSS Next we create an online database and
+                          API for our application data, using a free service
+                          called Supabase To get the data into the application
+                          and make it interactive, we learn the fundamentals of
+                          JavaScript Writing apps with only JavaScript can be
+                          difficult, so we build the app using the React library
+                          Finally, we deploy the final project to a free service
+                          called Netlify DONE! You can now share the URL of your
+                          project with everyone :) Already know HTML, CSS, or
+                          JavaScript? No problem! You can still get something
+                          from the course. For example, you can watch only the
+                          section on "React" and use the downloadable code from
+                          the previous section as your starting point.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <section class="spacing">
+                  <div class="container">
+                    <div class="heading inbetween">
+                      <h1>Recommended Courses</h1>
+                      <a href="#">View More</a>
+                    </div>
+                    <div class="recommend_wrap owl-carousel">
+                      <div class="course_block">
+                        <img
+                          src="https://img-c.udemycdn.com/course/240x135/567828_67d0.jpg"
+                          alt=""
+                        />
+                        <div class="course_time">New</div>
+                        <div class="course_content">
+                          <h3>Introduction to Python</h3>
+                          <p>Mark justin</p>
+                          <div class="course_info">
+                            <div class="hours">19.5 total hours</div>
+                            <div class="lectures">185 lectures</div>
+                          </div>
+                          <div class="price">CA$59</div>
+                        </div>
+                      </div>
+                      <div class="course_block">
+                        <img
+                          src="https://img-c.udemycdn.com/course/240x135/1362070_b9a1_2.jpg"
+                          alt=""
+                        />
+                        <div class="course_time">Best Seller</div>
+                        <div class="course_content">
+                          <h3>React - The complete Guide 2024</h3>
+                          <p>Mark justin</p>
+                          <div class="course_info">
+                            <div class="hours">19.5 total hours</div>
+                            <div class="lectures">185 lectures</div>
+                          </div>
+                          <div class="price">CA$59</div>
+                        </div>
+                      </div>
+                      <div class="course_block">
+                        <img
+                          src="https://img-c.udemycdn.com/course/240x135/705264_caa9_13.jpg"
+                          alt=""
+                        />
+                        <div class="course_time">Best Seller</div>
+                        <div class="course_content">
+                          <h3>Modern React with Redux</h3>
+                          <p>Mark justin</p>
+                          <div class="course_info">
+                            <div class="hours">19.5 total hours</div>
+                            <div class="lectures">185 lectures</div>
+                          </div>
+                          <div class="price">CA$59</div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </section>
+              </div>
+              <div class="col-12 col-md-4 col-lg-3">
+                <div class="details_page_right_wrap">
+                  <div class="details_page_right_block">
+                    <div class="details_page_right_top">
+                      <div class="video_wrap">
+                        <iframe
+                          src="https://www.youtube.com/embed/WIBSPhffOHI?si=vL-2Eb03UhxqxBtf"
+                          title="YouTube video player"
+                          frameborder="0"
+                          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                          referrerpolicy="strict-origin-when-cross-origin"
+                          allowfullscreen
+                        ></iframe>
+                      </div>
+                      <div class="video_desc">
+                        <div class="price">$11.99</div>
+                        <div class="buy">
+                          <button class="btn btn-primary btn-md" type="button">
+                            Buy now
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                    <h3>This Course includes:</h3>
+                    <div class="details_page_right_block_wrap">
+                      <i class="las la-file-video"></i>
+                      <span>12 hours on-demand video</span>
+                    </div>
+                    <div class="details_page_right_block_wrap">
+                      <i class="las la-file"></i>
+                      <span>3 articles</span>
+                    </div>
+                    <div class="details_page_right_block_wrap">
+                      <i class="las la-file-download"></i>
+                      <span>10 downloadable resources</span>
+                    </div>
+                    <div class="details_page_right_block_wrap">
+                      <i class="las la-mobile"></i>
+                      <span>Access on mobile and TV</span>
+                    </div>
+                    <div class="details_page_right_block_wrap">
+                      <i class="las la-infinity"></i>
+                      <span>Full lifetime access</span>
+                    </div>
+                    <div class="details_page_right_block_wrap">
+                      <i class="las la-calendar"></i>
+                      <span>Certificate of completion</span>
+                    </div>
+                  </div>
+
+                  <div class="details_page_right_block">
+                    <h3>Share this Course</h3>
+                    <div class="details_page_right_block_wrap social_icon">
+                      <a
+                        href="#!"
+                        target="_blank"
+                        class="facebook"
+                        title="facebook"
+                        ><i class="lab la-facebook-f"></i>
+                      </a>
+
+                      <a
+                        href="#!"
+                        target="_blank"
+                        class="instagram"
+                        title="instagram"
+                        ><i class="lab la-instagram"></i>
+                      </a>
+
+                      <a
+                        href="#!"
+                        target="_blank"
+                        class="twitter"
+                        title="twitter"
+                        ><i class="lab la-twitter"></i
+                      ></a>
+
+                      <a
+                        href="#!"
+                        target="_blank"
+                        class="youtube"
+                        title="youtube"
+                        ><i class="lab la-youtube"></i
+                      ></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- footer -->
+    <footer>
+      <div class="footer_top">
+        <div class="container">
+          <div class="row footer_wrap">
+            <div class="col-lg-12">
+              <div class="footer_block">
+                <a href="index.html">
+                  <img src="img/logo/orange.png" class="logo" alt="" />
+                </a>
+              </div>
+            </div>
+            <div class="col-12 col-sm-6 col-md-4 col-lg-4">
+              <div class="footer_block">
+                <h4>Get link in sms to download the app</h4>
+                <div class="footer_form">
+                  <form class="form_flex">
+                    <input
+                      type="number"
+                      id="contactNumber"
+                      name="contactNumber"
+                      placeholder="Enter mobile number"
+                    />
+                    <input
+                      type="submit"
+                      value="Get the link"
+                      class="form_submit"
+                    />
+                  </form>
+                </div>
+              </div>
+              <div class="footer_block counselling border p-3 rounded">
+                <div class="d-flex position-relative">
+                  <div>
+                    <h5 class="mb-3">
+                      Know more about our courses. Book a free counselling
+                      session.
+                    </h5>
+
+                    <button
+                      type="button"
+                      class="btn btn-primary"
+                      data-bs-toggle="modal"
+                      data-bs-target="#exampleModal"
+                    >
+                      Speak to an expert
+                    </button>
+                  </div>
+                  <img
+                    src="https://www.vedantu.com/cdn/images/new-home-page/newsletter-icon.svg"
+                    class="flex-shrink-0 ms-3 rounded-circle"
+                    alt="..."
+                  />
+                </div>
+              </div>
+              <div class="footer_block">
+                <h4>TOLL FREE: 1800-120-456-456</h4>
+                <ul class="list-group">
+                  <a href="tel:+4378712345">
+                    <i class="las la-phone"></i>&nbsp;<span
+                      >+1 6378712345</span
+                    ></a
+                  >
+                  <a href="mailto:dummyemail@gmail.com">
+                    <i class="las la-envelope"></i>&nbsp;<span
+                      >dummyemail@gmail.com</span
+                    ></a
+                  >
+                </ul>
+              </div>
+            </div>
+            <div class="col-12 col-sm-6 col-md-4 col-lg-8">
+              <div class="row">
+                <div class="col-lg-4">
+                  <div class="footer_block">
+                    <h4>Company</h4>
+                    <div class="footer_nav">
+                      <a href="about.html">About</a>
+                      <a href="contact.html">Contact</a>
+                      <a href="blog.html">Blog</a>
+                      <a href="news.html">News</a>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-8">
+                  <div class="footer_block course">
+                    <h4>Courses</h4>
+                    <div class="footer_nav">
+                      <a href="about.html">JAVA</a>
+                      <a href="contact.html">C#</a>
+                      <a href="privacy.html">Python</a>
+                      <a href="terms.html">Computer Science</a>
+                      <a href="terms.html">Business Analytics</a>
+                      <a href="terms.html"> Digital Marketing </a>
+                      <a href="terms.html"> Self Driving Car Engineer</a>
+                      <a href="terms.html"> Intro to Programming </a>
+                      <a href="terms.html"> Data Analyst </a>
+                      <a href="terms.html"> AWS Cloud Architect </a>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-4">
+                  <div class="footer_block right">
+                    <h4>Follow Us</h4>
+
+                    <div class="footer_nav social_icon">
+                      <a href="#!" target="_blank"
+                        ><i class="lab la-facebook-f"></i>
+                      </a>
+
+                      <a href="#!" target="_blank"
+                        ><i class="lab la-instagram"></i>
+                      </a>
+
+                      <a href="#!" target="_blank"
+                        ><i class="lab la-twitter"></i
+                      ></a>
+
+                      <a href="#!" target="_blank"
+                        ><i class="lab la-youtube"></i
+                      ></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="footer_bottom">
+        <p>
+          Copyright &copy;
+          <script>
+            document.write(new Date().getFullYear());
+          </script>
+          Mucon. All Rights Reserved.
+        </p>
+      </div>
+    </footer>
+
+    <!--  -->
+    <div
+      class="offcanvas offcanvas-end"
+      tabindex="-1"
+      id="offcanvasNavbar"
+      aria-labelledby="offcanvasNavbarLabel"
+    >
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Offcanvas</h5>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="offcanvas"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="offcanvas-body">
+        <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Link</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a
+              class="nav-link dropdown-toggle"
+              href="#"
+              role="button"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            >
+              Dropdown
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#">Action</a></li>
+              <li>
+                <a class="dropdown-item" href="#">Another action</a>
+              </li>
+              <li>
+                <hr class="dropdown-divider" />
+              </li>
+              <li>
+                <a class="dropdown-item" href="#">Something else here</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+        <form class="d-flex mt-3" role="search">
+          <input
+            class="form-control me-2"
+            type="search"
+            placeholder="Search"
+            aria-label="Search"
+          />
+          <button class="btn btn-outline-success" type="submit">Search</button>
+        </form>
+      </div>
+    </div>
+
+    <!-- modal -->
+    <div
+      class="modal fade"
+      id="exampleModal"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">...</div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Close
+            </button>
+            <button type="button" class="btn btn-primary">Save changes</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+      integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    <script src="js/fancybox.umd.js"></script>
+    <script src="js/script.js"></script>
+    <script src="js/contact-js.js"></script>
+
+    <script>
+      $(document).on("click", ".dropdown-menu", function (e) {
+        e.stopPropagation();
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Welcome to Mucon!</title>
+
+    <!-- favicon -->
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="img/fav/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="img/fav/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="img/fav/favicon-16x16.png"
+    />
+    <link rel="manifest" href="img/fav/site.webmanifest" />
+
+    <!-- bootstrap 5 -->
+    <link
+      rel="stylesheet"
+      href="node_modules/bootstrap/dist/css/bootstrap.min.css"
+    />
+
+    <!-- lineawesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/line-awesome/1.3.0/line-awesome/css/line-awesome.min.css"
+    />
+
+    <!-- fancy-box -->
+    <link rel="stylesheet" href="css/fancybox.css" />
+
+    <!-- owl-carousel -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css"
+    />
+
+    <!-- google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cookie&family=Labrada:ital,wght@0,500;1,500&family=Lato:ital,wght@0,400;0,700;0,900;1,400&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- external-link -->
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <!-- header -->
+    <header id="header">
+      <div class="main_header">
+        <div class="container-fluid">
+          <nav class="d-flex w-full align-items-center column-gap-md-3">
+            <div
+              class="header-left d-md-flex align-items-md-center gap-md-3 gap-lg-5"
+            >
+              <div class="logo">
+                <a href="index.html">
+                  <img src="img/logo/orange.png" alt="LOGO" />
+                </a>
+              </div>
+              <div class="header-left_nav d-none d-xl-block">
+                <ul>
+                  <li><a href="register.html">Explore Courses</a></li>
+                  <li><a href="register.html">Special Offer</a></li>
+                  <li><a href="register.html">Free Courses</a></li>
+                  <li><a href="blog.html">Blogs</a></li>
+                </ul>
+              </div>
+            </div>
+
+            <div
+              class="header-right ms-lg-auto d-none d-md-flex column-gap-md-2 align-items-center align-items-lg-center gap-lg-3"
+              id="main_nav"
+            >
+              <div id="search-wrapper">
+                <i class="search-icon las la-search"></i>
+                <input
+                  class="search"
+                  type="search"
+                  placeholder="What do you want to learn?"
+                />
+              </div>
+              <div class="header_login gx-5">
+                <a href="login.html" class="btn btn-outline-primary"> Login </a>
+                <a href="register.html" class="btn btn-primary"
+                  >Join for Free</a
+                >
+              </div>
+            </div>
+
+            <!-- hamburger -->
+            <div
+              class="hamburger hamburger_open ms-lg-3 d-block d-xl-none"
+              id="hamburger_open"
+              data-bs-toggle="offcanvas"
+              data-bs-target="#offcanvasNavbar"
+            >
+              <i class="las la-bars"></i>
+            </div>
+          </nav>
+        </div>
+      </div>
+    </header>
+
+    <!-- main starts here -->
+    <main>
+      <div class="common_banner">
+        <!-- <div class="container">
+          <h2>Contact Us</h2>
+        </div> -->
+      </div>
+
+      <!-- contact_page -->
+      <section class="contact_page pageAlignment">
+        <div class="container">
+          <div class="common_header">
+            <h1 class="page_title">Contact Page</h1>
+          </div>
+          <div class="common_block">
+            <div class="contact_map">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2880.9557596903937!2d-79.33804092393399!3d43.77377717109668!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89d4d3bca1a3f78f%3A0x815365ed6c3b957e!2sLambton%20College%20In%20Toronto!5e0!3m2!1sen!2sca!4v1711404573753!5m2!1sen!2sca"
+                width="600"
+                height="450"
+                style="border: 0"
+                allowfullscreen=""
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+              ></iframe>
+            </div>
+
+            <div class="contact_wrap">
+              <!-- Company details div (Only Tablet and Desktop) -->
+              <div class="contact_company_details contact_form">
+                <div class="contact_company_content">
+                  <!-- Company Contact div for company contact details -->
+                  <h2>Contact Us At...</h2>
+                  <div class="contact_info">
+                    <!-- Phone Details start -->
+                    <div class="company_details_item">
+                      <!-- Phone icon -->
+                      <i class="las la-map-marker-alt"></i>
+
+                      <!-- Phone anchor link -->
+                      <a href="#">180 Yorkland blvd</a>
+                    </div>
+                    <div class="company_details_item">
+                      <!-- Phone icon -->
+                      <i class="las la-phone"></i>
+                      <!-- Phone anchor link -->
+                      <a href="tel:+1236547889">+1 6378712345</a>
+                    </div>
+                    <!-- Phone Details end -->
+                    <!-- Email Details start -->
+                    <div class="company_details_item">
+                      <!-- Email icon -->
+                      <i class="las la-envelope"></i>
+                      <!-- Email anchor link -->
+                      <a href="mailto:dummyemail@gmail.com"
+                        >dummyemail@gmail.com</a
+                      >
+                    </div>
+                    <!-- Email Details end -->
+                  </div>
+                </div>
+              </div>
+              <!-- Container div for Form element -->
+              <div class="contact_form contact_company_form">
+                <!-- Form heading -->
+                <h2>Hi there, how can we help?</h2>
+
+                <!-- Form element start -->
+                <form action="#" id="contactPageForm">
+                  <!-- 1st Question Block div start -->
+                  <div class="questionBlock">
+                    <!-- 1st Question label -->
+                    <label class="question" for="fullName"
+                      ><span>01.</span>What's your Full Name?</label
+                    >
+
+                    <input
+                      type="text"
+                      id="fullName"
+                      name="fullName"
+                      placeholder="John Smith *"
+                      onkeyup="resetBordersFullName()"
+                    />
+                  </div>
+                  <!-- 1st Question Block div end -->
+
+                  <!-- 2nd Question Block div start -->
+                  <div class="questionBlock">
+                    <!-- 2nd Question label -->
+                    <label class="question" for="email"
+                      ><span>02.</span>What's your email?</label
+                    >
+
+                    <!-- Text Input -->
+                    <input
+                      type="text"
+                      id="email"
+                      name="email"
+                      placeholder="john@smith.com *"
+                      onkeyup="resetBordersEmail()"
+                    />
+                  </div>
+                  <!-- 2nd Question Block div end -->
+
+                  <!-- 3rd Question Block div start -->
+                  <div class="questionBlock">
+                    <!-- 3rd Question label -->
+                    <label class="question" for="phone"
+                      ><span>03.</span>What's your mobile number?</label
+                    >
+                    <!-- Phone Number Input -->
+                    <input
+                      type="tel"
+                      id="phone"
+                      name="phone"
+                      placeholder="+12345678900"
+                      onkeyup="resetBordersPhone()"
+                    />
+                  </div>
+                  <!-- 3rd Question Block div end -->
+
+                  <!-- 4th Question Block div start -->
+                  <div class="questionBlock">
+                    <label class="question" for="msg"
+                      ><span>04.</span>Your message?</label
+                    >
+                    <textarea
+                      id="msg"
+                      name="msg"
+                      rows="4"
+                      cols="50"
+                      placeholder="Hello Mucon, can you help me with..."
+                    ></textarea>
+                  </div>
+
+                  <!-- Submit button -->
+                  <button
+                    type="submit"
+                    id="submitBtn"
+                    value="submit"
+                    class="button"
+                  >
+                    Submit
+                  </button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div id="success" class="sucess-contact-msg"></div>
+    </main>
+
+    <!-- main ends here -->
+
+    <!-- footer -->
+    <footer>
+      <div class="footer_top">
+        <div class="container">
+          <div class="row footer_wrap">
+            <div class="col-lg-12">
+              <div class="footer_block">
+                <a href="index.html">
+                  <img src="img/logo/orange.png" class="logo" alt="" />
+                </a>
+              </div>
+            </div>
+            <div class="col-12 col-sm-6 col-md-4 col-lg-4">
+              <div class="footer_block">
+                <h4>Get link in sms to download the app</h4>
+                <div class="footer_form">
+                  <form class="form_flex">
+                    <input
+                      type="number"
+                      id="contactNumber"
+                      name="contactNumber"
+                      placeholder="Enter mobile number"
+                    />
+                    <input
+                      type="submit"
+                      value="Get the link"
+                      class="form_submit"
+                    />
+                  </form>
+                </div>
+              </div>
+              <div class="footer_block counselling border p-3 rounded">
+                <div class="d-flex position-relative">
+                  <div>
+                    <h5 class="mb-3">
+                      Know more about our courses. Book a free counselling
+                      session.
+                    </h5>
+
+                    <button
+                      type="button"
+                      class="btn btn-primary"
+                      data-bs-toggle="modal"
+                      data-bs-target="#exampleModal"
+                    >
+                      Speak to an expert
+                    </button>
+                  </div>
+                  <img
+                    src="https://www.vedantu.com/cdn/images/new-home-page/newsletter-icon.svg"
+                    class="flex-shrink-0 ms-3 rounded-circle"
+                    alt="..."
+                  />
+                </div>
+              </div>
+              <div class="footer_block">
+                <h4>TOLL FREE: 1800-120-456-456</h4>
+                <ul class="list-group">
+                  <a href="tel:+4378712345">
+                    <i class="las la-phone"></i>&nbsp;<span
+                      >+1 6378712345</span
+                    ></a
+                  >
+                  <a href="mailto:dummyemail@gmail.com">
+                    <i class="las la-envelope"></i>&nbsp;<span
+                      >dummyemail@gmail.com</span
+                    ></a
+                  >
+                </ul>
+              </div>
+            </div>
+            <div class="col-12 col-sm-6 col-md-4 col-lg-8">
+              <div class="row">
+                <div class="col-lg-4">
+                  <div class="footer_block">
+                    <h4>Company</h4>
+                    <div class="footer_nav">
+                      <a href="about.html">About</a>
+                      <a href="contact.html">Contact</a>
+                      <a href="blog.html">Blog</a>
+                      <a href="news.html">News</a>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-8">
+                  <div class="footer_block course">
+                    <h4>Courses</h4>
+                    <div class="footer_nav">
+                      <a href="about.html">JAVA</a>
+                      <a href="contact.html">C#</a>
+                      <a href="privacy.html">Python</a>
+                      <a href="terms.html">Computer Science</a>
+                      <a href="terms.html">Business Analytics</a>
+                      <a href="terms.html"> Digital Marketing </a>
+                      <a href="terms.html"> Self Driving Car Engineer</a>
+                      <a href="terms.html"> Intro to Programming </a>
+                      <a href="terms.html"> Data Analyst </a>
+                      <a href="terms.html"> AWS Cloud Architect </a>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-4">
+                  <div class="footer_block right">
+                    <h4>Follow Us</h4>
+
+                    <div class="footer_nav social_icon">
+                      <a href="#!" target="_blank"
+                        ><i class="lab la-facebook-f"></i>
+                      </a>
+
+                      <a href="#!" target="_blank"
+                        ><i class="lab la-instagram"></i>
+                      </a>
+
+                      <a href="#!" target="_blank"
+                        ><i class="lab la-twitter"></i
+                      ></a>
+
+                      <a href="#!" target="_blank"
+                        ><i class="lab la-youtube"></i
+                      ></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="footer_bottom">
+        <p>
+          Copyright &copy;
+          <script>
+            document.write(new Date().getFullYear());
+          </script>
+          Mucon. All Rights Reserved.
+        </p>
+      </div>
+    </footer>
+
+    <!--  -->
+    <div
+      class="offcanvas offcanvas-end"
+      tabindex="-1"
+      id="offcanvasNavbar"
+      aria-labelledby="offcanvasNavbarLabel"
+    >
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Offcanvas</h5>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="offcanvas"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="offcanvas-body">
+        <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Link</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a
+              class="nav-link dropdown-toggle"
+              href="#"
+              role="button"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            >
+              Dropdown
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#">Action</a></li>
+              <li>
+                <a class="dropdown-item" href="#">Another action</a>
+              </li>
+              <li>
+                <hr class="dropdown-divider" />
+              </li>
+              <li>
+                <a class="dropdown-item" href="#">Something else here</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+        <form class="d-flex mt-3" role="search">
+          <input
+            class="form-control me-2"
+            type="search"
+            placeholder="Search"
+            aria-label="Search"
+          />
+          <button class="btn btn-outline-success" type="submit">Search</button>
+        </form>
+      </div>
+    </div>
+
+    <!-- modal -->
+    <div
+      class="modal fade"
+      id="exampleModal"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">...</div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Close
+            </button>
+            <button type="button" class="btn btn-primary">Save changes</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+      integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    <script src="js/fancybox.umd.js"></script>
+    <!-- <script src="js/script.js"></script> -->
+    <script src="js/contact-js.js"></script>
+
+    <script>
+      $(document).on("click", ".dropdown-menu", function (e) {
+        e.stopPropagation();
+      });
+    </script>
+  </body>
+</html>

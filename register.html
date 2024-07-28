@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Register Page | Welcome to our website</title>
+
+    <!-- favicon -->
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="img/fav/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="img/fav/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="img/fav/favicon-16x16.png"
+    />
+    <link rel="manifest" href="img/fav/site.webmanifest" />
+
+    <!-- lineawesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/line-awesome/1.3.0/line-awesome/css/line-awesome.min.css"
+    />
+
+    <!-- google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cookie&family=Labrada:ital,wght@0,500;1,500&family=Lato:ital,wght@0,400;0,700;0,900;1,400&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- external-link -->
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <section class="login_page">
+      <div class="login_wrap">
+        <div class="login_wrap_top">
+          <div class="login_title">
+            <h2>Create your free online Account!</h2>
+          </div>
+          <form action="#" id="register_form">
+            <div class="questionBlock">
+              <label class="question" for="firstName">First Name</label>
+              <input
+                type="text"
+                id="firstName"
+                name="firstName"
+                placeholder="First Name"
+                required
+                onkeyup="resetBordersFullName()"
+              />
+            </div>
+
+            <div class="questionBlock">
+              <label class="question" for="lastName">Last Name</label>
+              <input
+                type="text"
+                id="lastName"
+                name="lastName"
+                placeholder="Last Name"
+                required
+                onkeyup="resetBordersFullName()"
+              />
+            </div>
+
+            <div class="questionBlock">
+              <label class="question" for="email">Email Address</label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                placeholder="your e-mail *"
+                required
+                onkeyup="resetBordersFullName()"
+              />
+            </div>
+
+            <!-- 2nd Question Block div start -->
+            <div class="questionBlock">
+              <!-- 2nd Question label -->
+              <label class="question" for="password">Choose a password</label>
+
+              <input
+                type="password"
+                id="password"
+                name="password"
+                placeholder="Password"
+                required
+                onkeyup="resetBordersEmail()"
+              />
+            </div>
+            <div class="questionBlock">
+              <!-- <label> -->
+              <input type="checkbox" checked="checked" name="remember" />
+              Stay up to date with emails about special offers, new courses and
+              recommendations
+              <!-- </label> -->
+            </div>
+
+            <button type="submit" id="submitBtn" value="submit" class="button">
+              Start your 30-day free trail now
+            </button>
+          </form>
+        </div>
+        <div class="login_wrap_bottom">
+          <p>Or <a href="login.html">Click here</a> to sign in your account.</p>
+        </div>
+      </div>
+    </section>
+
+    <div id="register_message"></div>
+
+    <script src="js/auth.js"></script>
+  </body>
+</html>
