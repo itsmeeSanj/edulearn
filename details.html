@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Description</title>
+    <title>Description Page | Welcome to WeRverse</title>
 
     <!-- favicon -->
     <link
@@ -26,9 +26,14 @@
     <link rel="manifest" href="img/fav/site.webmanifest" />
 
     <!-- bootstrap 5 -->
-    <link
+    <!-- <link
       rel="stylesheet"
       href="node_modules/bootstrap/dist/css/bootstrap.min.css"
+    /> -->
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
     />
 
     <!-- lineawesome -->
@@ -66,7 +71,9 @@
     <header id="header">
       <div class="main_header">
         <div class="container-fluid">
-          <nav class="d-flex w-full align-items-center column-gap-md-3">
+          <nav
+            class="d-flex w-full align-items-center column-gap-4 column-gap-md-3"
+          >
             <div
               class="header-left d-md-flex align-items-md-center gap-md-3 gap-lg-5"
             >
@@ -77,31 +84,61 @@
               </div>
               <div class="header-left_nav d-none d-xl-block">
                 <ul>
-                  <li><a href="register.html">Explore Courses</a></li>
-                  <li><a href="register.html">Special Offer</a></li>
-                  <li><a href="register.html">Free Courses</a></li>
-                  <li><a href="blog.html">Blogs</a></li>
+                  <li><a href="list.html">Explore Courses</a></li>
+                  <li><a href="list.html">Special Offer</a></li>
+                  <li><a href="list.html">Free Courses</a></li>
                 </ul>
               </div>
             </div>
 
             <div
-              class="header-right ms-lg-auto d-none d-md-flex column-gap-md-2 align-items-center align-items-lg-center gap-lg-3"
+              class="header-right d-flex ms-auto mx-sm-auto me-lg-0 ms-lg-auto d-md-flex align-items-center align-items-lg-center gap-md-3"
               id="main_nav"
             >
-              <div id="search-wrapper">
+              <div id="search-wrapper" class="d-none d-sm-flex">
                 <i class="search-icon las la-search"></i>
                 <input
                   class="search"
                   type="search"
                   placeholder="What do you want to learn?"
+                  id="searchInput"
                 />
               </div>
-              <div class="header_login gx-5">
-                <a href="login.html" class="btn btn-outline-primary"> Login </a>
-                <a href="register.html" class="btn btn-primary"
-                  >Join for Free</a
+
+              <div
+                class="auth_design_wrap d-flex align-items-center justify-content-center gap-2"
+              >
+                <div class="d-flex align-items-center gap-1">
+                  <div class="user_name" id="user_name"></div>
+
+                  <div class="auth_desgin">
+                    <i class="las la-user-circle"></i>
+
+                    <div class="auth_design_content">
+                      <div class="auth_logged_out">
+                        <a href="login.html">Login</a>
+                        <a href="register.html">Register</a>
+                      </div>
+                      <div class="auth_logged_in" style="display: none">
+                        <a href="profile.html">Profile</a>
+                        <a href="#" id="logout">Logout</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="cart position-relative"
+                  id="hamburger_open"
+                  data-bs-toggle="offcanvas"
+                  data-bs-target="#offcanvasCart"
                 >
+                  <i class="las la-shopping-cart"></i>
+                  <span
+                    class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"
+                    id="numCart"
+                  >
+                  </span>
+                </div>
               </div>
             </div>
 
@@ -124,7 +161,7 @@
       <!-- <div class="common_banner"></div> -->
 
       <!-- contact_page -->
-      <section class="details_page">
+      <section class="details_page pb-3">
         <div class="details_info">
           <div class="container">
             <div class="details_block">
@@ -145,7 +182,9 @@
               </div>
               <h2>Crash Course: Build a Full-Stack Web App in a Weekend!</h2>
 
-              <div class="course_items d-flex column-gap-2 gap-md-3 gap-lg-4">
+              <div
+                class="course_items d-flex flex-wrap column-gap-3 gap-md-3 gap-lg-4"
+              >
                 <div class="course_item">
                   <i class="las la-clock"></i>
                   <div>08 hr 15 mins</div>
@@ -162,7 +201,7 @@
                   <i class="las la-clock"></i>
                   <div>0 Quizes</div>
                 </div>
-                <div class="course_item">
+                <div class="course_item d-none d-md-flex">
                   <i class="las la-user-graduate"></i>
                   <div>21,784 Students</div>
                 </div>
@@ -505,52 +544,131 @@
                       <a href="#">View More</a>
                     </div>
                     <div class="recommend_wrap owl-carousel">
-                      <div class="course_block">
+                      <div class="course_block" data-id="1">
                         <img
                           src="https://img-c.udemycdn.com/course/240x135/567828_67d0.jpg"
                           alt=""
                         />
                         <div class="course_time">New</div>
                         <div class="course_content">
-                          <h3>Introduction to Python</h3>
+                          <h3>
+                            <a href="details.html">Introduction to Python</a>
+                          </h3>
                           <p>Mark justin</p>
                           <div class="course_info">
                             <div class="hours">19.5 total hours</div>
                             <div class="lectures">185 lectures</div>
                           </div>
                           <div class="price">CA$59</div>
+
+                          <button
+                            class="add_cart btn btn-primary mt-2 btn-sm"
+                            id="add_cart"
+                          >
+                            Add to cart
+                          </button>
                         </div>
                       </div>
-                      <div class="course_block">
+                      <div class="course_block" data-id="2">
                         <img
                           src="https://img-c.udemycdn.com/course/240x135/1362070_b9a1_2.jpg"
                           alt=""
                         />
                         <div class="course_time">Best Seller</div>
                         <div class="course_content">
-                          <h3>React - The complete Guide 2024</h3>
+                          <h3 class="">
+                            <a href="details.html">
+                              React - The complete Guide 2024
+                            </a>
+                          </h3>
                           <p>Mark justin</p>
                           <div class="course_info">
                             <div class="hours">19.5 total hours</div>
                             <div class="lectures">185 lectures</div>
                           </div>
                           <div class="price">CA$59</div>
+                          <button
+                            class="add_cart btn btn-primary mt-2 btn-sm"
+                            id="add_cart"
+                          >
+                            Add to cart
+                          </button>
                         </div>
                       </div>
-                      <div class="course_block">
+                      <div class="course_block" data-id="3">
                         <img
                           src="https://img-c.udemycdn.com/course/240x135/705264_caa9_13.jpg"
                           alt=""
                         />
                         <div class="course_time">Best Seller</div>
                         <div class="course_content">
-                          <h3>Modern React with Redux</h3>
+                          <h3>
+                            <a href="details.html"> Modern React with Redux </a>
+                          </h3>
                           <p>Mark justin</p>
                           <div class="course_info">
                             <div class="hours">19.5 total hours</div>
                             <div class="lectures">185 lectures</div>
                           </div>
                           <div class="price">CA$59</div>
+                          <button
+                            class="add_cart btn btn-primary mt-2 btn-sm"
+                            id="add_cart"
+                          >
+                            Add to cart
+                          </button>
+                        </div>
+                      </div>
+                      <div class="course_block" data-id="4">
+                        <img
+                          src="https://img-c.udemycdn.com/course/240x135/2776760_f176_10.jpg"
+                          alt="Course Image"
+                        />
+                        <div class="course_time">Best Seller</div>
+                        <div class="course_content">
+                          <h3>
+                            <a href="details.html">
+                              100 Days of Code: The Complete Python Pro Bootcamp
+                            </a>
+                          </h3>
+                          <p>Jose Portilla, Pierian Training</p>
+                          <div class="course_info">
+                            <div class="hours">58.5 total hours</div>
+                            <div class="lectures">61 lectures</div>
+                          </div>
+                          <div class="price">CA$49.99</div>
+                          <button
+                            class="add_cart btn btn-primary mt-2 btn-sm"
+                            id="add_cart"
+                          >
+                            Add to cart
+                          </button>
+                        </div>
+                      </div>
+                      <div class="course_block" data-id="5">
+                        <img
+                          src="https://img-c.udemycdn.com/course/240x135/543600_64d1_4.jpg"
+                          alt="Course Image"
+                        />
+                        <div class="course_time">Best Seller</div>
+                        <div class="course_content">
+                          <h3>
+                            <a href="details.html">
+                              Automate the Boring Stuff with Python Programming
+                            </a>
+                          </h3>
+                          <p>AI Sweigart</p>
+                          <div class="course_info">
+                            <div class="hours">8.1 total hours</div>
+                            <div class="lectures">51 lectures</div>
+                          </div>
+                          <div class="price">CA$149.99</div>
+                          <button
+                            class="add_cart btn btn-primary mt-2 btn-sm"
+                            id="add_cart"
+                          >
+                            Add to cart
+                          </button>
                         </div>
                       </div>
                     </div>
@@ -573,9 +691,15 @@
                       </div>
                       <div class="video_desc">
                         <div class="price">$11.99</div>
-                        <div class="buy">
-                          <button class="btn btn-primary btn-md" type="button">
+                        <div class="buy mb-3 gap-2">
+                          <button class="btn btn-primary" type="button">
                             Buy now
+                          </button>
+                          <button
+                            class="btn btn-primary add_cart mt-0 mt-md-2 mt-lg-0"
+                            type="button"
+                          >
+                            Add to cart
                           </button>
                         </div>
                       </div>
@@ -655,7 +779,7 @@
     <footer>
       <div class="footer_top">
         <div class="container">
-          <div class="row footer_wrap">
+          <div class="row footer_wrap gap-3 gap-sm-0">
             <div class="col-lg-12">
               <div class="footer_block">
                 <a href="index.html">
@@ -663,7 +787,7 @@
                 </a>
               </div>
             </div>
-            <div class="col-12 col-sm-6 col-md-4 col-lg-4">
+            <div class="col-12 col-sm-10 col-md-6 col-lg-4">
               <div class="footer_block">
                 <h4>Get link in sms to download the app</h4>
                 <div class="footer_form">
@@ -722,16 +846,16 @@
                 </ul>
               </div>
             </div>
-            <div class="col-12 col-sm-6 col-md-4 col-lg-8">
-              <div class="row">
+            <div class="col-12 col-sm-12 col-md-6 col-lg-8">
+              <div class="row gap-4 gap-md-0">
                 <div class="col-lg-4">
                   <div class="footer_block">
                     <h4>Company</h4>
                     <div class="footer_nav">
                       <a href="about.html">About</a>
                       <a href="contact.html">Contact</a>
-                      <a href="blog.html">Blog</a>
-                      <a href="news.html">News</a>
+                      <a href="privacy.html">Privacy Policy</a>
+                      <a href="terms.html">Terms</a>
                     </div>
                   </div>
                 </div>
@@ -786,14 +910,58 @@
           <script>
             document.write(new Date().getFullYear());
           </script>
-          Mucon. All Rights Reserved.
+          WeRVerse. All Rights Reserved.
         </p>
       </div>
     </footer>
 
+    <!-- cart  -->
+    <!-- cart  -->
+    <div
+      class="offcanvas offcanvasCart offcanvas-end"
+      tabindex="-1"
+      id="offcanvasCart"
+      aria-labelledby="offcanvasCart"
+    >
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="offcanvasCart">Cart</h5>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="offcanvas"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="offcanvas-body">
+        <div id="userNotLogin" class="userNotLogin mt-2 mt-lg-4">
+          <div class="course-list cart_course_list" id="course-list"></div>
+          <div class="course_wrap_summary mt-8">
+            <div class="course_summary">
+              <h3>Price Summary</h3>
+              <div class="course_summary_block">
+                <div class="course_summary_item">
+                  <span>Sub Total</span>
+                  <span id="subTotal">$3000</span>
+                </div>
+                <div class="course_summary_total">
+                  <span>Total Payable</span>
+                  <span id="totalPayable">$6000</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="course_total_pay mt-4">
+              <h3 id="subTotalvalue">$6000</h3>
+              <a href="#" class="btn btn-primary">Proceed To Checkout</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <!--  -->
     <div
-      class="offcanvas offcanvas-end"
+      class="offcanvas offcanvasCart offcanvas-end"
       tabindex="-1"
       id="offcanvasNavbar"
       aria-labelledby="offcanvasNavbarLabel"
@@ -810,44 +978,18 @@
       <div class="offcanvas-body">
         <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">Home</a>
+            <a class="nav-link" href="index.html">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Link</a>
+            <a class="nav-link" href="about.html">About</a>
           </li>
-          <li class="nav-item dropdown">
-            <a
-              class="nav-link dropdown-toggle"
-              href="#"
-              role="button"
-              data-bs-toggle="dropdown"
-              aria-expanded="false"
-            >
-              Dropdown
-            </a>
-            <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="#">Action</a></li>
-              <li>
-                <a class="dropdown-item" href="#">Another action</a>
-              </li>
-              <li>
-                <hr class="dropdown-divider" />
-              </li>
-              <li>
-                <a class="dropdown-item" href="#">Something else here</a>
-              </li>
-            </ul>
+          <li class="nav-item">
+            <a class="nav-link" href="list.html">Category</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="contact.html">Contact</a>
           </li>
         </ul>
-        <form class="d-flex mt-3" role="search">
-          <input
-            class="form-control me-2"
-            type="search"
-            placeholder="Search"
-            aria-label="Search"
-          />
-          <button class="btn btn-outline-success" type="submit">Search</button>
-        </form>
       </div>
     </div>
 
@@ -885,7 +1027,9 @@
       </div>
     </div>
 
-    <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+    <div id="success_login" class="sucess-contact-msg"></div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script> -->
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
       integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
@@ -896,6 +1040,8 @@
     <script src="js/fancybox.umd.js"></script>
     <script src="js/script.js"></script>
     <script src="js/contact-js.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/addToCart.js"></script>
 
     <script>
       $(document).on("click", ".dropdown-menu", function (e) {

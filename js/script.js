@@ -17,8 +17,8 @@ $(".recommend_wrap").owlCarousel({
     425: {
       items: 2,
     },
-    769: {
-      items: 3,
+    990: {
+      items: 2,
     },
     1024: {
       items: 3,
@@ -241,6 +241,19 @@ $(".testimonial-slider").owlCarousel({
   },
 });
 
+// add-to-cart
+
+// search-bar
+const searchSubmit = document.getElementById("searchInput");
+if (searchSubmit) {
+  searchSubmit.addEventListener("keydown", function (e) {
+    if (e.key === "Enter") {
+      alert(":sdfsdf");
+      window.location.href = "list.html";
+    }
+  });
+}
+
 // sticky-header
 window.onscroll = function () {
   myFunction();
@@ -251,10 +264,12 @@ var scrollTop = document.getElementById("scrollUp");
 var header = document.getElementById("header");
 var sticky = header.offsetTop;
 
-scrollTop.addEventListener("click", () => {
-  document.body.scrollTop = 0;
-  document.documentElement.scrollTop = 0;
-});
+if (scrollTop) {
+  scrollTop.addEventListener("click", () => {
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
+  });
+}
 
 function myFunction() {
   if (window.scrollY > sticky) {
