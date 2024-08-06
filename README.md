@@ -12,4 +12,8 @@ This project is build for online learning purpose where user can read courses fo
 
     Since this is a project like udemy, you can use it for your personal purpose for your college project. For this project, i have used bootstrap v5.3, SASS, HTML5. Before you run this, please make sure you install package and also run **npm run sass** to read SASS file.
 
-    HAppy Coding :)
+    Happy Coding :)
+
+## Find a bug?
+
+    If you found an issue or would like to submit an improvement to this project, please submit an issue using the issue tab above.
