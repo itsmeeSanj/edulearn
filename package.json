@@ -11,10 +11,6 @@
   "license": "ISC",
   "dependencies": {
     "bootstrap": "^5.3.3",
-<<<<<<< HEAD
-    "sass": "^1.77.6"
-  }
-=======
     "express": "^4.21.2",
     "mongoose": "^8.13.0",
     "sass": "^1.77.6"
@@ -28,5 +24,4 @@
   },
   "homepage": "https://github.com/itsmeeSanj/edulearn#readme",
   "description": ""
->>>>>>> 1e9616e (add:project)
 }
