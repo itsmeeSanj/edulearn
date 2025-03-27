@@ -1,8 +1,5 @@
 // Get the modal and close modal button
-var modal = document.getElementById("success-modal");
-var closeModal = document.getElementById("closeModal");
-
-var successMsg = document.getElementById("success");
+var successMsg = document.getElementById("success_login");
 
 // success Message modal
 const appendAlert = (message, type) => {
@@ -31,15 +28,15 @@ var form = document.getElementById("contactPageForm");
 // Validate name form value
 function validateName(name) {
   if (name == null || name == "") {
-    alert("Please enter your full name to proceed.");
+    appendAlertSucess("Please enter your full name to proceed.","danger");
     document.getElementById("fullName").style.border = "1px solid red";
     return false;
   } else if (name.match(/\d+/g) !== null) {
-    alert("Name has numeric values.");
+    appendAlertSucess("Name has numeric values.","danger");
     document.getElementById("fullName").style.border = "1px solid red";
     return false;
   } else if (name.match(specialCharRegex) !== null) {
-    alert("Name has special characters.");
+    appendAlertSucess("Name has special characters.","danger");
     document.getElementById("fullName").style.border = "1px solid red";
     return false;
   } else {
@@ -50,11 +47,11 @@ function validateName(name) {
 // Validate email form value
 function validateEmail(email) {
   if (email == null || email == "") {
-    alert("Please enter your email to proceed.");
+    appendAlertSucess("Please enter your email to proceed.","danger");
     document.getElementById("email").style.border = "1px solid red";
     return false;
   } else if (email.match(validEmailRegex) == null) {
-    alert("Entered email is not valid.");
+    appendAlertSucess("Entered email is not valid.","danger");
     document.getElementById("email").style.border = "1px solid red";
     return false;
   } else {
@@ -65,7 +62,7 @@ function validateEmail(email) {
 // Validate phone form value
 function validatePhone(phone) {
   if (phone == "") {
-    alert("Please enter mobile number.");
+    appendAlertSucess("Please enter mobile number.","danger");
     document.getElementById("phone").style.border = "1px solid red";
     return false;
   } else if (
@@ -73,13 +70,26 @@ function validatePhone(phone) {
       /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/im
     ) == null
   ) {
-    alert("Entered mobile number is not valid.");
+    appendAlertSucess("Entered mobile number is not valid.","danger");
     document.getElementById("phone").style.border = "1px solid red";
     return false;
   } else {
     return true;
   }
 }
+
+// Validate phone form value
+function validateMsg(msgArea) {
+  if (msgArea == "") {
+    appendAlertSucess("Please enter your message to proceed.","danger");
+    document.getElementById("msg").style.border = "1px solid red";
+    return false;
+  } else {
+    return true;
+  }
+}
+
+
 
 // Reset borders of name form input
 function resetBordersFullName() {
@@ -97,6 +107,11 @@ function resetBordersPhone() {
   document.getElementById("phone").style.border = "1px solid rgb(20, 25, 33)";
 }
 
+// Reset borders of msg form input
+function resetMsgArea() {
+  document.getElementById("msg").style.border = "1px solid rgb(20, 25, 33)";
+}
+
 // Submit form event listener
 if (form) {
   form.addEventListener("submit", (e) => {
@@ -106,20 +121,17 @@ if (form) {
     if (
       validateName(data.get("fullName")) == false ||
       validateEmail(data.get("email")) == false ||
-      validatePhone(data.get("phone")) == false
+      validatePhone(data.get("phone")) == false ||
+      validateMsg(data.get("msg")) == false
     ) {
       return false;
     } else {
-      appendAlert("Nice, your message is send :)", "success");
+      appendAlert("Nice, your message is sent :)", "success");
       setTimeout(() => {
         console.log("Delayed for 2 second.");
-        document.getElementById("email").value = "";
-        document.getElementById("phone").value = "";
-        document.getElementById("fullName").value = "";
-        document.getElementById("msg").value = "";
-        // successMsg.classList.remove("contact_sucess");
+        window.location.reload();
         console.log("Form erased!!!");
-      }, 4000);
+      }, 2000);
     }
   });
 }

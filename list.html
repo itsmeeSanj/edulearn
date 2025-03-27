@@ -1,0 +1,824 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>List Page | Welcome to WeRVerse</title>
+
+    <!-- favicon -->
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="img/fav/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="img/fav/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="img/fav/favicon-16x16.png"
+    />
+    <link rel="manifest" href="img/fav/site.webmanifest" />
+
+    <!-- bootstrap 5 -->
+    <!-- <link
+      rel="stylesheet"
+      href="node_modules/bootstrap/dist/css/bootstrap.min.css"
+    /> -->
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- lineawesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/line-awesome/1.3.0/line-awesome/css/line-awesome.min.css"
+    />
+
+    <!-- owl-carousel -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css"
+    />
+
+    <!-- google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cookie&family=Labrada:ital,wght@0,500;1,500&family=Lato:ital,wght@0,400;0,700;0,900;1,400&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- external-link -->
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <!-- header -->
+    <header id="header">
+      <div class="main_header">
+        <div class="container-fluid">
+          <nav
+            class="d-flex w-full align-items-center column-gap-4 column-gap-md-3"
+          >
+            <div
+              class="header-left d-md-flex align-items-md-center gap-md-3 gap-lg-5"
+            >
+              <div class="logo">
+                <a href="index.html">
+                  <img src="img/logo/orange.png" alt="LOGO" />
+                </a>
+              </div>
+              <div class="header-left_nav d-none d-xl-block">
+                <ul>
+                  <li><a href="list.html">Explore Courses</a></li>
+                  <li><a href="list.html">Special Offer</a></li>
+                  <li><a href="list.html">Free Courses</a></li>
+                </ul>
+              </div>
+            </div>
+
+            <div
+              class="header-right d-flex ms-auto mx-sm-auto me-lg-0 ms-lg-auto d-md-flex align-items-center align-items-lg-center gap-md-3"
+              id="main_nav"
+            >
+              <div id="search-wrapper" class="d-none d-sm-flex">
+                <i class="search-icon las la-search"></i>
+                <input
+                  class="search"
+                  type="search"
+                  placeholder="What do you want to learn?"
+                  id="searchInput"
+                />
+              </div>
+
+              <div
+                class="auth_design_wrap d-flex align-items-center justify-content-center gap-2"
+              >
+                <div class="d-flex align-items-center gap-1">
+                  <div class="user_name" id="user_name"></div>
+
+                  <div class="auth_desgin">
+                    <i class="las la-user-circle"></i>
+
+                    <div class="auth_design_content">
+                      <div class="auth_logged_out">
+                        <a href="login.html">Login</a>
+                        <a href="register.html">Register</a>
+                      </div>
+                      <div class="auth_logged_in" style="display: none">
+                        <a href="profile.html">Profile</a>
+                        <a href="#" id="logout">Logout</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="cart position-relative"
+                  id="hamburger_open"
+                  data-bs-toggle="offcanvas"
+                  data-bs-target="#offcanvasCart"
+                >
+                  <i class="las la-shopping-cart"></i>
+                  <span
+                    class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"
+                    id="numCart"
+                  >
+                  </span>
+                </div>
+              </div>
+            </div>
+
+            <!-- hamburger -->
+            <div
+              class="hamburger hamburger_open ms-lg-3 d-block d-xl-none"
+              id="hamburger_open"
+              data-bs-toggle="offcanvas"
+              data-bs-target="#offcanvasNavbar"
+            >
+              <i class="las la-bars"></i>
+            </div>
+          </nav>
+        </div>
+      </div>
+    </header>
+
+    <!-- main starts here -->
+    <main>
+      <div class="about_banner">
+        <div class="container">
+          <div class="about_banner_content">
+            <h1>All Course</h1>
+            <p>
+              See why millions of people turn to WeRVerse real-world experts to
+              learn. Learn at your own pace with hands-on exercises and quizzes.
+              Our courses are frequently updated so you’ll always be working
+              from the latest information.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!--  -->
+      <section class="list_course">
+        <div class="container">
+          <div class="row gap-4 gap-md-0">
+            <div class="col-md-3">
+              <div class="course_list_left">
+                <div class="course_list_left_head d-flex">
+                  <h1>Filters</h1>
+                  <button class="btn d-block d-md-none d-lg-block">
+                    Clear All
+                  </button>
+                </div>
+                <div class="course_left_block">
+                  <h2>Video Duration</h2>
+                  <div class="course_left_conten">
+                    <div class="form-check">
+                      <input
+                        class="form-check-input"
+                        type="checkbox"
+                        value=""
+                        id="flexCheckChecked"
+                      />
+                      <label class="form-check-label" for="flexCheckChecked">
+                        0-1 Hour (284)
+                      </label>
+                    </div>
+                    <div class="form-check">
+                      <input
+                        class="form-check-input"
+                        type="checkbox"
+                        value=""
+                        id="flexCheckChecked"
+                      />
+                      <label class="form-check-label" for="flexCheckChecked">
+                        1-3 Hour (14)
+                      </label>
+                    </div>
+                    <div class="form-check">
+                      <input
+                        class="form-check-input"
+                        type="checkbox"
+                        value=""
+                        id="flexCheckChecked"
+                      />
+                      <label class="form-check-label" for="flexCheckChecked">
+                        3-6 Hour (15)
+                      </label>
+                    </div>
+                    <div class="form-check">
+                      <input
+                        class="form-check-input"
+                        type="checkbox"
+                        value=""
+                        id="flexCheckChecked"
+                      />
+                      <label class="form-check-label" for="flexCheckChecked">
+                        6-7 Hour (38)
+                      </label>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="course_left_block">
+                  <h2>Level</h2>
+                  <div class="course_left_conten">
+                    <div class="form-check">
+                      <input
+                        class="form-check-input"
+                        type="checkbox"
+                        value=""
+                        id="flexCheckChecked"
+                      />
+                      <label class="form-check-label" for="flexCheckChecked">
+                        Beginner (13)
+                      </label>
+                    </div>
+                    <div class="form-check">
+                      <input
+                        class="form-check-input"
+                        type="checkbox"
+                        value=""
+                        id="flexCheckChecked"
+                      />
+                      <label class="form-check-label" for="flexCheckChecked">
+                        Intermediate (2)
+                      </label>
+                    </div>
+                    <div class="form-check">
+                      <input
+                        class="form-check-input"
+                        type="checkbox"
+                        value=""
+                        id="flexCheckChecked"
+                      />
+                      <label class="form-check-label" for="flexCheckChecked">
+                        All Levels (1)
+                      </label>
+                    </div>
+                    <div class="form-check">
+                      <input
+                        class="form-check-input"
+                        type="checkbox"
+                        value=""
+                        id="flexCheckChecked"
+                      />
+                      <label class="form-check-label" for="flexCheckChecked">
+                        Expert (0)
+                      </label>
+                    </div>
+                  </div>
+                </div>
+                <div class="course_left_block">
+                  <h2>Price</h2>
+                  <div class="course_left_conten">
+                    <div class="form-check">
+                      <input
+                        class="form-check-input"
+                        type="checkbox"
+                        value=""
+                        id="flexCheckChecked"
+                      />
+                      <label class="form-check-label" for="flexCheckChecked">
+                        Paid (222)
+                      </label>
+                    </div>
+                    <div class="form-check">
+                      <input
+                        class="form-check-input"
+                        type="checkbox"
+                        value=""
+                        id="flexCheckChecked"
+                      />
+                      <label class="form-check-label" for="flexCheckChecked">
+                        Free (4)
+                      </label>
+                    </div>
+                  </div>
+                </div>
+                <div class="course_left_block">
+                  <h2>Subtitle</h2>
+                  <div class="course_left_conten">
+                    <div class="form-check">
+                      <input
+                        class="form-check-input"
+                        type="checkbox"
+                        value=""
+                        id="flexCheckChecked"
+                      />
+                      <label class="form-check-label" for="flexCheckChecked">
+                        English (84)
+                      </label>
+                    </div>
+                    <div class="form-check">
+                      <input
+                        class="form-check-input"
+                        type="checkbox"
+                        value=""
+                        id="flexCheckChecked"
+                      />
+                      <label class="form-check-label" for="flexCheckChecked">
+                        Portugues (8)
+                      </label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-9">
+              <div class="course_list_right">
+                <div class="course_light_head mb-3">
+                  <h1>All Courses</h1>
+                  <span>5 results</span>
+                </div>
+                <div class="course-list">
+                  <div class="course-item d-flex gap-2 gap-lg-3" data-id="4">
+                    <div>
+                      <a href="details.html">
+                        <img
+                          src="https://img-c.udemycdn.com/course/240x135/2776760_f176_10.jpg"
+                          alt="Course Image"
+                        />
+                      </a>
+                    </div>
+                    <div class="course-info">
+                      <h2>
+                        <a href="details.html">
+                          100 Days of Code: The Complete Python Pro Bootcamp
+                        </a>
+                      </h2>
+                      <p>
+                        Learn Python like a Professional Start from the basics
+                        and go all the way to creating your own applications and
+                        games
+                      </p>
+                      <div class="author">Jose Portilla, Pierian Training</div>
+                      <p class="course_detail">
+                        <span class="badge">Bestseller</span> 58.5 total hours •
+                        61 lectures
+                      </p>
+                      <div class="course-rating">
+                        <span class="price">CA$49.99</span>
+                      </div>
+                      <button
+                        class="add_cart btn btn-primary mt-2 btn-sm"
+                        id="add_cart"
+                      >
+                        Add to cart
+                      </button>
+                    </div>
+                  </div>
+                  <div class="course-item d-flex gap-2 gap-lg-3" data-id="5">
+                    <div>
+                      <a href="details.html">
+                        <img
+                          src="https://img-c.udemycdn.com/course/240x135/543600_64d1_4.jpg"
+                          alt="Course Image"
+                        />
+                      </a>
+                    </div>
+                    <div class="course-info">
+                      <h2>
+                        <a href="details.html">
+                          Automate the Boring Stuff with Python Programming
+                        </a>
+                      </h2>
+                      <p>
+                        A practical programming course for office workers,
+                        academics, and administrators who want to improve their
+                        productivity.
+                      </p>
+                      <div class="author">AI Sweigart</div>
+                      <p class="course_detail">
+                        <span class="badge">Bestseller</span> 8.5 total hours •
+                        51 lectures
+                      </p>
+                      <div class="course-rating">
+                        <span class="price">CA$149.99</span>
+                      </div>
+                      <button
+                        class="add_cart btn btn-primary mt-2 btn-sm"
+                        id="add_cart"
+                      >
+                        Add to cart
+                      </button>
+                    </div>
+                  </div>
+                  <div class="course-item d-flex gap-2 gap-lg-3" data-id="6">
+                    <div>
+                      <a href="details.html">
+                        <img
+                          src="https://img-c.udemycdn.com/course/240x135/692188_9da7_34.jpg"
+                          alt="Course Image"
+                        />
+                      </a>
+                    </div>
+                    <div class="course-info">
+                      <h2>
+                        <a href="details.html">
+                          Python Mega Course: Learn Python in 60 Days, Build 20
+                          Apps
+                        </a>
+                      </h2>
+                      <p>
+                        Learn Python from zero to complete by building real
+                        programs to gain the skills needed to land an
+                        entry-level job.
+                      </p>
+                      <div class="author">Sweigart</div>
+                      <p class="course_detail">
+                        <span class="badge">Bestseller</span> 52 total hours •
+                        54 lectures
+                      </p>
+                      <div class="course-rating">
+                        <span class="price">CA$149.99</span>
+                      </div>
+                      <button
+                        class="add_cart btn btn-primary mt-2 btn-sm"
+                        id="add_cart"
+                      >
+                        Add to cart
+                      </button>
+                    </div>
+                  </div>
+                  <div class="course-item d-flex gap-2 gap-lg-3" data-id="7">
+                    <div>
+                      <a href="details.html">
+                        <img
+                          src="https://img-c.udemycdn.com/course/240x135/2365628_0b60_9.jpg"
+                          alt="Course Image"
+                        />
+                      </a>
+                    </div>
+                    <div class="course-info">
+                      <h2>
+                        <a href="details.html">
+                          Complete React Developer (w/ Redux, Hooks, GraphQL)
+                        </a>
+                      </h2>
+                      <p>
+                        Updated! Become a Senior
+                        <strong>React</strong> Developer. Build a massive
+                        E-commerce app with Redux, Hooks, GraphQL, Stripe,
+                        Firebase
+                      </p>
+                      <div class="author">Andea</div>
+
+                      <p class="course_detail">
+                        <span class="badge">Bestseller</span> 85 total hours •
+                        41 lectures
+                      </p>
+                      <div class="course-rating">
+                        <span class="price">CA$19.99</span>
+                      </div>
+                      <button
+                        class="add_cart btn btn-primary mt-2 btn-sm"
+                        id="add_cart"
+                      >
+                        Add to cart
+                      </button>
+                    </div>
+                  </div>
+                  <div class="course-item d-flex gap-2 gap-lg-3" data-id="8">
+                    <div>
+                      <a href="details.html">
+                        <img
+                          src="https://img-b.udemycdn.com/course/240x135/5620946_7c11.jpg"
+                          alt="Course Image"
+                        />
+                      </a>
+                    </div>
+                    <div class="course-info">
+                      <h2>
+                        <a href="details.html">
+                          React & TypeScript - The Practical Guide
+                        </a>
+                      </h2>
+                      <p>
+                        Build type-safe <strong>React</strong> apps & use
+                        TypeScript to enhance your components, state management,
+                        Redux & side effects code.
+                      </p>
+                      <div class="author">Jordan</div>
+
+                      <p class="course_detail">
+                        <span class="badge">Bestseller</span> 35 total hours •
+                        44 lectures
+                      </p>
+                      <div class="course-rating">
+                        <span class="price">CA$74.99</span>
+                      </div>
+                      <button
+                        class="add_cart btn btn-primary mt-2 btn-sm"
+                        id="add_cart"
+                      >
+                        Add to cart
+                      </button>
+                    </div>
+                  </div>
+                </div>
+                <div class="pagination mt-4 text-center">
+                  <nav aria-label="Page navigation">
+                    <ul class="pagination">
+                      <li class="page-item">
+                        <a class="page-link" href="#" aria-label="Previous">
+                          <span aria-hidden="true">&laquo;</span>
+                        </a>
+                      </li>
+                      <li class="page-item">
+                        <a class="page-link" href="#">1</a>
+                      </li>
+                      <li class="page-item">
+                        <a class="page-link" href="#">2</a>
+                      </li>
+                      <li class="page-item">
+                        <a class="page-link" href="#">3</a>
+                      </li>
+                      <li class="page-item">
+                        <a class="page-link" href="#" aria-label="Next">
+                          <span aria-hidden="true">&raquo;</span>
+                        </a>
+                      </li>
+                    </ul>
+                  </nav>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- footer -->
+    <footer>
+      <div class="footer_top">
+        <div class="container">
+          <div class="row footer_wrap gap-3 gap-sm-0">
+            <div class="col-lg-12">
+              <div class="footer_block">
+                <a href="index.html">
+                  <img src="img/logo/orange.png" class="logo" alt="" />
+                </a>
+              </div>
+            </div>
+            <div class="col-12 col-sm-10 col-md-6 col-lg-4">
+              <div class="footer_block">
+                <h4>Get link in sms to download the app</h4>
+                <div class="footer_form">
+                  <form class="form_flex">
+                    <input
+                      type="number"
+                      id="contactNumber"
+                      name="contactNumber"
+                      placeholder="Enter mobile number"
+                    />
+                    <input
+                      type="submit"
+                      value="Get the link"
+                      class="form_submit"
+                    />
+                  </form>
+                </div>
+              </div>
+              <div class="footer_block counselling border p-3 rounded">
+                <div class="d-flex position-relative">
+                  <div>
+                    <h5 class="mb-3">
+                      Know more about our courses. Book a free counselling
+                      session.
+                    </h5>
+
+                    <button
+                      type="button"
+                      class="btn btn-primary"
+                      data-bs-toggle="modal"
+                      data-bs-target="#exampleModal"
+                    >
+                      Speak to an expert
+                    </button>
+                  </div>
+                  <img
+                    src="https://www.vedantu.com/cdn/images/new-home-page/newsletter-icon.svg"
+                    class="flex-shrink-0 ms-3 rounded-circle"
+                    alt="..."
+                  />
+                </div>
+              </div>
+              <div class="footer_block">
+                <h4>TOLL FREE: 1800-120-456-456</h4>
+                <ul class="list-group">
+                  <a href="tel:+4378712345">
+                    <i class="las la-phone"></i>&nbsp;<span
+                      >+1 6378712345</span
+                    ></a
+                  >
+                  <a href="mailto:dummyemail@gmail.com">
+                    <i class="las la-envelope"></i>&nbsp;<span
+                      >dummyemail@gmail.com</span
+                    ></a
+                  >
+                </ul>
+              </div>
+            </div>
+            <div class="col-12 col-sm-12 col-md-6 col-lg-8">
+              <div class="row gap-4 gap-md-0">
+                <div class="col-lg-4">
+                  <div class="footer_block">
+                    <h4>Company</h4>
+                    <div class="footer_nav">
+                      <a href="about.html">About</a>
+                      <a href="contact.html">Contact</a>
+                      <a href="privacy.html">Privacy Policy</a>
+                      <a href="terms.html">Terms</a>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-8">
+                  <div class="footer_block course">
+                    <h4>Courses</h4>
+                    <div class="footer_nav">
+                      <a href="about.html">JAVA</a>
+                      <a href="contact.html">C#</a>
+                      <a href="privacy.html">Python</a>
+                      <a href="terms.html">Computer Science</a>
+                      <a href="terms.html">Business Analytics</a>
+                      <a href="terms.html"> Digital Marketing </a>
+                      <a href="terms.html"> Self Driving Car Engineer</a>
+                      <a href="terms.html"> Intro to Programming </a>
+                      <a href="terms.html"> Data Analyst </a>
+                      <a href="terms.html"> AWS Cloud Architect </a>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-4">
+                  <div class="footer_block right">
+                    <h4>Follow Us</h4>
+
+                    <div class="footer_nav social_icon">
+                      <a href="#!" target="_blank"
+                        ><i class="lab la-facebook-f"></i>
+                      </a>
+
+                      <a href="#!" target="_blank"
+                        ><i class="lab la-instagram"></i>
+                      </a>
+
+                      <a href="#!" target="_blank"
+                        ><i class="lab la-twitter"></i
+                      ></a>
+
+                      <a href="#!" target="_blank"
+                        ><i class="lab la-youtube"></i
+                      ></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="footer_bottom">
+        <p>
+          Copyright &copy;
+          <script>
+            document.write(new Date().getFullYear());
+          </script>
+          WeRVerse. All Rights Reserved.
+        </p>
+      </div>
+    </footer>
+
+    <!-- cart  -->
+    <div id="success_login" class="sucess-contact-msg"></div>
+    <!-- cart  -->
+    <div
+      class="offcanvas offcanvasCart offcanvas-end"
+      tabindex="-1"
+      id="offcanvasCart"
+      aria-labelledby="offcanvasCart"
+    >
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="offcanvasCart">Cart</h5>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="offcanvas"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="offcanvas-body">
+        <div id="userNotLogin" class="userNotLogin mt-2 mt-lg-4">
+          <div class="course-list cart_course_list" id="course-list"></div>
+          <div class="course_wrap_summary mt-8">
+            <div class="course_summary">
+              <h3>Price Summary</h3>
+              <div class="course_summary_block">
+                <div class="course_summary_item">
+                  <span>Sub Total</span>
+                  <span id="subTotal">$3000</span>
+                </div>
+                <div class="course_summary_total">
+                  <span>GST/HST</span>
+                  <span id="totalPayable">$6000</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="course_total_pay mt-4">
+              <h3 id="subTotalvalue">$6000</h3>
+              <a href="#" class="btn btn-primary">Proceed To Checkout</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!--  -->
+    <div
+      class="offcanvas offcanvasCart offcanvas-end"
+      tabindex="-1"
+      id="offcanvasNavbar"
+      aria-labelledby="offcanvasNavbarLabel"
+    >
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Offcanvas</h5>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="offcanvas"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="offcanvas-body">
+        <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="about.html">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="list.html">Category</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="contact.html">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- modal -->
+    <div
+      class="modal fade"
+      id="exampleModal"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">...</div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Close
+            </button>
+            <button type="button" class="btn btn-primary">Save changes</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="js/script.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/addToCart.js"></script>
+  </body>
+</html>
