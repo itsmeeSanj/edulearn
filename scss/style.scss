@@ -1,28 +1,30 @@
-@import "variables";
+// @use "variables"; // Assuming you have a variables.scss file with your color scheme
 
-// include bootstrap
-@import "../node_modules/bootstrap/scss/bootstrap.scss";
+$primary: #00b8c7;
+$white: #fff;
+$linear-primary: linear-gradient(
+    rgba(20, 25, 33, 0) 0%,
+    rgba(20, 25, 33, 0.56) 100%
+  ),
+  rgb(0, 125, 125);
 
-// code starts here
-html {
-  box-sizing: border-box;
-  font-family: "Lato", sans-serif;
-  scroll-behavior: smooth;
-  height: 100%;
-}
+$accordion-button-padding-y: 14px;
+$accordion-button-padding-x: 14px;
+$accordion-icon-width: 14px;
 
-*,
-*::after,
-*::before {
-  box-sizing: inherit;
-  margin: 0;
-  padding: 0;
-}
+$font-extra-large: 2rem;
+$font-large: 1.875rem;
+$font-medium: 1.0625rem;
 
+// Bootstrap SCSS
+// @use "../node_modules/bootstrap/scss/bootstrap" as *;
+
+@use "../node_modules/bootstrap/scss/bootstrap" as *; // Using tilde to reference node_modules
+
+// Global Styles
 :root {
   --primary-bg: rgb(150, 150, 221);
   --primary-bg-light: rgb(162, 209, 208);
-
   --bs-primary: #00b8c7;
   --primary-orange: #00b8c7;
   --primary-orange-hover: #007d7d;
@@ -31,75 +33,45 @@ html {
       rgba(20, 25, 33, 0.56) 100%
     ),
     rgb(0, 125, 125);
-
   --primary-color: #000000;
   --primary-footer: rgb(20, 25, 33);
   --primary-color-light: rgb(0 0 0 / 65%);
-
   --primary-white: #ffffff;
 }
-::placeholder {
-  opacity: 0.5;
-  font-weight: 400;
-  font-size: 14px;
-  color: var(--primary-color);
-  /* text-transform: capitalize; */
+
+// Box Sizing and Global Resets
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
+html {
+  box-sizing: border-box;
+  font-family: "Lato", sans-serif;
+  scroll-behavior: smooth;
+  height: 100%;
+}
+
+// Body Styling
 body {
   font-size: 16px;
-  overflow-x: hidden;
   font-weight: normal;
   color: var(--primary-color);
+  overflow-x: hidden;
   transition: all 0.4s ease-in-out;
   position: relative;
   min-height: 100%;
 }
 
+// Typography
 p {
   margin: 0;
   line-height: 1.5;
   font-weight: 300;
   color: var(--primary-color);
-}
-a {
-  color: inherit;
-  text-decoration: none;
-  transition: inherit;
-  &:hover {
-    text-decoration: none;
-    color: var(--primary-orange-hover);
-    transition: inherit;
-  }
-  &:focus {
-    outline: none;
-  }
-}
-
-ul {
-  margin-top: 0;
-  margin-bottom: 0;
-  padding: 0;
-  margin-left: 0.5rem;
-  li {
-    margin-bottom: 0;
-    font-size: 16px;
-    list-style: none;
-    font-weight: normal;
-  }
-}
-
-img {
-  height: 100%;
-  width: 100%;
-  max-width: 100%;
-  object-fit: contain;
-  border-style: none;
-  transition: all 0.4s ease-in-out;
-}
-
-i {
-  font-size: larger;
 }
 
 h1,
@@ -131,11 +103,48 @@ h5 {
   font-size: 15px;
 }
 
+// Links and Text Styling
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: color 0.3s ease;
+  &:hover {
+    color: var(--primary-orange-hover);
+  }
+  &:focus {
+    outline: none;
+  }
+}
+
+// List Styles
+ul {
+  margin-top: 0;
+  margin-bottom: 0;
+  padding: 0;
+  margin-left: 0.5rem;
+  li {
+    margin-bottom: 0;
+    font-size: 15px;
+    list-style: none;
+    font-weight: normal;
+  }
+}
+
+// Images
+img {
+  height: 100%;
+  width: 100%;
+  max-width: 100%;
+  object-fit: contain;
+  border-style: none;
+  transition: all 0.4s ease-in-out;
+}
+
+// Headings and Subheadings
 .heading {
   margin-bottom: 1.2rem;
   h1 {
     font-size: 24px;
-    font-weight: 500;
     line-height: 1.1;
     text-transform: capitalize;
     font-family: "Labrada", serif;
@@ -146,6 +155,7 @@ h5 {
     text-transform: uppercase;
     color: var(--primary-orange);
   }
+
   &.inbetween {
     display: flex;
     align-items: center;
@@ -159,39 +169,37 @@ h5 {
       }
     }
   }
+
   &.center {
     text-align: center;
   }
 }
 
+// Spacing Utilities
 .spacing {
   padding: 4rem 0 3rem;
 }
 
-.NotFound_wrap {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  .NotFound {
-    img {
-      height: 450px;
-    }
+// Button Styles
+@mixin button-style($bg-color, $color) {
+  background-color: $bg-color;
+  color: $color;
+  padding: 14px;
+  border-radius: 4px;
+  font-size: 15px;
+  border: 0;
+  &:hover {
+    background-color: darken($bg-color, 10%);
+    color: $color;
+    cursor: pointer;
   }
 }
 
 .button {
-  padding: 14px;
-  color: var(--primary-white);
-  border-radius: 4px;
-  font-size: 15px;
-  background-color: var(--primary-orange);
-  border: 0;
-  &:hover {
-    background-color: var(--primary-orange-hover);
-    color: var(--primary-white);
-    cursor: pointer;
-  }
+  @include button-style($primary, $white); // Apply SCSS variable directly here
 }
+
+// Scroll Up Button
 button.scroll_up {
   padding: 14px;
   border-radius: 8px;
@@ -204,157 +212,97 @@ button.scroll_up {
   }
 }
 
-/* owl-carousel */
+// Owl Carousel Styles
 .owl-nav {
   display: block !important;
   margin: 0 !important;
-}
+  button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    margin: 0 !important;
+    height: 34px !important;
+    width: 34px !important;
+    background: var(--bs-primary) !important;
+    border-radius: 50% !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
 
-.owl-nav button {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  margin: 0 !important;
-  height: 34px !important;
-  width: 34px !important;
-  background: $primary !important;
+  button i {
+    font-size: 16px;
+    color: #fff;
+  }
 
-  border-radius: 50% !important;
-  display: flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-}
+  button.owl-prev {
+    left: 0rem;
+  }
 
-.owl-nav button i {
-  font-size: 16px;
-  color: #fff;
-}
-
-.owl-nav button.owl-prev {
-  left: 0rem;
-}
-
-.owl-nav button.owl-next {
-  right: 0rem;
+  button.owl-next {
+    right: 0rem;
+  }
 }
 
 .owl-dots {
   display: block;
   margin: 0 !important;
-}
-
-/* slider-carousel-dots */
-
-.owl-dots button {
-  position: absolute;
-  bottom: -2rem;
-  span {
-    width: 24px !important;
-    height: 3px !important;
-    background-color: rgba(255, 255, 255, 0.5) !important;
-  }
-  &.active span {
-    background-color: var(--primary-hover-color) !important;
+  button {
+    position: absolute;
+    bottom: -2rem;
+    span {
+      width: 24px !important;
+      height: 3px !important;
+      background-color: rgba(255, 255, 255, 0.5) !important;
+    }
+    &.active span {
+      background-color: var(--primary-orange) !important;
+    }
   }
 }
 
-/* form */
+// Forms
 form {
-  input {
-    display: block;
-    width: 100%;
-    height: calc(1.4em + 1.125rem + 0.275rem);
-    padding: 0.5625rem 0.5625rem;
-    font-size: 15px;
-    font-weight: 300;
-    line-height: 1.5;
-    background-color: #f7f7fc;
-    background-clip: padding-box;
-    border: 1px solid var(--primary-footer);
-    border-radius: 0.25rem;
-    box-shadow: 0 0 0 0 transparent;
-    transition: border-color 0.2s ease-in-out, box-shadow 0.3s ease-in-out;
-  }
-
+  input,
   textarea {
     display: block;
     width: 100%;
-    padding: 0.5625rem 0.5625rem;
+    padding: 0.5625rem;
     font-size: 15px;
     font-weight: 300;
     line-height: 1.5;
     background-color: #f7f7fc;
-    background-clip: padding-box;
     border: 1px solid var(--primary-footer);
     border-radius: 0.25rem;
     box-shadow: 0 0 0 0 transparent;
     transition: border-color 0.2s ease-in-out, box-shadow 0.3s ease-in-out;
+    &:focus {
+      outline: none;
+      border-color: var(--primary-orange);
+      box-shadow: 0 0 5px var(--primary-orange);
+    }
+  }
+
+  label {
+    display: block;
+    margin-bottom: 12px;
+    font-size: 17px;
+  }
+
+  .form_submit {
+    border: 0;
+    font-size: 16px;
+    padding: 9px 16px;
+    background-color: var(--primary-orange);
+    color: var(--primary-white);
+    &:hover {
+      background-color: var(--primary-orange-hover);
+      cursor: pointer;
+    }
   }
 }
 
-form input[type="checkbox"] {
-  width: auto;
-  display: inline;
-  margin: 0;
-  height: auto;
-}
-
-form textarea:focus-visible {
-  outline: none;
-}
-
-form label {
-  display: block;
-  margin-bottom: 12px;
-  font-size: 17px;
-}
-
-.form_flex input {
-  padding: 9px 10px;
-  border: 0;
-  border-radius: 0;
-  height: auto;
-  width: auto;
-  background-color: var(--primary-white);
-}
-form input:focus-visible {
-  outline: none;
-  box-shadow: none;
-}
-
-form .form_submit {
-  border: 0;
-  font-size: 16px;
-  padding: 9px 16px;
-  color: var(--primary-white);
-  background-color: var(--primary-orange);
-}
-
-form .form_submit:hover {
-  cursor: pointer;
-  color: var(--primary-white);
-  background-color: var(--primary-orange-hover);
-}
-
-.questionBlock {
-  margin-bottom: 15px;
-}
-
-input.search {
-  width: 320px;
-  display: block;
-  height: calc(1.4em + 1.125rem + 0.275rem);
-  padding: 0.5625rem 0.5625rem;
-  border-radius: 0;
-  border: 0;
-  font-size: 15px;
-  line-height: 1.5;
-  background-color: #f7f7fc;
-}
-input.search:focus {
-  outline: none;
-}
-
+// Search Input
 #search-wrapper {
   display: flex;
   border: 1px solid var(--primary-footer);
@@ -363,26 +311,25 @@ input.search:focus {
   background-color: #f7f7fc;
   overflow: hidden;
   max-width: 400px;
-}
-#search {
-  border: none;
-  width: 350px;
-  font-size: 15px;
-}
-#search:focus {
-  outline: none;
-}
-.search-icon {
-  margin: 10px 0px 10px 10px;
-  color: rgba(0, 0, 0, 0.564);
+  input.search {
+    width: 100%;
+    height: 100%;
+    border: none;
+    font-size: 15px;
+    padding: 0.5625rem;
+    background-color: #f7f7fc;
+    &:focus {
+      outline: none;
+    }
+  }
 }
 
-// pageAlignment
+// Page Alignment
 .pageAlignment {
   padding: 32px 0;
 }
 
-// cart
+// Cart Styles (Offcanvas)
 .offcanvasCart {
   .offcanvas-header {
     border-bottom: 1px solid rgba(0, 0, 0, 0.3);
@@ -392,6 +339,7 @@ input.search:focus {
       font-weight: 600;
     }
   }
+
   .offcanvas-body {
     padding: 0 15px;
     position: relative;
@@ -403,62 +351,13 @@ input.search:focus {
         }
       }
     }
-    .userNotLogin {
-      text-align: center;
-      i {
-        font-size: 38px;
-      }
-      h2 {
-        font-size: 15px;
-        margin-top: 8px;
-      }
-      .course_wrap_summary {
-        position: absolute;
-        left: 0;
-        bottom: 0;
-        width: 100%;
-        padding: 15px;
-        .course_summary {
-          background-color: #f1f1f1;
-          padding: 16px;
-          text-align: left;
-          border-radius: 8px;
-          h3 {
-            font-size: 18px;
-            font-weight: 600;
-            margin-bottom: 8px;
-          }
-          .course_summary_block {
-            .course_summary_item {
-              display: flex;
-              align-items: center;
-              justify-content: space-between;
-              margin-bottom: 0px;
-            }
-            .course_summary_total {
-              display: flex;
-              align-items: center;
-              justify-content: space-between;
-              margin-bottom: 0px;
-            }
-          }
-        }
-        .course_total_pay {
-          display: flex;
-          align-items: center;
-          justify-content: space-between;
-          h3 {
-            font-size: 22px;
-            font-weight: 700;
-          }
-        }
-      }
-    }
   }
 }
 
-#auth_design_content_LoggedIn {
-  display: none;
+// Other Specific Styles
+.price_deduct {
+  color: #ff0000;
+  text-decoration: line-through;
 }
 
 /* header */
@@ -632,10 +531,11 @@ header nav .hamburger {
     z-index: 111;
     color: $white;
     h3 {
-      font-size: 17px;
+      font-size: 18px;
       font-weight: 700;
       text-transform: capitalize;
       a {
+        display: block;
         &:hover {
           color: $white;
           text-decoration: underline;
@@ -643,7 +543,7 @@ header nav .hamburger {
       }
     }
     p {
-      margin: 6px 0;
+      margin: 4px 0;
       color: $white;
       font-size: 14px;
     }
@@ -718,6 +618,28 @@ header nav .hamburger {
 /* events */
 .events_section {
   background-color: var(--primary-bg-light);
+  &.desc_sec {
+    .desc_sec_left,
+    .desc_sec_right {
+      h1 {
+        font-size: 1.875rem;
+        font-weight: 600;
+        line-height: 1.2;
+        font-family: "Labrada", serif;
+      }
+      p {
+        margin: 0.5625rem 0;
+        font-size: 1.0625rem;
+        font-weight: 400;
+      }
+      .desc_price {
+        font-size: 26px;
+        margin: 9px 0;
+        font-weight: 600;
+        font-family: "Labrada", serif;
+      }
+    }
+  }
 }
 
 /* testimonial */
