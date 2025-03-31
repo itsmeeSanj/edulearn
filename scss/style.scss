@@ -180,10 +180,18 @@ img {
   padding: 4rem 0 3rem;
 }
 
-// Button Styles
-@mixin button-style($bg-color, $color) {
-  background-color: $bg-color;
-  color: $color;
+.NotFound_wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  .NotFound {
+    img {
+      height: 450px;
+    }
+  }
+}
+
+.button {
   padding: 14px;
   border-radius: 4px;
   font-size: 15px;
@@ -360,6 +368,90 @@ form {
   text-decoration: line-through;
 }
 
+// pageAlignment
+.pageAlignment {
+  padding: 32px 0;
+}
+
+// cart
+.offcanvasCart {
+  .offcanvas-header {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+    padding: 15px;
+    h5 {
+      font-size: 18px;
+      font-weight: 600;
+    }
+  }
+  .offcanvas-body {
+    padding: 0 15px;
+    position: relative;
+    ul {
+      margin: 0;
+      li {
+        a {
+          padding: 6px 0;
+        }
+      }
+    }
+    .userNotLogin {
+      text-align: center;
+      i {
+        font-size: 38px;
+      }
+      h2 {
+        font-size: 15px;
+        margin-top: 8px;
+      }
+      .course_wrap_summary {
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        padding: 15px;
+        .course_summary {
+          background-color: #f1f1f1;
+          padding: 16px;
+          text-align: left;
+          border-radius: 8px;
+          h3 {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 8px;
+          }
+          .course_summary_block {
+            .course_summary_item {
+              display: flex;
+              align-items: center;
+              justify-content: space-between;
+              margin-bottom: 0px;
+            }
+            .course_summary_total {
+              display: flex;
+              align-items: center;
+              justify-content: space-between;
+              margin-bottom: 0px;
+            }
+          }
+        }
+        .course_total_pay {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          h3 {
+            font-size: 22px;
+            font-weight: 700;
+          }
+        }
+      }
+    }
+  }
+}
+
+#auth_design_content_LoggedIn {
+  display: none;
+}
+
 /* header */
 header {
   width: 100%;
@@ -531,7 +623,7 @@ header nav .hamburger {
     z-index: 111;
     color: $white;
     h3 {
-      font-size: 18px;
+      font-size: 17px;
       font-weight: 700;
       text-transform: capitalize;
       a {
