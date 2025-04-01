@@ -1,34 +1,3 @@
-$(".recommend_wrap").owlCarousel({
-  loop: true,
-  dots: false,
-  margin: 15,
-  autoplay: true,
-  autoplayTimeout: 3600,
-  navText: [
-    '<i class="las la-angle-left"></i>',
-    '<i class="las la-angle-right"></i>',
-  ],
-  nav: true,
-  items: 1,
-  responsive: {
-    0: {
-      items: 1,
-    },
-    425: {
-      items: 2,
-    },
-    990: {
-      items: 2,
-    },
-    1024: {
-      items: 3,
-    },
-    1440: {
-      items: 4,
-    },
-  },
-});
-
 $(".partners_wrap_carousel").owlCarousel({
   loop: true,
   dots: false,
@@ -60,42 +29,11 @@ $(".partners_wrap_carousel").owlCarousel({
   },
 });
 
-$(".editor_wrap").owlCarousel({
-  loop: true,
-  dots: false,
-  margin: 15,
-  autoplay: true,
-  autoplayTimeout: 3200,
-  navText: [
-    '<i class="las la-angle-left"></i>',
-    '<i class="las la-angle-right"></i>',
-  ],
-  nav: true,
-  items: 1,
-  responsive: {
-    0: {
-      items: 1,
-    },
-    425: {
-      items: 2,
-    },
-    769: {
-      items: 3,
-    },
-    1024: {
-      items: 5,
-    },
-    1440: {
-      items: 5,
-    },
-  },
-});
-
 $(".hot_courses").owlCarousel({
   loop: true,
   dots: false,
   margin: 15,
-  autoplay: true,
+  autoplay: false,
   autoplayTimeout: 3200,
   navText: [
     '<i class="las la-angle-left"></i>',
@@ -114,41 +52,10 @@ $(".hot_courses").owlCarousel({
       items: 3,
     },
     1024: {
-      items: 5,
+      items: 4,
     },
     1440: {
-      items: 5,
-    },
-  },
-});
-
-$(".editor_wrap").owlCarousel({
-  loop: true,
-  dots: false,
-  margin: 15,
-  autoplay: true,
-  autoplayTimeout: 3200,
-  navText: [
-    '<i class="las la-angle-left"></i>',
-    '<i class="las la-angle-right"></i>',
-  ],
-  nav: true,
-  items: 1,
-  responsive: {
-    0: {
-      items: 1,
-    },
-    425: {
-      items: 2,
-    },
-    769: {
-      items: 3,
-    },
-    1024: {
-      items: 5,
-    },
-    1440: {
-      items: 5,
+      items: 4,
     },
   },
 });
@@ -157,7 +64,7 @@ $(".recomended_course").owlCarousel({
   loop: true,
   dots: false,
   margin: 15,
-  autoplay: true,
+  autoplay: false,
   autoplayTimeout: 3400,
   navText: [
     '<i class="las la-angle-left"></i>',
@@ -176,10 +83,10 @@ $(".recomended_course").owlCarousel({
       items: 3,
     },
     1024: {
-      items: 5,
+      items: 4,
     },
     1440: {
-      items: 5,
+      items: 4,
     },
   },
 });
@@ -207,10 +114,10 @@ $(".new_wrap").owlCarousel({
       items: 3,
     },
     1024: {
-      items: 5,
+      items: 4,
     },
     1440: {
-      items: 5,
+      items: 4,
     },
   },
 });
@@ -220,7 +127,7 @@ $(".testimonial-slider").owlCarousel({
   loop: true,
   dots: false,
   margin: 15,
-  autoplay: true,
+  autoplay: false,
   autoplayTimeout: 3300,
   navText: [
     '<i class="las la-angle-left"></i>',
@@ -233,10 +140,10 @@ $(".testimonial-slider").owlCarousel({
       items: 1,
     },
     576: {
-      items: 1,
+      items: 2,
     },
     769: {
-      items: 2,
+      items: 4,
     },
   },
 });

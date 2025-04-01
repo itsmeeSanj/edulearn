@@ -1,12 +1,12 @@
 // @use "variables"; // Assuming you have a variables.scss file with your color scheme
 
-$primary: #00b8c7;
+$primary: #fdb439;
 $white: #fff;
 $linear-primary: linear-gradient(
     rgba(20, 25, 33, 0) 0%,
     rgba(20, 25, 33, 0.56) 100%
   ),
-  rgb(0, 125, 125);
+  #2457a6;
 
 $accordion-button-padding-y: 14px;
 $accordion-button-padding-x: 14px;
@@ -17,22 +17,18 @@ $font-large: 1.875rem;
 $font-medium: 1.0625rem;
 
 // Bootstrap SCSS
-// @use "../node_modules/bootstrap/scss/bootstrap" as *;
 
-@use "../node_modules/bootstrap/scss/bootstrap" as *; // Using tilde to reference node_modules
+@import "../node_modules/bootstrap/scss/bootstrap.scss";
 
 // Global Styles
 :root {
-  --primary-bg: rgb(150, 150, 221);
-  --primary-bg-light: rgb(162, 209, 208);
-  --bs-primary: #00b8c7;
-  --primary-orange: #00b8c7;
-  --primary-orange-hover: #007d7d;
+  --primary-bg: #2457a6;
+  --primary-bg-light: #e1f0fb;
   --primary-linear-color: linear-gradient(
       rgba(20, 25, 33, 0) 0%,
       rgba(20, 25, 33, 0.56) 100%
     ),
-    rgb(0, 125, 125);
+    #2457a6;
   --primary-color: #000000;
   --primary-footer: rgb(20, 25, 33);
   --primary-color-light: rgb(0 0 0 / 65%);
@@ -109,7 +105,7 @@ a {
   text-decoration: none;
   transition: color 0.3s ease;
   &:hover {
-    color: var(--primary-orange-hover);
+    color: $primary;
   }
   &:focus {
     outline: none;
@@ -144,9 +140,10 @@ img {
 .heading {
   margin-bottom: 1.2rem;
   h1 {
-    font-size: 24px;
-    line-height: 1.1;
     text-transform: capitalize;
+    font-size: 1.875rem;
+    font-weight: 600;
+    line-height: 1.2;
     font-family: "Labrada", serif;
   }
   h4 {
@@ -172,12 +169,23 @@ img {
 
   &.center {
     text-align: center;
+    width: 65%;
+    margin: 0 auto 2rem;
+
+    p {
+      font-size: 1.125rem;
+      font-weight: 400;
+    }
   }
 }
 
 // Spacing Utilities
 .spacing {
-  padding: 4rem 0 3rem;
+  padding: 5.5rem 0 5rem;
+  .read_more {
+    text-align: center;
+    margin: 2rem auto 0;
+  }
 }
 
 .NotFound_wrap {
@@ -192,22 +200,39 @@ img {
 }
 
 .button {
-  padding: 14px;
+  padding: 12px 16px;
   border-radius: 4px;
   font-size: 15px;
-  border: 0;
-  &:hover {
-    background-color: darken($bg-color, 10%);
-    color: $color;
-    cursor: pointer;
+  border: 2px solid transparent;
+  background: transparent;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.6s ease-in-out;
+  &.bg_color {
+    background-color: $primary;
+    &:hover {
+      background-color: transparent;
+      color: var(--primary-white);
+      border-color: var(--primary-white);
+    }
+  }
+  &.bg_hover_color {
+    &:hover {
+      background-color: $primary;
+      border-color: $primary;
+    }
+  }
+  &.no_bg {
+    color: var(--primary-bg-light);
+    border-color: var(--primary-white);
+    &:hover {
+      border-color: $primary;
+      color: $primary;
+      background-color: transparent;
+    }
   }
 }
 
-.button {
-  @include button-style($primary, $white); // Apply SCSS variable directly here
-}
-
-// Scroll Up Button
 button.scroll_up {
   padding: 14px;
   border-radius: 8px;
@@ -231,7 +256,7 @@ button.scroll_up {
     margin: 0 !important;
     height: 34px !important;
     width: 34px !important;
-    background: var(--bs-primary) !important;
+    background: $primary !important;
     border-radius: 50% !important;
     display: flex !important;
     align-items: center !important;
@@ -264,7 +289,7 @@ button.scroll_up {
       background-color: rgba(255, 255, 255, 0.5) !important;
     }
     &.active span {
-      background-color: var(--primary-orange) !important;
+      background-color: $primary !important;
     }
   }
 }
@@ -360,12 +385,6 @@ form {
       }
     }
   }
-}
-
-// Other Specific Styles
-.price_deduct {
-  color: #ff0000;
-  text-decoration: line-through;
 }
 
 // pageAlignment
@@ -583,8 +602,11 @@ header nav .hamburger {
 
 // course-block
 .course_block {
-  background: $primary;
+  background: var(--primary-bg);
   position: relative;
+  overflow: hidden;
+  transition: all 0.6s ease-in-out;
+
   &::before {
     content: "";
     position: absolute;
@@ -598,12 +620,14 @@ header nav .hamburger {
         rgba(20, 25, 33, 0) 0%,
         rgba(20, 25, 33, 0.9) 100%
       ),
-      rgb(0, 125, 125);
+      var(--primary-bg);
   }
+
   img {
     height: 290px;
     object-fit: contain;
   }
+
   .course_time {
     position: absolute;
     top: 5px;
@@ -614,36 +638,62 @@ header nav .hamburger {
     font-size: 12px;
     z-index: 111;
   }
+
   .course_content {
-    padding: 0.9375rem;
     position: absolute;
     bottom: 0;
     left: 0;
     width: 100%;
+    padding: 0.9375rem;
+    background: $linear-primary; /* Semi-transparent background */
     z-index: 111;
     color: $white;
+    transform: translateY(100%); /* Initially hidden */
+    transition: transform 0.6s ease-in-out;
+
     h3 {
       font-size: 17px;
-      font-weight: 700;
+      font-weight: 600;
       text-transform: capitalize;
+      margin-bottom: 0;
+
       a {
         display: block;
+
         &:hover {
           color: $white;
           text-decoration: underline;
         }
       }
     }
+
     p {
-      margin: 4px 0;
+      margin: 6px 0;
+      font-weight: 400;
       color: $white;
-      font-size: 14px;
+      font-size: 15px;
     }
+
+    .price {
+      font-size: 16px;
+
+      .price_deduct {
+        color: #ccc;
+        text-decoration: line-through;
+      }
+    }
+
     .course_info {
       display: flex;
       align-items: center;
       column-gap: 15px;
       font-size: 14px;
+    }
+  }
+
+  &:hover {
+    .course_content {
+      transform: translateY(0); /* Moves up on hover */
     }
   }
 }
@@ -653,23 +703,25 @@ header nav .hamburger {
   height: 500px;
   width: 100%;
   position: relative;
-  background: $linear-primary;
+  background: $linear-primary url("/img/music_bg.svg") no-repeat center fixed;
+  background-size: contain;
+  background-position: center center;
   transition: all 0.4s ease-in-out;
+  color: var(--primary-white);
   .banner_content {
-    position: relative;
-    color: var(--primary-white);
+    text-align: center;
     h1 {
       font-size: 26px;
       font-weight: 800;
       text-transform: uppercase;
-      margin-bottom: 4px;
       font-family: "Labrada", serif;
     }
     p {
-      font-size: 16px;
       color: var(--primary-white);
+      font-size: 18px;
       font-weight: 400;
-      margin-bottom: 10px;
+      margin: 15px 0;
+      display: block;
     }
   }
   .banner_img {
@@ -687,7 +739,7 @@ header nav .hamburger {
   .partners_wrap {
     position: relative;
     .partners_wrap_carousel {
-      background-color: $primary;
+      background-color: var(--primary-bg);
       position: absolute;
       top: -98px;
       width: 100%;
@@ -709,8 +761,16 @@ header nav .hamburger {
 
 /* events */
 .events_section {
-  background-color: var(--primary-bg-light);
+  background: var(--primary-bg) url("/img/music_bg.svg") no-repeat center fixed;
+  background-size: contain;
+  position: relative;
+  background-position: center center;
+  color: white;
+  width: 100%;
   &.desc_sec {
+    .row {
+      align-items: center;
+    }
     .desc_sec_left,
     .desc_sec_right {
       h1 {
@@ -720,15 +780,37 @@ header nav .hamburger {
         font-family: "Labrada", serif;
       }
       p {
-        margin: 0.5625rem 0;
-        font-size: 1.0625rem;
+        margin: 0.9375rem 0;
+        font-size: 1.125rem;
         font-weight: 400;
+        color: #fff;
       }
       .desc_price {
-        font-size: 26px;
-        margin: 9px 0;
-        font-weight: 600;
+        font-size: 20px;
+        margin: 0.9375rem 0;
+        font-weight: 500;
         font-family: "Labrada", serif;
+      }
+    }
+    .desc_sec_right_img {
+      position: relative;
+
+      &::before {
+        content: "";
+        background: #fff;
+        border: 2px solid transparent;
+        border-radius: 50%;
+        position: absolute;
+        width: 76px;
+        height: 76px;
+        opacity: 0.2;
+        margin-left: -38px;
+        top: -20px;
+        z-index: -1;
+      }
+      img {
+        height: 300px;
+        width: 100%;
       }
     }
   }
@@ -737,13 +819,11 @@ header nav .hamburger {
 /* testimonial */
 .testimonial-slider .testimonial-block {
   display: flex;
+  background: $linear-primary;
+  color: #fff;
+  padding: 40px 30px;
+  border-radius: 6px;
   .testimonial-user {
-    width: 40%;
-    img {
-      height: 90px;
-      width: 100%;
-      object-fit: contain;
-    }
     h5 {
       margin-bottom: 2px;
     }
@@ -752,21 +832,28 @@ header nav .hamburger {
     }
   }
   .testimonial-content {
-    padding: 0 0 0 50px;
+    // padding: 0 0 0 50px;
     position: relative;
     .icon {
       position: absolute;
-      top: 0%;
-      left: 3%;
+      top: -18%;
+      left: -8%;
       i {
-        font-size: 20px;
+        font-size: 14px;
         color: var(--primary-hover-color);
       }
     }
     p {
       margin-bottom: 15px;
-      color: var(--primary-color);
+      font-weight: 400;
+      font-size: 16px;
+      color: #fff;
       opacity: 0.7;
+
+      display: -webkit-box;
+      line-clamp: 4;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
     }
   }
 }
@@ -774,11 +861,14 @@ header nav .hamburger {
 /* footer */
 footer {
   color: var(--primary-white);
+  position: relative;
+
   h4 {
-    font-weight: 700;
-    font-size: 17px;
+    font-family: "Labrada", serif;
     text-transform: uppercase;
     margin-bottom: 15px;
+    font-weight: 500;
+    font-size: 17px;
   }
   a {
     display: block;
@@ -800,20 +890,8 @@ footer {
   }
   .footer_block {
     margin-bottom: 1.875rem;
-    &.counselling {
-      width: 90%;
-      img {
-        height: 62px;
-        object-fit: cover;
-      }
-    }
+
     .footer_nav {
-      a {
-        &:hover {
-          color: $white;
-          text-decoration: underline;
-        }
-      }
       &.social_icon {
         a {
           height: 32px;
@@ -837,12 +915,7 @@ footer {
     &:last-child {
       margin-bottom: 0;
     }
-    &.course {
-      a {
-        float: left;
-        width: 50%;
-      }
-    }
+
     .footer_form {
       .form_flex {
         display: flex;
@@ -860,12 +933,16 @@ footer {
   .footer_bottom {
     padding: 10px 0;
     text-align: center;
-    background-color: var(--primary-orange);
+    background-color: var(--primary-bg);
     p {
       color: var(--primary-white);
       font-size: 15px;
     }
   }
+}
+
+.border-top {
+  border-top: 1px solid $linear-primary;
 }
 
 /* FOR Contact Page Start*/
@@ -1597,12 +1674,6 @@ footer {
   footer {
     .footer_block {
       margin-bottom: 16px;
-      &.course {
-        a {
-          float: none;
-          width: 100%;
-        }
-      }
     }
   }
 }
@@ -1657,10 +1728,6 @@ footer {
   /* header_sidebar */
   .header_sidebar {
     width: 32%;
-  }
-
-  .heading h1 {
-    font-size: 26px;
   }
 
   /* banner */
@@ -1807,12 +1874,12 @@ footer {
     font-size: 15px;
   }
 
-  .heading {
-    margin-bottom: 1.7rem;
-    h1 {
-      font-size: 1.625rem;
-    }
-  }
+  // .heading {
+  //   margin-bottom: 1.7rem;
+  //   h1 {
+  //     font-size: 1.625rem;
+  //   }
+  // }
 
   .heading.inbetween a {
     font-size: 16px;
