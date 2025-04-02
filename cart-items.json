@@ -1,0 +1,26 @@
+[
+  {
+    "id": "123",
+    "name": "Rode NT-USB Mini USB Condenser Microphone",
+    "price": 25999.0,
+    "quantity": 1,
+    "image": "https://audioshopnepal.com/wp-content/uploads/2023/02/Rode-NT-USB-Mini--768x768.jpeg",
+    "url": "https://audioshopnepal.com/product/rode-nt-usb-mini-usb-condenser-microphone/"
+  },
+  {
+    "id": "124",
+    "name": "Behringer Xenyx Q502USB Mixer",
+    "price": 14999.0,
+    "quantity": 2,
+    "image": "https://audioshopnepal.com/wp-content/uploads/2023/02/Behringer-Xenyx-Q502USB--768x768.jpeg",
+    "url": "https://audioshopnepal.com/product/behringer-xenyx-q502usb-mixer/"
+  },
+  {
+    "id": "125",
+    "name": "Audio-Technica ATH-M50X Headphones",
+    "price": 17999.0,
+    "quantity": 1,
+    "image": "https://audioshopnepal.com/wp-content/uploads/2023/02/Audio-Technica-ATH-M50X--768x768.jpeg",
+    "url": "https://audioshopnepal.com/product/audio-technica-ath-m50x-headphones/"
+  }
+]

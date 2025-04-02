@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Change-password | Welcome to WeRVerse</title>
+    <title>checkout | Mucon</title>
 
     <!-- favicon -->
     <link
@@ -25,7 +25,6 @@
     />
     <link rel="manifest" href="img/fav/site.webmanifest" />
 
-    <!-- bootstrap 5 -->
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -35,16 +34,6 @@
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/line-awesome/1.3.0/line-awesome/css/line-awesome.min.css"
-    />
-
-    <!-- owl-carousel -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css"
     />
 
     <!-- google fonts -->
@@ -62,7 +51,7 @@
     <!-- header -->
     <header id="header">
       <div class="main_header">
-        <div class="container-fluid">
+        <div class="container">
           <nav
             class="d-flex w-full align-items-center column-gap-4 column-gap-md-3"
           >
@@ -76,9 +65,9 @@
               </div>
               <div class="header-left_nav d-none d-xl-block">
                 <ul>
-                  <li><a href="list.html">Explore Courses</a></li>
-                  <li><a href="list.html">Special Offer</a></li>
-                  <li><a href="list.html">Free Courses</a></li>
+                  <li><a href="list.html">About us</a></li>
+                  <li><a href="list.html">Blogs</a></li>
+                  <li><a href="list.html">Contacts</a></li>
                 </ul>
               </div>
             </div>
@@ -87,15 +76,15 @@
               class="header-right d-flex ms-auto mx-sm-auto me-lg-0 ms-lg-auto d-md-flex align-items-center align-items-lg-center gap-md-3"
               id="main_nav"
             >
-              <div id="search-wrapper" class="d-none d-sm-flex">
-                <i class="search-icon las la-search"></i>
-                <input
-                  class="search"
-                  type="search"
-                  placeholder="What do you want to learn?"
-                  id="searchInput"
-                />
-              </div>
+              <!-- <div id="search-wrapper" class="d-none d-sm-flex">
+                  <i class="search-icon las la-search"></i>
+                  <input
+                    class="search"
+                    type="search"
+                    placeholder="What do you want to learn?"
+                    id="searchInput"
+                  />
+                </div> -->
 
               <div
                 class="auth_design_wrap d-flex align-items-center justify-content-center gap-2"
@@ -108,8 +97,8 @@
 
                     <div class="auth_design_content">
                       <div class="auth_logged_out">
-                        <a href="login.html">Login</a>
-                        <a href="register.html">Register</a>
+                        <a href="/login">Login</a>
+                        <a href="/register">Register</a>
                       </div>
                       <div class="auth_logged_in" style="display: none">
                         <a href="profile.html">Profile</a>
@@ -150,88 +139,127 @@
 
     <!-- main starts here -->
     <main>
-      <section class="profile my-5">
+      <div class="about_banner checkout">
         <div class="container">
-          <div class="row gap-4 gap-md-0">
-            <div class="col-12 col-md-3">
-              <div class="profile-left">
-                <div class="profile_left_block">
-                  <h3>Profile</h3>
-                  <div class="profile_left_content">
-                    <a href="profile.html">Information</a>
-                    <a href="change-password.html" class="active"
-                      >Change Password</a
-                    >
-                  </div>
-                </div>
-                <div class="profile_left_block">
-                  <h3>Order</h3>
-                  <div class="profile_left_content">
-                    <a href="orders.html">Purchase History</a>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-12 col-md-9">
-              <div class="profile_right">
-                <h3>Change Password</h3>
+          <div class="about_banner_content">
+            <ul>
+              <li><a href="/cart">Shopping Cart</a></li>
+              <li><a href="/checkout">Checkout</a></li>
+              <li><a href="/complete">Order Complete</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- contact_page -->
+      <section class="checkout_page contact_page pageAlignment">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-8">
+              <div class="checkout_left">
+                <h3>Billing Details</h3>
                 <div class="profile_right_block">
-                  <form action="" id="changePassForm">
-                    <div class="row col-gap-4">
+                  <form action="/billing" method="POST" id="billing_form">
+                    <div class="row">
                       <div class="col-md-6">
                         <div class="form-input">
-                          <label class="question" for="oldPassword"
-                            >Current Password</label
-                          >
-
+                          <label for="firstName">First Name</label>
                           <input
-                            type="password"
-                            id="oldPassword"
-                            name="oldPassword"
-                            placeholder="Current Password"
+                            type="text"
+                            id="firstName"
+                            name="firstName"
                             required
                           />
                         </div>
                       </div>
                       <div class="col-md-6">
                         <div class="form-input">
-                          <label class="question" for="newPassword"
-                            >New Password</label
-                          >
-
+                          <label for="lastName">Last Name</label>
                           <input
-                            type="password"
-                            id="newPassword"
-                            name="newPassword"
-                            placeholder="New Password"
+                            type="text"
+                            id="lastName"
+                            name="lastName"
                             required
                           />
                         </div>
                       </div>
-                      <div class="col-md-6">
-                        <div class="form-input">
-                          <label class="question" for="confPassword"
-                            >Confirm Password</label
-                          >
-
-                          <input
-                            type="password"
-                            id="confPassword"
-                            name="confPassword"
-                            placeholder="Confirm Password"
-                            required
-                          />
-                        </div>
-                      </div>
-
                       <div class="col-md-12">
+                        <div class="form-input">
+                          <label for="address">Street Address</label>
+                          <input
+                            type="text"
+                            id="address"
+                            name="address"
+                            required
+                          />
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <div class="form-input">
+                          <label for="city">Town / City</label>
+                          <input type="text" id="city" name="city" required />
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <div class="form-input">
+                          <label for="postalCode">Postal Code (optional)</label>
+                          <input
+                            type="text"
+                            id="postalCode"
+                            name="postalCode"
+                          />
+                        </div>
+                      </div>
+                      <div class="col-md-12">
+                        <div class="form-input">
+                          <label for="email">Email Address</label>
+                          <input
+                            type="email"
+                            id="email"
+                            name="email"
+                            required
+                          />
+                        </div>
+                      </div>
+                      <div class="col-md-12">
+                        <div class="form-input">
+                          <label for="phone">Phone Number</label>
+                          <input type="tel" id="phone" name="phone" required />
+                        </div>
+                      </div>
+
+                      <!--  -->
+                      <div class="col-md-12 mt-4 payment_info">
+                        <h4>Payment Information</h4>
+                        <div class="form-input">
+                          <input
+                            type="radio"
+                            id="cash"
+                            name="paymentMethod"
+                            value="cash"
+                            required
+                          />
+                          <label for="cash"> Cash on delivery</label>
+                        </div>
+                        <div class="form-input">
+                          <input
+                            type="radio"
+                            id="bankTransfer"
+                            name="paymentMethod"
+                            value="bankTransfer"
+                            required
+                          />
+                          <label for="bankTransfer">Direct Bank Transfer</label>
+                        </div>
+                      </div>
+
+                      <div class="col-md-12 mt-4">
                         <button
                           type="submit"
-                          id="submitBtn"
-                          value="submit"
-                          class="button"
+                          class="button bg_color bg_hover_color pad_btn"
+                          style="width: 100%"
                         >
-                          Submit
+                          Place Order
                         </button>
                       </div>
                     </div>
@@ -239,10 +267,49 @@
                 </div>
               </div>
             </div>
+            <div class="col-lg-4">
+              <div class="checkout_right pge_checkout">
+                <h2>Your Order</h2>
+
+                <div class="pge_block">
+                  <div class="pge_block_header">
+                    <h3>Product</h3>
+                    <h3>Subtotal</h3>
+                  </div>
+                  <div class="pge_blocks_body">
+                    <div class="pge_block_body">
+                      <div class="pge_cancel">x</div>
+                      <div class="pge_img">
+                        <img src="" alt="" />
+                      </div>
+                      <div class="pge_title">
+                        <h4>Rode NT-USB Mini USB Condenser Microphone</h4>
+                      </div>
+                      <div class="pge_price">
+                        <span>Rs 51,995</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="pge_block_footer">
+                    <div class="pge_foot">
+                      <h5>SUbtitle</h5>
+                      <h5>50000</h5>
+                    </div>
+                    <div class="pge_foot">
+                      <h5>total</h5>
+                      <h5>50000</h5>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
+
+      <div id="success" class="sucess-contact-msg"></div>
     </main>
+
     <!-- main ends here -->
 
     <!-- footer -->
@@ -252,54 +319,12 @@
           <div class="row footer_wrap gap-3 gap-sm-0">
             <div class="col-lg-12">
               <div class="footer_block">
-                <a href="index.html">
+                <a href="index">
                   <img src="img/logo/orange.png" class="logo" alt="" />
                 </a>
               </div>
             </div>
             <div class="col-12 col-sm-10 col-md-6 col-lg-4">
-              <div class="footer_block">
-                <h4>Get link in sms to download the app</h4>
-                <div class="footer_form">
-                  <form class="form_flex">
-                    <input
-                      type="number"
-                      id="contactNumber"
-                      name="contactNumber"
-                      placeholder="Enter mobile number"
-                    />
-                    <input
-                      type="submit"
-                      value="Get the link"
-                      class="form_submit"
-                    />
-                  </form>
-                </div>
-              </div>
-              <div class="footer_block counselling border p-3 rounded">
-                <div class="d-flex position-relative">
-                  <div>
-                    <h5 class="mb-3">
-                      Know more about our courses. Book a free counselling
-                      session.
-                    </h5>
-
-                    <button
-                      type="button"
-                      class="btn btn-primary"
-                      data-bs-toggle="modal"
-                      data-bs-target="#exampleModal"
-                    >
-                      Speak to an expert
-                    </button>
-                  </div>
-                  <img
-                    src="https://www.vedantu.com/cdn/images/new-home-page/newsletter-icon.svg"
-                    class="flex-shrink-0 ms-3 rounded-circle"
-                    alt="..."
-                  />
-                </div>
-              </div>
               <div class="footer_block">
                 <h4>TOLL FREE: 1800-120-456-456</h4>
                 <ul class="list-group">
@@ -320,29 +345,24 @@
               <div class="row gap-4 gap-md-0">
                 <div class="col-lg-4">
                   <div class="footer_block">
-                    <h4>Company</h4>
+                    <h4>Quick Links</h4>
                     <div class="footer_nav">
-                      <a href="about.html">About</a>
-                      <a href="contact.html">Contact</a>
                       <a href="privacy.html">Privacy Policy</a>
-                      <a href="terms.html">Terms</a>
+                      <a href="user.html">My Account</a>
+                      <a href="terms.html">Terms and Conditions</a>
+                      <a href="about.html">About</a>
                     </div>
                   </div>
                 </div>
-                <div class="col-lg-8">
+                <div class="col-lg-4">
                   <div class="footer_block course">
-                    <h4>Courses</h4>
+                    <h4>Category</h4>
                     <div class="footer_nav">
-                      <a href="about.html">JAVA</a>
-                      <a href="contact.html">C#</a>
-                      <a href="privacy.html">Python</a>
-                      <a href="terms.html">Computer Science</a>
-                      <a href="terms.html">Business Analytics</a>
-                      <a href="terms.html"> Digital Marketing </a>
-                      <a href="terms.html"> Self Driving Car Engineer</a>
-                      <a href="terms.html"> Intro to Programming </a>
-                      <a href="terms.html"> Data Analyst </a>
-                      <a href="terms.html"> AWS Cloud Architect </a>
+                      <a href="list.html">Guitars </a>
+                      <a href="list.html"> Pianos and Keyboards </a>
+                      <a href="list.html"> Other Instruments </a>
+                      <a href="list.html"> Drums </a>
+                      <a href="list.html"> Guitar Accessories </a>
                     </div>
                   </div>
                 </div>
@@ -385,7 +405,6 @@
       </div>
     </footer>
 
-    <!-- cart  -->
     <!-- cart  -->
     <div
       class="offcanvas offcanvasCart offcanvas-end"
@@ -498,14 +517,20 @@
     </div>
 
     <div id="success_login" class="sucess-contact-msg"></div>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
     <!-- <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script> -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
     <script src="js/script.js"></script>
     <script src="js/auth.js"></script>
-    <script src="js/change-password.js"></script>
     <script src="js/addToCart.js"></script>
+
+    <script>
+      $(document).on("click", ".dropdown-menu", function (e) {
+        e.stopPropagation();
+      });
+    </script>
   </body>
 </html>
