@@ -27,10 +27,12 @@ connectDB();
 const mainRoutes = require("./router/pageRoutes");
 const cartRoutes = require("./router/cartRoue");
 const accountRoutes = require("./router/user");
+const dashboardRoutes = require("./router/dashboardRoute");
 
 app.use("/", mainRoutes);
 app.use("/", cartRoutes);
 app.use("/", accountRoutes);
+app.use("/admin", dashboardRoutes);
 
 // Start Server
 app.listen(PORT, () => {

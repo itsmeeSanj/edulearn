@@ -5,7 +5,7 @@
     "InstrumentPrevPrice": 349.99,
     "InstrumentShortDesc": "A classic wooden acoustic guitar with a rich sound.",
     "InstrumentFullDesc": "This acoustic guitar is crafted with high-quality mahogany wood, offering a warm tone and perfect resonance for beginners and professionals alike.",
-    "InstrumentImage": "https://example.com/images/acoustic-guitar.jpg"
+    "InstrumentImage": "https://example.com/images/${}.jpg"
   },
   {
     "InstrumentName": "Grand Piano",

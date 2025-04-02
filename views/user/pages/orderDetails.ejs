@@ -1,0 +1,81 @@
+<%- include('../../partial/header') %>
+
+<main>
+  <section class="profile spacing">
+    <div class="container">
+      <div class="row gap-4 gap-md-0">
+        <div class="col-12 col-md-3">
+          <div class="profile-left">
+            <div class="profile_left_block">
+              <h3>My Account</h3>
+              <div class="profile_left_content">
+                <a href="/my-account">Dashboard</a>
+                <a href="/my-account/order" class="active">Orders</a>
+                <a href="/my-account/address">Addresses</a>
+                <a href="/my-account/edit-account">Account details</a>
+                <a href="/logout">Logout</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-md-9">
+          <div class="profile_right profile_right_block order_details_sec">
+            <div class="order-container">
+              <div class="order-header">
+                <h3>
+                  Order # <strong><%= order.id %></strong> was placed on
+                  <strong><%= order.date %></strong> and is currently
+                  <strong><%= order.status %></strong>.
+                </h3>
+              </div>
+
+              <div class="order-details">
+                <h3>Order Details</h3>
+                <table class="order-table">
+                  <thead>
+                    <tr>
+                      <th>Product</th>
+                      <th>Quantity</th>
+                      <th>Total</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <% order.items.forEach(item => { %>
+                    <tr>
+                      <td><%= item.product %></td>
+                      <td>× <%= item.quantity %></td>
+                      <td>Rs <%= item.price %></td>
+                    </tr>
+                    <% }) %>
+                    <tr>
+                      <td colspan="2"><strong>Subtotal:</strong></td>
+                      <td>Rs <%= order.total %></td>
+                    </tr>
+                    <tr>
+                      <td colspan="2"><strong>Payment method:</strong></td>
+                      <td><%= order.payment %></td>
+                    </tr>
+                    <tr class="total">
+                      <td colspan="2"><strong>TOTAL:</strong></td>
+                      <td>Rs <%= order.total %></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <div class="billing-address">
+                <h3>Billing Address</h3>
+                <p><%= order.customer.name %></p>
+                <p><%= order.customer.address %></p>
+                <p><%= order.customer.region %></p>
+                <p><%= order.customer.phone %></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<%- include('../../partial/footer') %>

@@ -1,840 +1,449 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<%- include('partial/header') %>
 
-    <title>Welcome to WeRVerse</title>
-
-    <!-- favicon -->
-    <link
-      rel="apple-touch-icon"
-      sizes="180x180"
-      href="img/fav/apple-touch-icon.png"
-    />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="32x32"
-      href="img/fav/favicon-32x32.png"
-    />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="16x16"
-      href="img/fav/favicon-16x16.png"
-    />
-    <link rel="manifest" href="img/fav/site.webmanifest" />
-
-    <!-- bootstrap 5 -->
-
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-    />
-
-    <!-- lineawesome -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/line-awesome/1.3.0/line-awesome/css/line-awesome.min.css"
-    />
-
-    <!-- owl-carousel -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css"
-    />
-
-    <!-- google fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Cookie&family=Labrada:ital,wght@0,500;1,500&family=Lato:ital,wght@0,400;0,700;0,900;1,400&display=swap"
-      rel="stylesheet"
-    />
-
-    <!-- external-link -->
-    <link rel="stylesheet" href="/css/style.css" />
-  </head>
-  <body>
-    <!-- header -->
-    <header id="header">
-      <div class="main_header">
-        <div class="container">
-          <nav
-            class="d-flex w-full align-items-center column-gap-4 column-gap-md-3"
-          >
-            <div
-              class="header-left d-md-flex align-items-md-center gap-md-3 gap-lg-5"
-            >
-              <div class="logo">
-                <a href="index.html">
-                  <img src="img/logo/orange.png" alt="LOGO" />
-                </a>
-              </div>
-              <div class="header-left_nav d-none d-xl-block">
-                <ul>
-                  <li><a href="list.html">About us</a></li>
-                  <li><a href="list.html">Blogs</a></li>
-                  <li><a href="list.html">Contacts</a></li>
-                </ul>
-              </div>
-            </div>
-
-            <div
-              class="header-right d-flex ms-auto mx-sm-auto me-lg-0 ms-lg-auto d-md-flex align-items-center align-items-lg-center gap-md-3"
-              id="main_nav"
-            >
-              <!-- <div id="search-wrapper" class="d-none d-sm-flex">
-                <i class="search-icon las la-search"></i>
-                <input
-                  class="search"
-                  type="search"
-                  placeholder="What do you want to learn?"
-                  id="searchInput"
-                />
-              </div> -->
-
-              <div
-                class="auth_design_wrap d-flex align-items-center justify-content-center gap-2"
-              >
-                <div class="d-flex align-items-center gap-1">
-                  <div class="user_name" id="user_name"></div>
-
-                  <div class="auth_desgin">
-                    <i class="las la-user-circle"></i>
-
-                    <div class="auth_design_content">
-                      <div class="auth_logged_out">
-                        <a href="/login">Login</a>
-                        <a href="/register">Register</a>
-
-                        <a href="login.html">Login</a>
-                        <a href="register.html">Register</a>
-                      </div>
-                      <div class="auth_logged_in" style="display: none">
-                        <a href="profile.html">Profile</a>
-                        <a href="#" id="logout">Logout</a>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div
-                  class="cart position-relative"
-                  id="hamburger_open"
-                  data-bs-toggle="offcanvas"
-                  data-bs-target="#offcanvasCart"
-                >
-                  <i class="las la-shopping-cart"></i>
-                  <span
-                    class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"
-                    id="numCart"
-                  >
-                  </span>
-                </div>
-              </div>
-            </div>
-
-            <!-- hamburger -->
-            <div
-              class="hamburger hamburger_open ms-lg-3 d-block d-xl-none"
-              id="hamburger_open"
-              data-bs-toggle="offcanvas"
-              data-bs-target="#offcanvasNavbar"
-            >
-              <i class="las la-bars"></i>
-            </div>
-          </nav>
-        </div>
-      </div>
-    </header>
-
-    <!-- main starts here -->
-    <main>
-      <section class="banner d-flex align-items-center justify-content-center">
-        <div class="container">
-          <div class="banner_content">
-            <!-- <h1>All the Musical Instruments in one shop</h1> -->
-            <h1>All the <br />Musical Instruments in one shop</h1>
-            <p>
-              Explore a world of music with premium instruments and expert
-              guidance. Elevate your skills and passion today!
-            </p>
-            <a href="list.html" class="button bg_color d-inline-block">
-              Browse Collection <i class="las la-arrow-right"></i>
-            </a>
-          </div>
-        </div>
-      </section>
-
-      <!-- partners -->
-      <section class="partners">
-        <div class="container">
-          <div class="partners_wrap">
-            <div class="partners_wrap_carousel rounded p-3 owl-carousel">
-              <div class="partners_block">
-                <a href="#">
-                  <img
-                    src="https://lambtoncollege.ca/assets/images/lambton-college-logo-256.webp"
-                    alt=""
-                  />
-                </a>
-              </div>
-              <div class="partners_block">
-                <a href="#">
-                  <img
-                    src="https://www.centennialcollege.ca/media/hg5nrxf4/centennialcollege_logo_horizontal_rgb.jpg"
-                    alt=""
-                  />
-                </a>
-              </div>
-              <div class="partners_block">
-                <a href="#">
-                  <img
-                    src="https://www.senecapolytechnic.ca/content/dam/projects/seneca/seneca-logo.svg"
-                    alt=""
-                  />
-                </a>
-              </div>
-              <div class="partners_block">
-                <a href="#">
-                  <img
-                    src="https://www.fanshawec.ca/themes/custom/de_theme/logo.png"
-                    alt=""
-                  />
-                </a>
-              </div>
-              <div class="partners_block">
-                <a href="#">
-                  <img
-                    src="data:image/png;base64,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"
-                    alt=""
-                  />
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- editor -->
-      <section class="spacing border-top">
-        <div class="container">
-          <div class="heading center">
-            <h1>New Arrival Instruments</h1>
-            <p>
-              Pellentesque mattis mauris ac tortor volutpat, eu fermentum sapien
-              euismod. In id tempus metus. Donec eu volutpat nibh, in maximus
-              ligula.
-            </p>
-          </div>
-
-          <div class="hot_courses owl-carousel">
-            <% instruments.forEach((instrument, index) => { %>
-            <div class="course_block" data-id="<%= index + 1 %>">
-              <img
-                src="<%= instrument.InstrumentImage %>"
-                alt="<%= instrument.InstrumentName %>"
-              />
-              <div class="course_time">New</div>
-              <div class="course_content">
-                <h3>
-                  <a href="details.html"><%= instrument.InstrumentName %></a>
-                </h3>
-                <p><%= instrument.InstrumentShortDesc %></p>
-
-                <div class="info_course_block">
-                  <div class="price">
-                    <span>CA$59</span>
-                    <span class="price_deduct">CA$59</span>
-                  </div>
-
-                  <button
-                    class="add_cart btn btn-primary mt-2 btn-sm"
-                    id="add_cart"
-                  >
-                    Add to cart
-                    <i class="las la-shopping-cart"></i>
-                  </button>
-                </div>
-              </div>
-            </div>
-            <% }) %>
-          </div>
-
-          <div class="read_more">
-            <a
-              href="list.html"
-              class="button bg_color bg_hover_color d-inline-block"
-            >
-              Read More <i class="las la-arrow-right"></i>
-            </a>
-          </div>
-        </div>
-      </section>
-
-      <!-- editors -->
-      <section class="events_section spacing desc_sec">
-        <div class="container">
-          <div class="row">
-            <div class="col-lg-6">
-              <div class="desc_sec_left">
-                <h1>
-                  Top Sell <br />
-                  Electirc Guitar
-                </h1>
-                <p>
-                  Experience the latest top-selling electric guitar, known for
-                  its exceptional sound quality and sleek design.
-                </p>
-
-                <div class="desc_price">Starting from CAD 500</div>
-
-                <div class="desc_order">
-                  <button class="button bg_color">Order Now</button>
-                  <button class="button no_bg">View Details</button>
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-6">
-              <div class="desc_sec_right_img desc_img">
-                <img src="/img/guitar.png" alt="" />
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- news -->
-      <section class="events_near_section spacing">
-        <div class="container">
-          <div class="heading center">
-            <h1>Courses Recommended for You</h1>
-            <p>
-              Pellentesque mattis mauris ac tortor volutpat, eu fermentum sapien
-              euismod. In id tempus metus. Donec eu volutpat nibh, in maximus
-              ligula.
-            </p>
-          </div>
-
-          <div class="recomended_course owl-carousel">
-            <!--  -->
-            <% instruments.forEach((instrument, index) => { %>
-            <div class="course_block" data-id="<%= index + 1 %>">
-              <img
-                src="<%= instrument.InstrumentImage %>"
-                alt="<%= instrument.InstrumentName %>"
-              />
-              <div class="course_time">New</div>
-              <div class="course_content">
-                <h3>
-                  <a href="details.html"><%= instrument.InstrumentName %></a>
-                </h3>
-                <p><%= instrument.InstrumentShortDesc %></p>
-
-                <div class="info_course_block">
-                  <div class="price">
-                    <span>CA$59</span>
-                    <span class="price_deduct">CA$59</span>
-                  </div>
-
-                  <button
-                    class="add_cart btn btn-primary mt-2 btn-sm"
-                    id="add_cart"
-                  >
-                    Add to cart
-                    <i class="las la-shopping-cart"></i>
-                  </button>
-                </div>
-              </div>
-            </div>
-            <% }) %>
-          </div>
-
-          <div class="read_more">
-            <a
-              href="list.html"
-              class="button bg_color bg_hover_color d-inline-block"
-            >
-              Read More <i class="las la-arrow-right"></i>
-            </a>
-          </div>
-        </div>
-      </section>
-
-      <!-- new -->
-      <section class="events_section spacing desc_sec">
-        <div class="container">
-          <div class="row">
-            <div class="col-lg-6">dsfd</div>
-            <div class="col-lg-6">
-              <div class="desc_sec_right">
-                <h1>
-                  Just Arrived!<br />
-                  Yamaha Drum Set
-                </h1>
-                <p>
-                  Elevate your rhythm with the latest Yamaha Drum Set, crafted
-                  for both beginners and professionals. Designed for powerful
-                  sound, durability, and precision, it's the perfect addition to
-                  any drummer’s setup.
-                </p>
-                <div class="desc_price">Starting from CAD 500</div>
-
-                <div class="desc_order">
-                  <button class="button bg_color">Order Now</button>
-                  <button class="button no_bg">View Details</button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section class="sponser_section spacing">
-        <div class="container">
-          <div class="heading center">
-            <h1>Have a Look into at our store</h1>
-            <p>
-              Pellentesque mattis mauris ac tortor volutpat, eu fermentum sapien
-              euismod. In id tempus metus. Donec eu volutpat nibh, in maximus
-              ligula.
-            </p>
-          </div>
-
-          <div class="new_wrap owl-carousel">
-            <div class="course_block" data-id="1">
-              <img
-                src="https://img-c.udemycdn.com/course/240x135/567828_67d0.jpg"
-                alt=""
-              />
-              <div class="course_time">New</div>
-              <div class="course_content">
-                <h3>
-                  <a href="details.html">Introduction to Python</a>
-                </h3>
-                <p>Mark justin</p>
-                <div class="course_info">
-                  <div class="hours">19.5 total hours</div>
-                  <div class="lectures">185 lectures</div>
-                </div>
-                <div class="price">CA$59</div>
-                <button
-                  class="add_cart btn btn-primary mt-2 btn-sm"
-                  id="add_cart"
-                >
-                  Add to cart
-                </button>
-              </div>
-            </div>
-            <div class="course_block" data-id="2">
-              <img
-                src="https://img-c.udemycdn.com/course/240x135/1362070_b9a1_2.jpg"
-                alt=""
-              />
-              <div class="course_time">Best Seller</div>
-              <div class="course_content">
-                <h3>
-                  <a href="details.html"> React - The complete Guide 2024 </a>
-                </h3>
-                <p>Mark justin</p>
-                <div class="course_info">
-                  <div class="hours">19.5 total hours</div>
-                  <div class="lectures">185 lectures</div>
-                </div>
-                <div class="price">CA$59</div>
-                <button
-                  class="add_cart btn btn-primary mt-2 btn-sm"
-                  id="add_cart"
-                >
-                  Add to cart
-                </button>
-              </div>
-            </div>
-            <div class="course_block" data-id="3">
-              <img
-                src="https://img-c.udemycdn.com/course/240x135/705264_caa9_13.jpg"
-                alt=""
-              />
-              <div class="course_time">Best Seller</div>
-              <div class="course_content">
-                <h3>
-                  <a href="details.html"> Modern React with Redux </a>
-                </h3>
-                <p>Mark justin</p>
-                <div class="course_info">
-                  <div class="hours">19.5 total hours</div>
-                  <div class="lectures">185 lectures</div>
-                </div>
-                <div class="price">CA$59</div>
-                <button
-                  class="add_cart btn btn-primary mt-2 btn-sm"
-                  id="add_cart"
-                >
-                  Add to cart
-                </button>
-              </div>
-            </div>
-            <div class="course_block" data-id="4">
-              <img
-                src="https://img-c.udemycdn.com/course/240x135/2776760_f176_10.jpg"
-                alt="Course Image"
-              />
-              <div class="course_time">Best Seller</div>
-              <div class="course_content">
-                <h3>
-                  <a href="details.html">
-                    100 Days of Code: The Complete Python Pro Bootcamp
-                  </a>
-                </h3>
-                <p>Jose Portilla, Pierian Training</p>
-                <div class="course_info">
-                  <div class="hours">58.5 total hours</div>
-                  <div class="lectures">61 lectures</div>
-                </div>
-                <div class="price">CA$49.99</div>
-                <button
-                  class="add_cart btn btn-primary mt-2 btn-sm"
-                  id="add_cart"
-                >
-                  Add to cart
-                </button>
-              </div>
-            </div>
-            <div class="course_block" data-id="5">
-              <img
-                src="https://img-c.udemycdn.com/course/240x135/543600_64d1_4.jpg"
-                alt="Course Image"
-              />
-              <div class="course_time">Best Seller</div>
-              <div class="course_content">
-                <h3>
-                  <a href="details.html">
-                    Automate the Boring Stuff with Python Programming
-                  </a>
-                </h3>
-                <p>AI Sweigart</p>
-                <div class="course_info">
-                  <div class="hours">8.1 total hours</div>
-                  <div class="lectures">51 lectures</div>
-                </div>
-
-                <div class="price">CA$149.99</div>
-                <button
-                  class="add_cart btn btn-primary mt-2 btn-sm"
-                  id="add_cart"
-                >
-                  Add to cart
-                </button>
-              </div>
-            </div>
-          </div>
-
-          <div class="read_more">
-            <a
-              href="list.html"
-              class="button bg_color bg_hover_color d-inline-block"
-            >
-              Read More <i class="las la-arrow-right"></i>
-            </a>
-          </div>
-        </div>
-      </section>
-
-      <!-- testimonial -->
-      <section class="sponser_section spacing border-top">
-        <div class="container">
-          <div class="heading center">
-            <h1>What Our Clients Say</h1>
-            <p>
-              Pellentesque mattis mauris ac tortor volutpat, eu fermentum sapien
-              euismod. In id tempus metus. Donec eu volutpat nibh, in maximus
-              ligula.
-            </p>
-          </div>
-
-          <div class="testimonial-slider owl-carousel">
-            <div class="testimonial-block">
-              <div class="testimonial-content">
-                <div class="icon">
-                  <i class="las la-quote-left"></i>
-                </div>
-                <p>
-                  Easy to use platform, got my tickets hassle-free! Will
-                  definitely use again!" (by Josh Peck) "Impressed with the
-                  quick and secure ticketing process. Thanks for making
-                  concert-going stress-free!
-                </p>
-                <div class="testimonial-user">
-                  <h5>Drake Bell</h5>
-                  <span>Organization name</span>
-                </div>
-              </div>
-            </div>
-            <div class="testimonial-block">
-              <div class="testimonial-content">
-                <div class="icon">
-                  <i class="las la-quote-left"></i>
-                </div>
-                <p>
-                  Super impressed with the range of payment options and the
-                  security measures in place. Top-notch service!
-                </p>
-                <div class="testimonial-user">
-                  <h5>Chloe Shaym</h5>
-                  <span>Organization name</span>
-                </div>
-              </div>
-            </div>
-            <div class="testimonial-block">
-              <div class="testimonial-content">
-                <div class="icon">
-                  <i class="las la-quote-left"></i>
-                </div>
-                <p>
-                  Appreciate the transparency and reliability of this ticketing
-                  system. Makes planning outings a breeze!
-                </p>
-                <div class="testimonial-user">
-                  <h5>Randy Roller</h5>
-                  <span>Organization name</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- scroll-up -->
-      <button class="scroll_up button" id="scrollUp">
-        <i class="las la-long-arrow-alt-up"></i>
-      </button>
-    </main>
-    <!-- main ends here -->
-
-    <!-- footer -->
-    <footer>
-      <div class="footer_top">
-        <div class="container">
-          <div class="row footer_wrap gap-3 gap-sm-0">
-            <div class="col-lg-12">
-              <div class="footer_block">
-                <a href="index">
-                  <img src="img/logo/orange.png" class="logo" alt="" />
-                </a>
-              </div>
-            </div>
-            <div class="col-12 col-sm-10 col-md-6 col-lg-4">
-              <div class="footer_block">
-                <h4>TOLL FREE: 1800-120-456-456</h4>
-                <ul class="list-group">
-                  <a href="tel:+4378712345">
-                    <i class="las la-phone"></i>&nbsp;<span
-                      >+1 6378712345</span
-                    ></a
-                  >
-                  <a href="mailto:dummyemail@gmail.com">
-                    <i class="las la-envelope"></i>&nbsp;<span
-                      >dummyemail@gmail.com</span
-                    ></a
-                  >
-                </ul>
-              </div>
-            </div>
-            <div class="col-12 col-sm-12 col-md-6 col-lg-8">
-              <div class="row gap-4 gap-md-0">
-                <div class="col-lg-4">
-                  <div class="footer_block">
-                    <h4>Quick Links</h4>
-                    <div class="footer_nav">
-                      <a href="privacy.html">Privacy Policy</a>
-                      <a href="user.html">My Account</a>
-                      <a href="terms.html">Terms and Conditions</a>
-                      <a href="about.html">About</a>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-lg-4">
-                  <div class="footer_block course">
-                    <h4>Category</h4>
-                    <div class="footer_nav">
-                      <a href="list.html">Guitars </a>
-                      <a href="list.html"> Pianos and Keyboards </a>
-                      <a href="list.html"> Other Instruments </a>
-                      <a href="list.html"> Drums </a>
-                      <a href="list.html"> Guitar Accessories </a>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-lg-4">
-                  <div class="footer_block right">
-                    <h4>Follow Us</h4>
-
-                    <div class="footer_nav social_icon">
-                      <a href="#!" target="_blank"
-                        ><i class="lab la-facebook-f"></i>
-                      </a>
-
-                      <a href="#!" target="_blank"
-                        ><i class="lab la-instagram"></i>
-                      </a>
-
-                      <a href="#!" target="_blank"
-                        ><i class="lab la-twitter"></i
-                      ></a>
-
-                      <a href="#!" target="_blank"
-                        ><i class="lab la-youtube"></i
-                      ></a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="footer_bottom">
+<!-- main starts here -->
+<main>
+  <section class="banner d-flex align-items-center justify-content-center">
+    <div class="container">
+      <div class="banner_content">
+        <!-- <h1>All the Musical Instruments in one shop</h1> -->
+        <h1>All the <br />Musical Instruments in one shop</h1>
         <p>
-          Copyright &copy;
-          <script>
-            document.write(new Date().getFullYear());
-          </script>
-          WeRVerse. All Rights Reserved.
+          Explore a world of music with premium instruments and expert guidance.
+          Elevate your skills and passion today!
+        </p>
+        <a href="list.html" class="button bg_color d-inline-block">
+          Browse Collection <i class="las la-arrow-right"></i>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- partners -->
+  <section class="partners">
+    <div class="container">
+      <div class="partners_wrap">
+        <div class="partners_wrap_carousel rounded p-3 owl-carousel">
+          <div class="partners_block">
+            <a href="#">
+              <img
+                src="https://lambtoncollege.ca/assets/images/lambton-college-logo-256.webp"
+                alt=""
+              />
+            </a>
+          </div>
+          <div class="partners_block">
+            <a href="#">
+              <img
+                src="https://www.centennialcollege.ca/media/hg5nrxf4/centennialcollege_logo_horizontal_rgb.jpg"
+                alt=""
+              />
+            </a>
+          </div>
+          <div class="partners_block">
+            <a href="#">
+              <img
+                src="https://www.senecapolytechnic.ca/content/dam/projects/seneca/seneca-logo.svg"
+                alt=""
+              />
+            </a>
+          </div>
+          <div class="partners_block">
+            <a href="#">
+              <img
+                src="https://www.fanshawec.ca/themes/custom/de_theme/logo.png"
+                alt=""
+              />
+            </a>
+          </div>
+          <div class="partners_block">
+            <a href="#">
+              <img
+                src="data:image/png;base64,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"
+                alt=""
+              />
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- editor -->
+  <section class="spacing border-top">
+    <div class="container">
+      <div class="heading center">
+        <h1>New Arrival Instruments</h1>
+        <p>
+          Pellentesque mattis mauris ac tortor volutpat, eu fermentum sapien
+          euismod. In id tempus metus. Donec eu volutpat nibh, in maximus
+          ligula.
         </p>
       </div>
-    </footer>
 
-    <!-- cart  -->
-    <div
-      class="offcanvas offcanvasCart offcanvas-end"
-      tabindex="-1"
-      id="offcanvasCart"
-      aria-labelledby="offcanvasCart"
-    >
-      <div class="offcanvas-header">
-        <h5 class="offcanvas-title" id="offcanvasCart">Cart</h5>
-        <button
-          type="button"
-          class="btn-close"
-          data-bs-dismiss="offcanvas"
-          aria-label="Close"
-        ></button>
-      </div>
-      <div class="offcanvas-body">
-        <div id="userNotLogin" class="userNotLogin mt-2 mt-lg-4">
-          <div class="course-list cart_course_list" id="course-list"></div>
-          <div class="course_wrap_summary mt-8">
-            <div class="course_summary">
-              <h3>Price Summary</h3>
-              <div class="course_summary_block">
-                <div class="course_summary_item">
-                  <span>Sub Total</span>
-                  <span id="subTotal">$3000</span>
-                </div>
-                <div class="course_summary_total">
-                  <span>GST/HST</span>
-                  <span id="totalPayable">$6000</span>
-                </div>
+      <div class="hot_courses owl-carousel">
+        <% instruments.forEach((instrument, index) => { %>
+        <div class="course_block" data-id="<%= index + 1 %>">
+          <img
+            src="<%= instrument.InstrumentImage %>"
+            alt="<%= instrument.InstrumentName %>"
+          />
+          <div class="course_time">New</div>
+          <div class="course_content">
+            <h3>
+              <a href="details.html"><%= instrument.InstrumentName %></a>
+            </h3>
+            <p><%= instrument.InstrumentShortDesc %></p>
+
+            <div class="info_course_block">
+              <div class="price">
+                <span>CA$59</span>
+                <span class="price_deduct">CA$59</span>
               </div>
-            </div>
 
-            <div class="course_total_pay mt-4">
-              <h3 id="subTotalvalue">$6000</h3>
-              <a href="#" class="btn btn-primary">Proceed To Checkout</a>
+              <button
+                class="add_cart btn btn-primary mt-2 btn-sm"
+                id="add_cart"
+              >
+                Add to cart
+                <i class="las la-shopping-cart"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+        <% }) %>
+      </div>
+
+      <div class="read_more">
+        <a
+          href="list.html"
+          class="button bg_color bg_hover_color d-inline-block"
+        >
+          Read More <i class="las la-arrow-right"></i>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- editors -->
+  <section class="events_section spacing desc_sec">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6">
+          <div class="desc_sec_left">
+            <h1>
+              Top Sell <br />
+              Electirc Guitar
+            </h1>
+            <p>
+              Experience the latest top-selling electric guitar, known for its
+              exceptional sound quality and sleek design.
+            </p>
+
+            <div class="desc_price">Starting from CAD 500</div>
+
+            <div class="desc_order">
+              <button class="button bg_color">Order Now</button>
+              <button class="button no_bg">View Details</button>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="desc_sec_right_img desc_img">
+            <img src="/img/guitar.png" alt="" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- news -->
+  <section class="events_near_section spacing">
+    <div class="container">
+      <div class="heading center">
+        <h1>Courses Recommended for You</h1>
+        <p>
+          Pellentesque mattis mauris ac tortor volutpat, eu fermentum sapien
+          euismod. In id tempus metus. Donec eu volutpat nibh, in maximus
+          ligula.
+        </p>
+      </div>
+
+      <div class="recomended_course owl-carousel">
+        <!--  -->
+        <% instruments.forEach((instrument, index) => { %>
+        <div class="course_block" data-id="<%= index + 1 %>">
+          <img
+            src="<%= instrument.InstrumentImage %>"
+            alt="<%= instrument.InstrumentName %>"
+          />
+          <div class="course_time">New</div>
+          <div class="course_content">
+            <h3>
+              <a href="details.html"><%= instrument.InstrumentName %></a>
+            </h3>
+            <p><%= instrument.InstrumentShortDesc %></p>
+
+            <div class="info_course_block">
+              <div class="price">
+                <span>CA$59</span>
+                <span class="price_deduct">CA$59</span>
+              </div>
+
+              <button
+                class="add_cart btn btn-primary mt-2 btn-sm"
+                id="add_cart"
+              >
+                Add to cart
+                <i class="las la-shopping-cart"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+        <% }) %>
+      </div>
+
+      <div class="read_more">
+        <a
+          href="list.html"
+          class="button bg_color bg_hover_color d-inline-block"
+        >
+          Read More <i class="las la-arrow-right"></i>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- new -->
+  <section class="events_section spacing desc_sec">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6">dsfd</div>
+        <div class="col-lg-6">
+          <div class="desc_sec_right">
+            <h1>
+              Just Arrived!<br />
+              Yamaha Drum Set
+            </h1>
+            <p>
+              Elevate your rhythm with the latest Yamaha Drum Set, crafted for
+              both beginners and professionals. Designed for powerful sound,
+              durability, and precision, it's the perfect addition to any
+              drummer’s setup.
+            </p>
+            <div class="desc_price">Starting from CAD 500</div>
+
+            <div class="desc_order">
+              <button class="button bg_color">Order Now</button>
+              <button class="button no_bg">View Details</button>
             </div>
           </div>
         </div>
       </div>
     </div>
+  </section>
 
-    <!--  -->
-    <div
-      class="offcanvas offcanvasCart offcanvas-end"
-      tabindex="-1"
-      id="offcanvasNavbar"
-      aria-labelledby="offcanvasNavbarLabel"
-    >
-      <div class="offcanvas-header">
-        <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Offcanvas</h5>
-        <button
-          type="button"
-          class="btn-close"
-          data-bs-dismiss="offcanvas"
-          aria-label="Close"
-        ></button>
+  <section class="sponser_section spacing">
+    <div class="container">
+      <div class="heading center">
+        <h1>Have a Look into at our store</h1>
+        <p>
+          Pellentesque mattis mauris ac tortor volutpat, eu fermentum sapien
+          euismod. In id tempus metus. Donec eu volutpat nibh, in maximus
+          ligula.
+        </p>
       </div>
-      <div class="offcanvas-body">
-        <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
-          <li class="nav-item">
-            <a class="nav-link" href="index.html">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="about.html">About</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="list.html">Category</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="contact.html">Contact</a>
-          </li>
-        </ul>
-      </div>
-    </div>
 
-    <!-- modal -->
-    <div
-      class="modal fade"
-      id="exampleModal"
-      tabindex="-1"
-      aria-labelledby="exampleModalLabel"
-      aria-hidden="true"
-    >
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
-            <button
-              type="button"
-              class="btn-close"
-              data-bs-dismiss="modal"
-              aria-label="Close"
-            ></button>
-          </div>
-          <div class="modal-body">...</div>
-          <div class="modal-footer">
-            <button
-              type="button"
-              class="btn btn-secondary"
-              data-bs-dismiss="modal"
-            >
-              Close
+      <div class="new_wrap owl-carousel">
+        <div class="course_block" data-id="1">
+          <img
+            src="https://img-c.udemycdn.com/course/240x135/567828_67d0.jpg"
+            alt=""
+          />
+          <div class="course_time">New</div>
+          <div class="course_content">
+            <h3>
+              <a href="details.html">Introduction to Python</a>
+            </h3>
+            <p>Mark justin</p>
+            <div class="course_info">
+              <div class="hours">19.5 total hours</div>
+              <div class="lectures">185 lectures</div>
+            </div>
+            <div class="price">CA$59</div>
+            <button class="add_cart btn btn-primary mt-2 btn-sm" id="add_cart">
+              Add to cart
             </button>
-            <button type="button" class="btn btn-primary">Save changes</button>
+          </div>
+        </div>
+        <div class="course_block" data-id="2">
+          <img
+            src="https://img-c.udemycdn.com/course/240x135/1362070_b9a1_2.jpg"
+            alt=""
+          />
+          <div class="course_time">Best Seller</div>
+          <div class="course_content">
+            <h3>
+              <a href="details.html"> React - The complete Guide 2024 </a>
+            </h3>
+            <p>Mark justin</p>
+            <div class="course_info">
+              <div class="hours">19.5 total hours</div>
+              <div class="lectures">185 lectures</div>
+            </div>
+            <div class="price">CA$59</div>
+            <button class="add_cart btn btn-primary mt-2 btn-sm" id="add_cart">
+              Add to cart
+            </button>
+          </div>
+        </div>
+        <div class="course_block" data-id="3">
+          <img
+            src="https://img-c.udemycdn.com/course/240x135/705264_caa9_13.jpg"
+            alt=""
+          />
+          <div class="course_time">Best Seller</div>
+          <div class="course_content">
+            <h3>
+              <a href="details.html"> Modern React with Redux </a>
+            </h3>
+            <p>Mark justin</p>
+            <div class="course_info">
+              <div class="hours">19.5 total hours</div>
+              <div class="lectures">185 lectures</div>
+            </div>
+            <div class="price">CA$59</div>
+            <button class="add_cart btn btn-primary mt-2 btn-sm" id="add_cart">
+              Add to cart
+            </button>
+          </div>
+        </div>
+        <div class="course_block" data-id="4">
+          <img
+            src="https://img-c.udemycdn.com/course/240x135/2776760_f176_10.jpg"
+            alt="Course Image"
+          />
+          <div class="course_time">Best Seller</div>
+          <div class="course_content">
+            <h3>
+              <a href="details.html">
+                100 Days of Code: The Complete Python Pro Bootcamp
+              </a>
+            </h3>
+            <p>Jose Portilla, Pierian Training</p>
+            <div class="course_info">
+              <div class="hours">58.5 total hours</div>
+              <div class="lectures">61 lectures</div>
+            </div>
+            <div class="price">CA$49.99</div>
+            <button class="add_cart btn btn-primary mt-2 btn-sm" id="add_cart">
+              Add to cart
+            </button>
+          </div>
+        </div>
+        <div class="course_block" data-id="5">
+          <img
+            src="https://img-c.udemycdn.com/course/240x135/543600_64d1_4.jpg"
+            alt="Course Image"
+          />
+          <div class="course_time">Best Seller</div>
+          <div class="course_content">
+            <h3>
+              <a href="details.html">
+                Automate the Boring Stuff with Python Programming
+              </a>
+            </h3>
+            <p>AI Sweigart</p>
+            <div class="course_info">
+              <div class="hours">8.1 total hours</div>
+              <div class="lectures">51 lectures</div>
+            </div>
+
+            <div class="price">CA$149.99</div>
+            <button class="add_cart btn btn-primary mt-2 btn-sm" id="add_cart">
+              Add to cart
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="read_more">
+        <a
+          href="list.html"
+          class="button bg_color bg_hover_color d-inline-block"
+        >
+          Read More <i class="las la-arrow-right"></i>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- testimonial -->
+  <section class="sponser_section spacing border-top">
+    <div class="container">
+      <div class="heading center">
+        <h1>What Our Clients Say</h1>
+        <p>
+          Pellentesque mattis mauris ac tortor volutpat, eu fermentum sapien
+          euismod. In id tempus metus. Donec eu volutpat nibh, in maximus
+          ligula.
+        </p>
+      </div>
+
+      <div class="testimonial-slider owl-carousel">
+        <div class="testimonial-block">
+          <div class="testimonial-content">
+            <div class="icon">
+              <i class="las la-quote-left"></i>
+            </div>
+            <p>
+              Easy to use platform, got my tickets hassle-free! Will definitely
+              use again!" (by Josh Peck) "Impressed with the quick and secure
+              ticketing process. Thanks for making concert-going stress-free!
+            </p>
+            <div class="testimonial-user">
+              <h5>Drake Bell</h5>
+              <span>Organization name</span>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-block">
+          <div class="testimonial-content">
+            <div class="icon">
+              <i class="las la-quote-left"></i>
+            </div>
+            <p>
+              Super impressed with the range of payment options and the security
+              measures in place. Top-notch service!
+            </p>
+            <div class="testimonial-user">
+              <h5>Chloe Shaym</h5>
+              <span>Organization name</span>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-block">
+          <div class="testimonial-content">
+            <div class="icon">
+              <i class="las la-quote-left"></i>
+            </div>
+            <p>
+              Appreciate the transparency and reliability of this ticketing
+              system. Makes planning outings a breeze!
+            </p>
+            <div class="testimonial-user">
+              <h5>Randy Roller</h5>
+              <span>Organization name</span>
+            </div>
           </div>
         </div>
       </div>
     </div>
+  </section>
 
-    <div id="success_login" class="sucess-contact-msg"></div>
-
-    <!-- <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script> -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
-    <script src="js/script.js"></script>
-    <script src="js/auth.js"></script>
-    <script src="js/addToCart.js"></script>
-
-    <script>
-      $(document).on("click", ".dropdown-menu", function (e) {
-        e.stopPropagation();
-      });
-    </script>
-  </body>
-</html>
+  <!-- scroll-up -->
+  <button class="scroll_up button" id="scrollUp">
+    <i class="las la-long-arrow-alt-up"></i>
+  </button>
+</main>
+<!-- main ends here -->
+<%- include('partial/footer') %>

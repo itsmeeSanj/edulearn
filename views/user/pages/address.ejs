@@ -1,0 +1,62 @@
+<%- include('../../partial/header') %>
+<!--  -->
+
+<main>
+  <section class="profile spacing">
+    <div class="container">
+      <div class="row gap-4 gap-md-0">
+        <div class="col-12 col-md-3">
+          <div class="profile-left">
+            <div class="profile_left_block">
+              <h3>My Account</h3>
+              <div class="profile_left_content">
+                <a href="/my-account">Dashboard</a>
+                <a href="/my-account/order">Orders</a>
+                <a href="/my-account/address" class="active">Addresses</a>
+                <a href="/my-account/edit-account">Account details</a>
+                <a href="/logout">Logout</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-md-9">
+          <div class="profile_right">
+            <h3>Address</h3>
+            <div class="profile_right_block">
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="billing address">
+                    <h4>Billing Address</h4>
+                    <a href="/my-account/address/billing">
+                      <i class="las la-edit"></i>
+                      Edit Biling Address
+                    </a>
+
+                    <div class="address_content">
+                      You have not set up this type of address yet.
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="shipping address">
+                    <h4>Shipping Address</h4>
+                    <a href="/my-account/address/shipping">
+                      <i class="las la-edit"></i>
+                      Edit Shipping Address
+                    </a>
+                    <div class="address_content">
+                      You have not set up this type of address yet.
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!--  -->
+<%- include('../../partial/footer') %>

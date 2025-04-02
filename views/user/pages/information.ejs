@@ -1,0 +1,122 @@
+<%- include('../../partial/header') %>
+
+<main>
+  <section class="profile spacing">
+    <div class="container">
+      <div class="row gap-4 gap-md-0">
+        <div class="col-12 col-md-3">
+          <div class="profile-left">
+            <div class="profile_left_block">
+              <h3>My Account</h3>
+              <div class="profile_left_content">
+                <a href="/my-account">Dashboard</a>
+                <a href="/my-account/order">Orders</a>
+                <a href="/my-account/address">Addresses</a>
+                <a href="/my-account/edit-account" class="active"
+                  >Account details</a
+                >
+                <a href="/logout">Logout</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-md-9">
+          <div class="profile_right">
+            <h3>Information</h3>
+            <div class="profile_right_block">
+              <form action="" id="profile_form">
+                <div class="row col-gap-4">
+                  <div class="col-md-6">
+                    <div class="form-input">
+                      <label class="question" for="firstName">First Name</label>
+                      <input type="text" id="firstName" name="firstName" />
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="form-input">
+                      <label class="question" for="lastName">Last Name</label>
+                      <input type="text" id="lastName" name="lastName" />
+                    </div>
+                  </div>
+                  <div class="col-md-12">
+                    <div class="form-input">
+                      <label class="question" for="email">Email Address</label>
+                      <input type="email" id="email" name="email" />
+                    </div>
+                  </div>
+
+                  <div class="col-md-12">
+                    <fieldset>
+                      <legend>Password Change</legend>
+
+                      <div class="row mt-3">
+                        <div class="col-md-12">
+                          <div class="form-input">
+                            <label class="question" for="oldPassword"
+                              >Current Password</label
+                            >
+
+                            <input
+                              type="password"
+                              id="oldPassword"
+                              name="oldPassword"
+                              placeholder="Current Password"
+                              required
+                            />
+                          </div>
+                        </div>
+                        <div class="col-md-12">
+                          <div class="form-input">
+                            <label class="question" for="newPassword"
+                              >New Password</label
+                            >
+
+                            <input
+                              type="password"
+                              id="newPassword"
+                              name="newPassword"
+                              placeholder="New Password"
+                              required
+                            />
+                          </div>
+                        </div>
+                        <div class="col-md-12">
+                          <div class="form-input">
+                            <label class="question" for="confPassword"
+                              >Confirm Password</label
+                            >
+
+                            <input
+                              type="password"
+                              id="confPassword"
+                              name="confPassword"
+                              placeholder="Confirm Password"
+                              required
+                            />
+                          </div>
+                        </div>
+                      </div>
+                    </fieldset>
+                  </div>
+
+                  <div class="col-md-12">
+                    <button
+                      type="submit"
+                      id="submitBtn"
+                      value="submit"
+                      class="button bg_color bg_hover_color"
+                    >
+                      Save Change
+                    </button>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<%- include('../../partial/footer') %>
