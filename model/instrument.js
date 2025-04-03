@@ -10,5 +10,4 @@ const instrumentSchema = new mongoose.Schema({
 });
 
 const instrument = mongoose.model("instrument", instrumentSchema);
-
 module.exports = instrument;

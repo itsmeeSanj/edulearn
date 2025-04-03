@@ -12,21 +12,34 @@ router.get("/", async (req, res) => {
 });
 
 // Login Page
-router.get("/pages/login", (req, res) => res.render("login"));
-
-// Register Page
-router.get("/pages/register", (req, res) => res.render("register"));
-
-router.get("/pages/about", (req, res) => res.render("about"));
-
-// List Page
-router.get("/pages/list", (req, res) => res.render("list"));
-
-router.get("/pages/details", (req, res) =>
-  res.render("details", { title: "Details" })
+router.get("/login", (req, res) =>
+  res.render("login", {
+    title: "Login",
+  })
 );
 
-// checkout
-// router.get("/checkout", (req, res) => res.render("checkout"));
+// Register Page
+router.get("/register", (req, res) =>
+  res.render("register", {
+    title: "List",
+  })
+);
+
+router.get("/about", (req, res) =>
+  res.render("about", {
+    title: "List",
+  })
+);
+
+// List Page
+router.get("/list", (req, res) =>
+  res.render("pages/list", {
+    title: "List",
+  })
+);
+
+router.get("/details", (req, res) =>
+  res.render("pages/details", { title: "Details" })
+);
 
 module.exports = router;

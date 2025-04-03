@@ -116,12 +116,13 @@
       <div class="hot_courses owl-carousel">
         <% if (instruments.length > 0) { %> <% instruments.forEach((instrument,
         index) => { %>
+
         <div class="course_block" data-id="<%= index + 1 %>">
           <img src="<%= instrument.image %>" alt="<%= instrument.name %>" />
           <div class="course_time">New</div>
           <div class="course_content">
             <h3>
-              <a href="details.html"><%= instrument.name %></a>
+              <a href="details.html"><%= instrument.InstrumentName %></a>
             </h3>
             <p><%= instrument.description %></p>
             <div class="info_course_block">
@@ -129,7 +130,11 @@
                 <span>CA$<%= instrument.price %></span>
                 <span class="price_deduct">CA$<%= instrument.price %></span>
               </div>
-              <button class="add_cart btn btn-primary mt-2 btn-sm">
+
+              <button
+                class="add_cart btn btn-primary mt-2 btn-sm"
+                onclick="console.log('<%= instrument %>')"
+              >
                 Add to cart <i class="las la-shopping-cart"></i>
               </button>
             </div>

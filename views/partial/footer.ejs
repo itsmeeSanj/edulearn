@@ -219,8 +219,6 @@
       e.stopPropagation();
     });
 
-
-
         async function fetchProducts() {
             try {
                 const response = await fetch("/api/products"); // Call API
@@ -240,9 +238,9 @@
                 console.error("Error fetching products:", error);
             }
         }
-
         // Fetch products when page loads
         window.onload = fetchProducts;
+
   </script>
 </body>
 </html>

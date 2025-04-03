@@ -1,102 +1,64 @@
-<%- include('../../partial/header') %>
-
-<main>
-  <section class="profile spacing">
-    <div class="container">
-      <div class="row gap-4 gap-md-0">
-        <div class="col-12 col-md-3">
-          <div class="profile-left">
-            <div class="profile_left_block">
-              <h3>My Account</h3>
-              <div class="profile_left_content">
-                <a href="/my-account">Dashboard</a>
-                <a href="/my-account/order">Orders</a>
-                <a href="/my-account/address" class="active">Addresses</a>
-                <a href="/my-account/edit-account">Account details</a>
-                <a href="/logout">Logout</a>
-              </div>
-            </div>
+<div class="profile_right">
+  <h3>Billing Address</h3>
+  <div class="profile_right_block">
+    <form action="/billing" method="POST" id="billing_form">
+      <div class="row">
+        <div class="col-md-6">
+          <div class="form-input">
+            <label for="firstName">First Name</label>
+            <input type="text" id="firstName" name="firstName" required />
           </div>
         </div>
-        <div class="col-12 col-md-9">
-          <div class="profile_right">
-            <h3>Billing Address</h3>
-            <div class="profile_right_block">
-              <form action="/billing" method="POST" id="billing_form">
-                <div class="row">
-                  <div class="col-md-6">
-                    <div class="form-input">
-                      <label for="firstName">First Name</label>
-                      <input
-                        type="text"
-                        id="firstName"
-                        name="firstName"
-                        required
-                      />
-                    </div>
-                  </div>
-                  <div class="col-md-6">
-                    <div class="form-input">
-                      <label for="lastName">Last Name</label>
-                      <input
-                        type="text"
-                        id="lastName"
-                        name="lastName"
-                        required
-                      />
-                    </div>
-                  </div>
-                  <div class="col-md-12">
-                    <div class="form-input">
-                      <label for="address">Street Address</label>
-                      <input type="text" id="address" name="address" required />
-                    </div>
-                  </div>
-                  <div class="col-md-6">
-                    <div class="form-input">
-                      <label for="city">Town / City</label>
-                      <input type="text" id="city" name="city" required />
-                    </div>
-                  </div>
-                  <div class="col-md-6">
-                    <div class="form-input">
-                      <label for="postalCode">Postal Code (optional)</label>
-                      <input type="text" id="postalCode" name="postalCode" />
-                    </div>
-                  </div>
-                  <div class="col-md-12">
-                    <div class="form-input">
-                      <label for="email">Email Address</label>
-                      <input type="email" id="email" name="email" required />
-                    </div>
-                  </div>
-                  <div class="col-md-12">
-                    <div class="form-input">
-                      <label for="phone">Phone Number</label>
-                      <input type="tel" id="phone" name="phone" required />
-                    </div>
-                  </div>
-
-                  <div class="col-md-12">
-                    <button type="submit" class="btn btn-primary">
-                      Submit Billing Info
-                    </button>
-                    <button
-                      type="button"
-                      class="btn btn-secondary"
-                      onclick="window.history.back()"
-                    >
-                      <i class="las la-arrow-left"></i> Go Back
-                    </button>
-                  </div>
-                </div>
-              </form>
-            </div>
+        <div class="col-md-6">
+          <div class="form-input">
+            <label for="lastName">Last Name</label>
+            <input type="text" id="lastName" name="lastName" required />
           </div>
+        </div>
+        <div class="col-md-12">
+          <div class="form-input">
+            <label for="address">Street Address</label>
+            <input type="text" id="address" name="address" required />
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="form-input">
+            <label for="city">Town / City</label>
+            <input type="text" id="city" name="city" required />
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="form-input">
+            <label for="postalCode">Postal Code (optional)</label>
+            <input type="text" id="postalCode" name="postalCode" />
+          </div>
+        </div>
+        <div class="col-md-12">
+          <div class="form-input">
+            <label for="email">Email Address</label>
+            <input type="email" id="email" name="email" required />
+          </div>
+        </div>
+        <div class="col-md-12">
+          <div class="form-input">
+            <label for="phone">Phone Number</label>
+            <input type="tel" id="phone" name="phone" required />
+          </div>
+        </div>
+
+        <div class="col-md-12">
+          <button type="submit" class="btn btn-primary">
+            Submit Billing Info
+          </button>
+          <button
+            type="button"
+            class="btn btn-secondary"
+            onclick="window.history.back()"
+          >
+            <i class="las la-arrow-left"></i> Go Back
+          </button>
         </div>
       </div>
-    </div>
-  </section>
-</main>
-
-<%- include('../../partial/footer') %>
+    </form>
+  </div>
+</div>

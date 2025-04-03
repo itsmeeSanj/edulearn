@@ -9,7 +9,6 @@ const connectDB = require("./db");
 
 const app = express();
 
-// Fallback to default port if not set in .env
 const PORT = process.env.DEV_PORT || 3000;
 
 // Middleware
@@ -38,9 +37,6 @@ app.use("/", pages);
 app.use("/", cart);
 app.use("/user", user);
 app.use("/admin", admin);
-
-const api = require("./router/api"); // Import API routes
-app.use("/api", api);
 
 // Start Server
 app.listen(PORT, () => {

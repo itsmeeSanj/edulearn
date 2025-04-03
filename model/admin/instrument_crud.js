@@ -1,8 +1,3 @@
-// Require necessary modules
-var mongoose = require("mongoose");
-var path = require("path");
-
-// Require the instrument models
 const insModel = require("../instrument");
 
 module.exports = {
@@ -145,24 +140,6 @@ module.exports = {
         .render("error", { errorMessage: "Error updating instrument." });
     }
   },
-
-  // Get request to delete a instrument
-  // deleteInstrumentGet: async (req, res) => {
-  //     console.log("Delete Instrument ID:", req.params.id);
-  //     try {
-  //         // Fetch instrument from the database
-  //         const instrument = await insModel.findById(req.params.id);
-  //         // If instrument is not found, return a 404 error
-  //         if (!instrument) {
-  //             return res.status(404).render('error', { errorMessage: 'Instrument not found.' });
-  //         }
-  //         // Render the view and pass the instrument as null
-  //         res.render('admin/pages/confirmDelete', { instrument });
-  //     } catch (error) {
-  //         console.error('Error fetching instrument:', error);
-  //         res.status(500).render('error', { errorMessage: 'Error fetching instrument.' });
-  //     }
-  // },
 
   // Post request to delete a instrument
   deleteInstrumentPost: async (req, res) => {

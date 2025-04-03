@@ -1,62 +1,31 @@
-<%- include('../../partial/header') %>
-
-<main>
-  <section class="profile spacing">
-    <div class="container">
-      <div class="row gap-4 gap-md-0">
-        <div class="col-12 col-md-3">
-          <div class="profile-left">
-            <div class="profile_left_block">
-              <h3>My Account</h3>
-              <div class="profile_left_content">
-                <a href="/my-account">Dashboard</a>
-                <a href="/my-account/order" class="active">Orders</a>
-                <a href="/my-account/address">Addresses</a>
-                <a href="/my-account/edit-account">Account details</a>
-                <a href="/logout">Logout</a>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-12 col-md-9">
-          <div class="profile_right">
-            <h3>Order Info</h3>
-            <div class="profile_right_block order_pge">
-              <table>
-                <thead>
-                  <tr>
-                    <th>ORDER</th>
-                    <th>DATE</th>
-                    <th>STATUS</th>
-                    <th>TOTAL</th>
-                    <th>ACTIONS</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <% orders.forEach(order => { %>
-                  <tr>
-                    <td>#<%= order.id %></td>
-                    <td><%= order.date %></td>
-                    <td><%= order.status %></td>
-                    <td>
-                      <strong><%= order.total %></strong> for <%= order.items %>
-                      items
-                    </td>
-                    <td>
-                      <a href="/my-account/order/<%= order.id %>" class="btn"
-                        >View</a
-                      >
-                    </td>
-                  </tr>
-                  <% }) %>
-                </tbody>
-              </table>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-</main>
-
-<%- include('../../partial/footer') %>
+<div class="profile_right">
+  <h3>Order Info</h3>
+  <div class="profile_right_block order_pge">
+    <table>
+      <thead>
+        <tr>
+          <th>ORDER</th>
+          <th>DATE</th>
+          <th>STATUS</th>
+          <th>TOTAL</th>
+          <th>ACTIONS</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% orders.forEach(order => { %>
+        <tr>
+          <td>#<%= order.id %></td>
+          <td><%= order.date %></td>
+          <td><%= order.status %></td>
+          <td>
+            <strong><%= order.total %></strong> for <%= order.items %> items
+          </td>
+          <td>
+            <a href="/my-account/order/<%= order.id %>" class="btn">View</a>
+          </td>
+        </tr>
+        <% }) %>
+      </tbody>
+    </table>
+  </div>
+</div>

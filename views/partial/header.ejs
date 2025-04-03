@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title> <%= (title ? title : "Homepage") + " - Mucon" %></title>
+    <title><%= (title ? title : "Homepage") + " - Mucon" %></title>
 
     <!-- favicon -->
     <link
@@ -73,7 +73,7 @@
             >
               <div class="logo">
                 <a href="/">
-                  <img src="img/logo/orange.png" alt="LOGO" />
+                  <img src="/img/logo.png" alt="LOGO" />
                 </a>
               </div>
               <div class="header-left_nav d-none d-xl-block">
@@ -112,9 +112,6 @@
                       <div class="auth_logged_out">
                         <a href="/login">Login</a>
                         <a href="/register">Register</a>
-
-                        <a href="login.html">Login</a>
-                        <a href="register.html">Register</a>
                       </div>
                       <div class="auth_logged_in" style="display: none">
                         <a href="profile.html">Profile</a>
@@ -152,4 +149,5 @@
         </div>
       </div>
     </header>
-  
+  </body>
+</html>
