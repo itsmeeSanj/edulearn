@@ -9,16 +9,7 @@ $linear-primary: linear-gradient(
   #2457a6;
 $shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 
-$accordion-button-padding-y: 14px;
-$accordion-button-padding-x: 14px;
-$accordion-icon-width: 14px;
-
-$font-extra-large: 2rem;
-$font-large: 1.875rem;
-$font-medium: 1.0625rem;
-
 // Bootstrap SCSS
-
 @import "../node_modules/bootstrap/scss/bootstrap.scss";
 
 // Global Styles
@@ -2501,52 +2492,65 @@ footer {
     background-color: var(--primary-bg);
     margin: 0;
     .sidebar-brand {
-      height: 4.375rem;
       text-decoration: none;
-      font-size: 1rem;
-      font-weight: 800;
+      font-size: 1.25rem;
+      font-weight: 600;
       padding: 1.5rem 1rem;
-      text-align: center;
       text-transform: uppercase;
       letter-spacing: 0.05rem;
-      z-index: 1;
       color: #fff;
       display: flex;
       align-items: center;
-      justify-content: center;
-    }
-  }
-
-  .sidebar-dark hr.sidebar-divider {
-    border-top: 1px solid rgba(255, 255, 255, 0.15);
-  }
-
-  hr.sidebar-divider {
-    margin: 0 1rem 1rem;
-  }
-
-  .nav-item {
-    position: relative;
-
-    .nav-link {
-      display: block;
-      width: 100%;
-      text-align: left;
-      padding: 1rem;
-      width: 14rem;
-      color: #fff;
-      font-weight: 700;
-
+      column-gap: 6px;
       i {
-        font-size: 0.85rem;
-        margin-right: 0.25rem;
-        color: #fff;
+        font-size: 24px;
+      }
+    }
+
+    .nav-item {
+      position: relative;
+
+      &.active {
+        background-color: $primary;
       }
 
-      span {
-        font-size: 0.85rem;
-        display: inline;
+      .nav-link {
+        padding: 1rem;
+        color: #fff;
+        display: flex;
+        align-items: center;
+        column-gap: 6px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+        i {
+          font-size: 18px;
+          margin-right: 0.25rem;
+        }
+
+        span {
+          font-size: 15px;
+          display: inline-block;
+        }
       }
+
+      &:first-child {
+        .nav-link {
+          border-bottom: none;
+        }
+      }
+      &:last-child {
+        margin-bottom: 1rem;
+        .nav-link {
+          border-bottom: none;
+        }
+      }
+    }
+
+    .sidebar-dark hr.sidebar-divider {
+      border-top: 1px solid rgba(255, 255, 255, 0.15);
+    }
+
+    hr.sidebar-divider {
+      margin: 0 1rem 1rem;
     }
   }
 
@@ -2554,12 +2558,8 @@ footer {
     text-align: left;
     padding: 0 1rem;
     font-weight: 800;
-    font-size: 0.65rem;
+    font-size: 18px;
     color: rgba(255, 255, 255, 0.4);
-  }
-
-  .nav-item:last-child {
-    margin-bottom: 1rem;
   }
 }
 
@@ -2610,6 +2610,13 @@ footer {
 .border-left-primary {
   border-left: 0.25rem solid #4e73df !important;
 }
+.border-left-success {
+  border-left: 0.25rem solid $primary !important;
+}
+
+.border-left-info {
+  border-left: 0.25rem solid var(--primary-bg) !important;
+}
 
 .card-body {
   flex: 1 1 auto;
@@ -2620,50 +2627,56 @@ footer {
 .sidebar .nav-item {
   .collapse {
     position: relative;
-    left: 0;
-    z-index: 1;
-    top: 0;
-    animation: none;
-
     .collapse-inner {
       padding: 0.5rem 0;
-      min-width: 10rem;
-      font-size: 0.85rem;
-      margin: 0 0 1rem 0;
-      box-shadow: none;
-
-      .collapse-header {
-        margin: 0;
-        white-space: nowrap;
-        padding: 0.5rem 1.5rem;
-        text-transform: uppercase;
-        font-weight: 800;
-        font-size: 0.65rem;
-        color: #b7b9cc;
-      }
-
-      .collapse-item {
+      font-size: 0.875rem;
+      a {
         padding: 0.5rem 1rem;
-        margin: 0 0.5rem;
         display: block;
         color: #3a3b45;
         text-decoration: none;
-        border-radius: 0.35rem;
-        white-space: nowrap;
       }
+    }
+  }
+  .navbar {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.5rem 1rem;
+
+    h1 {
+      margin: 0;
     }
   }
 }
 
-.navbar {
-  position: relative;
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0.5rem 1rem;
+.user_info {
+  span {
+    font-size: 15px;
+  }
+  img {
+    height: 32px;
+    width: 32px;
+    border-radius: 50%;
+    overflow: hidden;
+  }
+}
 
-  h1 {
-    margin: 0;
+#wrapper footer {
+  color: #000;
+  margin-top: 32px;
+}
+
+.nav_head {
+  padding: 1.5rem 1rem;
+  .icon {
+    cursor: pointer;
+  }
+  .no-arrow {
+    .nav-link {
+      padding: 0;
+    }
   }
 }

@@ -15,8 +15,13 @@ const PORT = process.env.DEV_PORT || 3000;
 // Middleware
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "views"));
-app.use(bodyParser.urlencoded({ extended: true }));
-app.use(bodyParser.json());
+// app.use(bodyParser.urlencoded({ extended: true }));
+// app.use(bodyParser.json());
+// parse application/x-www-form-urlencoded
+app.use(express.urlencoded({ extended: true }));
+// parse application/json
+app.use(express.json());
+
 app.use(methodOverride("_method"));
 app.use(express.static(path.join(__dirname, "public")));
 
@@ -24,15 +29,18 @@ app.use(express.static(path.join(__dirname, "public")));
 connectDB();
 
 // Import and use route files
-const mainRoutes = require("./router/pageRoutes");
-const cartRoutes = require("./router/cartRoue");
-const accountRoutes = require("./router/user");
-const dashboardRoutes = require("./router/dashboardRoute");
+const pages = require("./router/pages");
+const cart = require("./router/cart");
+const user = require("./router/user");
+const admin = require("./router/admin");
 
-app.use("/", mainRoutes);
-app.use("/", cartRoutes);
-app.use("/", accountRoutes);
-app.use("/admin", dashboardRoutes);
+app.use("/", pages);
+app.use("/", cart);
+app.use("/user", user);
+app.use("/admin", admin);
+
+const api = require("./router/api"); // Import API routes
+app.use("/api", api);
 
 // Start Server
 app.listen(PORT, () => {

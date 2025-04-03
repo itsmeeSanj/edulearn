@@ -1,58 +1,46 @@
-<!-- Sidebar -->
 <ul
   class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion"
   id="accordionSidebar"
 >
-  <!-- Sidebar - Brand -->
-  <a class="sidebar-brand" href="index.html">
+  <% sidebar.forEach(item => { %> <% if (item.type === "brand") { %>
+  <a class="sidebar-brand" href="<%= item.link %>">
     <div class="sidebar-brand-icon">
-      <i class="las la-smile-wink"></i>
+      <i class="<%= item.icon %>"></i>
     </div>
-    <div class="sidebar-brand-text mx-3">SB Admin <sup>2</sup></div>
+    <div class="sidebar-brand-text"><%= item.title %></div>
   </a>
 
-  <!-- Divider -->
-  <hr class="sidebar-divider my-0" />
-
-  <!-- Nav Item - Dashboard -->
-  <li class="nav-item active">
-    <a class="nav-link" href="index.html">
-      <i class="fas fa-fw fa-tachometer-alt"></i>
-      <span>Dashboard</span></a
-    >
+  <% } else if (item.type === "item") { %>
+  <li class="nav-item <%= item.active ? 'active' : '' %>">
+    <a class="nav-link" href="<%= item.link %>">
+      <i class="<%= item.icon %>"></i>
+      <span><%= item.title %></span>
+    </a>
   </li>
 
-  <!-- Divider -->
-  <hr class="sidebar-divider" />
-
-  <!-- Heading -->
-  <div class="sidebar-heading">Interface</div>
-
-  <!-- Nav Item - Pages Collapse Menu -->
+  <% } else if (item.type === "collapse" && Array.isArray(item.items)) { %>
   <li class="nav-item">
     <a
       class="nav-link collapsed"
       href="#"
-      data-toggle="collapse"
-      data-target="#collapseTwo"
-      aria-expanded="true"
-      aria-controls="collapseTwo"
+      data-bs-toggle="collapse"
+      data-bs-target="#<%= item.id %>"
+      aria-expanded="false"
     >
-      <i class="fas fa-fw fa-cog"></i>
-      <span>Components</span>
+      <i class="<%= item.icon %>"></i>
+      <span><%= item.title %></span>
     </a>
     <div
-      id="collapseTwo"
+      id="<%= item.id %>"
       class="collapse"
-      aria-labelledby="headingTwo"
-      data-parent="#accordionSidebar"
+      data-bs-parent="#accordionSidebar"
     >
-      <div class="bg-white py-2 collapse-inner rounded">
-        <h6 class="collapse-header">Custom Components:</h6>
-        <a class="collapse-item" href="buttons.html">Buttons</a>
-        <a class="collapse-item" href="cards.html">Cards</a>
+      <div class="bg-white py-2 collapse-inner">
+        <% item.items.forEach(sub => { %>
+        <a class="collapse-item" href="<%= sub.link %>"><%= sub.title %></a>
+        <% }) %>
       </div>
     </div>
   </li>
+  <% } %> <% }) %>
 </ul>
-<!-- End of Sidebar -->

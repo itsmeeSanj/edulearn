@@ -1,9 +1,39 @@
 <!-- Footer -->
-<footer class="sticky-footer bg-white">
+<footer class="">
   <div class="container my-auto">
     <div class="copyright text-center my-auto">
-      <span>Copyright &copy; Your Website 2021</span>
+      <span>Copyright &copy; Mucon 2025</span>
     </div>
   </div>
 </footer>
 <!-- End of Footer -->
+
+
+ <!-- <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script> -->
+ <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+ <script src="js/script.js"></script>
+
+ <script>
+   $(document).on("click", ".dropdown-menu", function (e) {
+     e.stopPropagation();
+   });
+
+   // This function is triggered when the modal is shown
+  $('#deleteProductModal').on('show.bs.modal', function (event) {
+    var button = $(event.relatedTarget); // Button that triggered the modal
+    var productId = button.data('id');  // Extract product ID from data-id attribute
+    var productName = button.data('name');  // Extract product name
+
+    // Update the modal body text to show the product name
+    var modalBody = $(this).find('.modal-body p');
+    modalBody.text('Are you sure you want to delete the product "' + productName + '"?');
+
+    // Update the form action to include the product ID in the URL
+    var formAction = '/admin/products/delete/' + productId;
+    $(this).find('form').attr('action', formAction);
+  });
+ </script>
+</body>
+</html>

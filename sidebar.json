@@ -1,0 +1,31 @@
+[
+  {
+    "title": "Admin",
+    "icon": "las la-smile-wink",
+    "link": "/admin",
+    "type": "brand"
+  },
+  {
+    "title": "Dashboard",
+    "icon": "las la-tachometer-alt",
+    "link": "/admin",
+    "type": "item",
+    "active": true
+  },
+  {
+    "title": "Products",
+    "icon": "las la-box",
+    "link": "/admin/products",
+    "type": "item"
+  },
+  {
+    "title": "Users",
+    "icon": "las la-user",
+    "type": "collapse",
+    "id": "collapseUsers",
+    "items": [
+      { "title": "Buttons", "link": "buttons.html" },
+      { "title": "Cards", "link": "cards.html" }
+    ]
+  }
+]

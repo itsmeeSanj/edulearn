@@ -80,7 +80,7 @@
         </p>
       </div>
 
-      <div class="hot_courses owl-carousel">
+      <!-- <div class="hot_courses owl-carousel">
         <% instruments.forEach((instrument, index) => { %>
         <div class="course_block" data-id="<%= index + 1 %>">
           <img
@@ -111,6 +111,33 @@
           </div>
         </div>
         <% }) %>
+      </div> -->
+
+      <div class="hot_courses owl-carousel">
+        <% if (instruments.length > 0) { %> <% instruments.forEach((instrument,
+        index) => { %>
+        <div class="course_block" data-id="<%= index + 1 %>">
+          <img src="<%= instrument.image %>" alt="<%= instrument.name %>" />
+          <div class="course_time">New</div>
+          <div class="course_content">
+            <h3>
+              <a href="details.html"><%= instrument.name %></a>
+            </h3>
+            <p><%= instrument.description %></p>
+            <div class="info_course_block">
+              <div class="price">
+                <span>CA$<%= instrument.price %></span>
+                <span class="price_deduct">CA$<%= instrument.price %></span>
+              </div>
+              <button class="add_cart btn btn-primary mt-2 btn-sm">
+                Add to cart <i class="las la-shopping-cart"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+        <% }) %> <% } else { %>
+        <p>No instruments found.</p>
+        <% } %>
       </div>
 
       <div class="read_more">

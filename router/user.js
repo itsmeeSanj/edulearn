@@ -42,36 +42,92 @@ const orders = [
 ];
 
 // User Account Dashboard
-router.get("/my-account", (req, res) =>
-  res.render("user/index", { title: "My Account" })
-);
 
-// Edit Account Information
-router.get("/my-account/edit-account", (req, res) =>
-  res.render("user/pages/information", { title: "Information" })
-);
+// router.get("/", (req, res) =>
+//   res.render("user/index", { title: "My Account" })
+// );
 
-// Address Routes
-router.get("/my-account/address", (req, res) =>
-  res.render("user/pages/address", { title: "Address" })
-);
-router.get("/my-account/address/billing", (req, res) =>
-  res.render("user/pages/billing", { title: "My Account" })
-);
-router.get("/my-account/address/shipping", (req, res) =>
-  res.render("user/pages/shipping", { title: "My Account" })
-);
+// router.get("/edit-account", (req, res) =>
+//   res.render("user/pages/information", { title: "Information" })
+// );
+
+// router.get("/address", (req, res) =>
+//   res.render("user/pages/address", { title: "Address" })
+// );
+// router.get("/address/billing", (req, res) =>
+//   res.render("user/pages/billing", { title: "My Account" })
+// );
+// router.get("/address/shipping", (req, res) =>
+//   res.render("user/pages/shipping", { title: "My Account" })
+// );
+
+const routes = {
+  "/": {
+    page: "userDashboard",
+    pageTitle: "My Account",
+  },
+
+  "/edit-account": {
+    page: "information",
+    pageTitle: "My Account",
+  },
+
+  "/address": {
+    page: "address",
+    pageTitle: "My Account",
+  },
+
+  "/address/billing": {
+    page: "billing",
+    pageTitle: "My Account",
+  },
+
+  "/address/shipping": {
+    page: "billing",
+    pageTitle: "My Account",
+  },
+  "/order": {
+    page: "order",
+    pageTitle: "My Account",
+  },
+};
 
 // Orders & Checkout
 
-router.get("/my-account/order", (req, res) => {
-  res.render("user/pages/order", { title: "My Account", orders });
+// router.get("/order", (req, res) => {
+//   res.render("user/pages/order", { title: "My Account", orders });
+// });
+
+// router.get("/order/:id", (req, res) => {
+//   const order = orders.find((o) => o.id == req.params.id);
+//   if (!order) return res.status(404).send("Order not found");
+//   res.render("user/pages/orderDetails", { title: "My Account", order });
+// });
+
+// Handle routes dynamically
+Object.entries(routes).forEach(([path, { page, pageTitle }]) => {
+  router.get(path, async (req, res) => {
+    try {
+      // When the path is "/products", send product data
+
+      res.render("user/index", {
+        title: `Admin | ${pageTitle}`, // Browser window title
+        pageTitle, // Page heading
+        page, // Page content
+        sidebar, // Sidebar data from sidebar.json
+      });
+    } catch (error) {
+      console.error("Error rendering page:", error);
+      res.status(500).send("Internal Server Error");
+    }
+  });
 });
 
-router.get("/my-account/order/:id", (req, res) => {
+// Order details route
+router.get("/order/:id", (req, res) => {
   const order = orders.find((o) => o.id == req.params.id);
-  if (!order) return res.status(404).send("Order not found");
-  res.render("user/pages/orderDetails", { title: "My Account", order });
+  if (!order) return res.status(404).json({ error: "Order not found" });
+  res.json({ message: "Order Details", order });
 });
 
 module.exports = router;

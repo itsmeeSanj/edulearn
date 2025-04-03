@@ -2,10 +2,15 @@
 <div id="wrapper" class="admin">
   <!-- sidebar -->
   <%- include("sidebar") %>
-
-  <div id="content-wrapper" class="d-flex flex-column">
-    <%- include('../partials/header') %>
-    <!--  -->
-    <%- include('main') %>
+  <!-- nav -->
+  <div class="w-100">
+    <div id="content-wrapper" class="d-flex flex-column">
+      <%- include('nav') %>
+      <!--  -->
+      <%- include('main') %>
+    </div>
+    <%- include('../partials/footer') %>
   </div>
+
+  <!--  -->
 </div>

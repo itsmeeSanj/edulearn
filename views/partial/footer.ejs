@@ -218,6 +218,31 @@
     $(document).on("click", ".dropdown-menu", function (e) {
       e.stopPropagation();
     });
+
+
+
+        async function fetchProducts() {
+            try {
+                const response = await fetch("/api/products"); // Call API
+                const products = await response.json(); // Parse JSON
+                const productList = document.getElementById("productList");
+
+                // Clear existing content
+                productList.innerHTML = "";
+
+                // Loop through products and add to list
+                products.forEach(product => {
+                    const li = document.createElement("li");
+                    li.innerHTML = `<strong>${product.name}</strong> - $${product.price} (${product.category})`;
+                    productList.appendChild(li);
+                });
+            } catch (error) {
+                console.error("Error fetching products:", error);
+            }
+        }
+
+        // Fetch products when page loads
+        window.onload = fetchProducts;
   </script>
 </body>
 </html>
