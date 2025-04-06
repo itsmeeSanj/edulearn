@@ -9,7 +9,6 @@
     </div>
     <div class="sidebar-brand-text"><%= item.title %></div>
   </a>
-
   <% } else if (item.type === "item") { %>
   <li class="nav-item <%= item.active ? 'active' : '' %>">
     <a class="nav-link" href="<%= item.link %>">
@@ -17,7 +16,6 @@
       <span><%= item.title %></span>
     </a>
   </li>
-
   <% } else if (item.type === "collapse" && Array.isArray(item.items)) { %>
   <li class="nav-item">
     <a

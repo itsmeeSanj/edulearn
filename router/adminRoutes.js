@@ -1,7 +1,6 @@
 const express = require("express");
 const router = express.Router();
 
-// Load sidebar.json
 const sidebar = require("../sidebar.json");
 
 // Middleware for CRUD functions
@@ -130,22 +129,31 @@ router.post("/products/delete/:id", async (req, res) => {
   }
 });
 
-// brands
-// Products list route
-router.get("/brands", async (req, res) => {
+// Users management route
+router.get("/brands", (req, res) => {
   try {
-    // const instruments = await instrumentCRUD.searchItems(req, res);
-    // console.log("Instruments data:", instruments); // Debug log
-
     res.render("admin/index", {
-      title: "Admin | Brands Management",
-      pageTitle: "Brands Management",
+      title: "Admin Management",
+      pageTitle: "Brand Management",
       page: "brands/index",
       sidebar,
-      // instruments,
     });
   } catch (error) {
-    console.error("Error rendering products list:", error);
+    console.error("Error rendering users page:", error);
+    res.status(500).send("Internal Server Error");
+  }
+});
+
+router.get("/brands/add", (req, res) => {
+  try {
+    res.render("admin/index", {
+      title: "Admin Management",
+      pageTitle: "Brand Management",
+      page: "brands/add",
+      sidebar,
+    });
+  } catch (error) {
+    console.error("Error rendering users page:", error);
     res.status(500).send("Internal Server Error");
   }
 });

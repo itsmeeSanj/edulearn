@@ -14,9 +14,6 @@ const PORT = process.env.DEV_PORT || 3000;
 // Middleware
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "views"));
-// app.use(bodyParser.urlencoded({ extended: true }));
-// app.use(bodyParser.json());
-// parse application/x-www-form-urlencoded
 app.use(express.urlencoded({ extended: true }));
 // parse application/json
 app.use(express.json());
@@ -28,15 +25,18 @@ app.use(express.static(path.join(__dirname, "public")));
 connectDB();
 
 // Import and use route files
-const pages = require("./router/pages");
-const cart = require("./router/cart");
-const user = require("./router/user");
-const admin = require("./router/admin");
+const homePage = require("./router/homePageRoutes");
+const userPage = require("./router/userRoutes");
+const adminPage = require("./router/adminRoutes");
 
-app.use("/", pages);
-app.use("/", cart);
-app.use("/user", user);
-app.use("/admin", admin);
+app.use("/", homePage);
+app.use("/user", userPage);
+app.use("/admin", adminPage);
+
+// Import and use API Route Files
+const brandApiRoutes = require("./router/api/brandApiRoutes");
+
+app.use("/api/brands", brandApiRoutes);
 
 // Start Server
 app.listen(PORT, () => {
