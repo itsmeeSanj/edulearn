@@ -35,7 +35,6 @@ app.use("/admin", adminPage);
 
 // Import and use API Route Files
 const brandApiRoutes = require("./router/api/brandApiRoutes");
-
 app.use("/api/brands", brandApiRoutes);
 
 // Start Server

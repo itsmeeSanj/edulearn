@@ -1,72 +1,82 @@
+const multer = require("multer");
 const Brand = require("../../model/admin/brandModel");
 
+// Set up Multer storage
+const storage = multer.diskStorage({
+  destination: (req, file, cb) => {
+    cb(null, "public/uploads/");
+  },
+  filename: (req, file, cb) => {
+    cb(null, Date.now() + "-" + file.originalname);
+  },
+});
+
+const upload = multer({ storage });
+
+// Add brand
 exports.addBrand = async (req, res) => {
   try {
-    const { name, img } = req.body;
+    const { name } = req.body;
+    const img = req.file ? req.file.filename : null;
+
+    if (!name || !img) {
+      return res.status(400).json({ message: "All fields are required" });
+    }
+
     const newBrand = new Brand({ name, img });
     await newBrand.save();
-    res.status(201).json({
-      message: "Brand Created Successfully",
-      newBrand,
-    });
+
+    res.redirect("/admin/brands");
   } catch (error) {
-    res.status(500).json({
-      error: error,
-    });
+    res.status(500).json({ error: error.message });
   }
 };
 
+// Get brands
 exports.getBrand = async (req, res) => {
   try {
     const brands = await Brand.find();
     res.status(200).json(brands);
-  } catch (error) {
-    res.status(500).json({
-      error: error,
+    res.render("admin/index", {
+      title: "Admin Management",
+      pageTitle: "Brand Management",
+      page: "brands/index",
+      brands,
     });
+  } catch (error) {
+    res.status(500).json({ error: error.message });
   }
 };
 
 exports.updateBrand = async (req, res) => {
   try {
     const { id } = req.params;
-    const { name, img } = req.body;
+    const { name } = req.body;
+    const img = req.file ? req.file.filename : req.body.oldImg;
 
     const updatedBrand = await Brand.findByIdAndUpdate(
       id,
       { name, img },
-      { new: true, runValidators: true }
+      { new: true }
     );
 
-    if (!updatedBrand) {
+    if (!updatedBrand)
       return res.status(404).json({ message: "Brand not found" });
-    }
 
-    res.status(200).json({
-      message: "Brand Updated Successfully",
-      brand: updatedBrand,
-    });
+    res.redirect("/admin/brands");
   } catch (error) {
-    res.status(500).json({
-      error: error.message,
-    });
+    res.status(500).json({ error: error.message });
   }
 };
 
 // Delete a brand
+// Delete brand
 exports.deleteBrand = async (req, res) => {
   try {
     const { id } = req.params;
-
-    const deletedBrand = await Brand.findByIdAndDelete(id);
-    if (!deletedBrand) {
-      return res.status(404).json({ message: "Brand not found" });
-    }
-
-    res.status(200).json({ message: "Brand Deleted Successfully" });
+    await Brand.findByIdAndDelete(id);
+    res.redirect("/admin/brands");
   } catch (error) {
-    res.status(500).json({
-      error: error.message,
-    });
+    res.status(500).json({ error: error.message });
   }
 };

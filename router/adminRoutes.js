@@ -5,6 +5,7 @@ const sidebar = require("../sidebar.json");
 
 // Middleware for CRUD functions
 const instrumentCRUD = require("../model/admin/instrument_crud");
+const Brand = require("../model/admin/brandModel");
 
 // Dashboard route
 router.get("/", (req, res) => {
@@ -148,12 +149,28 @@ router.get("/brands/add", (req, res) => {
   try {
     res.render("admin/index", {
       title: "Admin Management",
-      pageTitle: "Brand Management",
+      pageTitle: "Add Brand",
       page: "brands/add",
-      sidebar,
+      brand: null,
     });
   } catch (error) {
-    console.error("Error rendering users page:", error);
+    res.status(500).send("Internal Server Error");
+  }
+});
+
+// edit
+router.get("/brands/edit/:id", async (req, res) => {
+  try {
+    const brand = await Brand.findById(req.params.id);
+    if (!brand) return res.status(404).send("Brand not found");
+
+    res.render("admin/index", {
+      title: "Admin Management",
+      pageTitle: "Edit Brand",
+      page: "brands/add",
+      brand,
+    });
+  } catch (error) {
     res.status(500).send("Internal Server Error");
   }
 });

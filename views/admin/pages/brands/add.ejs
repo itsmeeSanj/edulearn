@@ -1,1 +1,49 @@
-addBrands
+<div class="container">
+  <form
+    action="<%= brand ? `/admin/brands/${brand._id}?_method=PUT` : '/admin/brands' %>"
+    method="POST"
+    enctype="multipart/form-data"
+  >
+    <input type="hidden" name="_method" value="<%= brand ? 'PUT' : 'POST' %>" />
+    <input type="hidden" name="id" value="<%= brand ? brand._id : '' %>" />
+
+    <div class="row mb-3">
+      <input type="hidden" name="id" />
+
+      <div class="col-md-12">
+        <label for="brandName" class="form-label">Brand Name</label>
+        <input
+          type="text"
+          class="form-control"
+          id="brandName"
+          name="name"
+          value="<%= brand ? brand.name : ''  %>"
+          required
+        />
+      </div>
+
+      <div class="col-md-12">
+        <label for="brandImage" class="form-label">Brand Image</label>
+        <input
+          type="file"
+          class="form-control"
+          id="brandImage"
+          name="img"
+          <%
+          if(brand
+          &&
+          brand.img)
+          {
+          %
+        />
+        <img src="/uploads/<%= brand.img %>" alt="Brand Image" />
+        <% } %> />
+      </div>
+    </div>
+
+    <button type="submit" class="btn btn-primary">
+      <%= brand ? 'Update' : 'Submit' %>
+    </button>
+    <a href="/admin/brands" class="btn btn-secondary">Cancel</a>
+  </form>
+</div>
