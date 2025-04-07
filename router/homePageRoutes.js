@@ -1,11 +1,14 @@
 const express = require("express");
 const router = express.Router();
 
+const Brand = require("../model/admin/brandModel");
+
 // Home Route
 router.get("/", async (req, res) => {
   try {
     const instruments = require("../data.json"); // Fetch data from JSON
-    res.render("index", { title: "Home", instruments });
+    const brands = await Brand.find(); // or limit/filter as needed
+    res.render("index", { title: "Home", instruments, brands });
   } catch (error) {
     res.status(500).send("Error Fetching: " + error.message);
   }

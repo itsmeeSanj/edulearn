@@ -1,6 +1,5 @@
 require("dotenv").config();
 const express = require("express");
-const bodyParser = require("body-parser");
 const methodOverride = require("method-override");
 const path = require("path");
 
@@ -8,18 +7,20 @@ const path = require("path");
 const connectDB = require("./db");
 
 const app = express();
-
-const PORT = process.env.DEV_PORT || 3000;
+const PORT = process.env.DEV_PORT;
 
 // Middleware
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "views"));
 app.use(express.urlencoded({ extended: true }));
-// parse application/json
 app.use(express.json());
-
 app.use(methodOverride("_method"));
+
 app.use(express.static(path.join(__dirname, "public")));
+app.use(
+  "/public/uploads",
+  express.static(path.join(__dirname, "public/uploads"))
+);
 
 // Connect to MongoDB
 connectDB();
@@ -34,8 +35,8 @@ app.use("/user", userPage);
 app.use("/admin", adminPage);
 
 // Import and use API Route Files
-const brandApiRoutes = require("./router/api/brandApiRoutes");
-app.use("/api/brands", brandApiRoutes);
+// const brandApiRoutes = require("./router/api/brandApiRoutes");
+// app.use("/api/brands", brandApiRoutes);
 
 // Start Server
 app.listen(PORT, () => {

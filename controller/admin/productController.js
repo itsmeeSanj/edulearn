@@ -2,7 +2,7 @@ const multer = require("multer");
 const fs = require("fs");
 const path = require("path");
 
-const Brand = require("../../model/admin/brandModel");
+const Brand = require("../../model/admin/productModel");
 const sidebar = require("../../sidebar.json");
 
 // Set up Multer storage
@@ -17,8 +17,8 @@ const storage = multer.diskStorage({
 
 const upload = multer({ storage });
 
-// Add brand
-exports.addBrand = async (req, res) => {
+// Add product
+exports.addProduct = async (req, res) => {
   try {
     console.log("Form Data:", req.body);
     console.log("Uploaded File:", req.file);
@@ -40,8 +40,8 @@ exports.addBrand = async (req, res) => {
   }
 };
 
-// Get all brands
-exports.getBrand = async (req, res) => {
+// Get all products
+exports.getProduct = async (req, res) => {
   try {
     const brands = await Brand.find();
     console.log("Brands fetched:", brands); // Debugging output
@@ -60,8 +60,8 @@ exports.getBrand = async (req, res) => {
   }
 };
 
-// Edit Brand Page
-exports.editBrandPage = async (req, res) => {
+// Edit Product Page
+exports.editProductPage = async (req, res) => {
   try {
     const brand = await Brand.findById(req.params.id);
     if (!brand) return res.status(404).send("Brand not found");
@@ -80,7 +80,7 @@ exports.editBrandPage = async (req, res) => {
 };
 
 // update
-exports.updateBrand = async (req, res) => {
+exports.updateProduct = async (req, res) => {
   try {
     console.log("Updating Brand:", req.body);
 
@@ -103,8 +103,8 @@ exports.updateBrand = async (req, res) => {
   }
 };
 
-// Delete Brand
-exports.deleteBrand = async (req, res) => {
+// Delete Product
+exports.deleteProduct = async (req, res) => {
   try {
     const { id } = req.params;
     console.log("Updating Brand:", id);

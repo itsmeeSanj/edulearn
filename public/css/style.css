@@ -12512,8 +12512,8 @@ header nav .hamburger i {
 }
 .partners .partners_wrap .partners_wrap_carousel .partners_block a img {
   height: 50px;
-  width: auto;
-  object-fit: contain;
+  width: 100%;
+  object-fit: cover;
 }
 
 /* events */
@@ -14181,6 +14181,13 @@ input[type=button]) {
 
 .form-control {
   margin-bottom: 0.9375rem;
+}
+
+.admin_card_table table img {
+  height: 75px;
+  width: 75px;
+  object-fit: contain;
+  border: 1px solid rgba(0, 0, 0, 0.3);
 }
 
 /*# sourceMappingURL=style.css.map */

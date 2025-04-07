@@ -30,6 +30,15 @@
     var formAction = '/admin/products/delete/' + productId;
     $(this).find('form').attr('action', formAction);
   });
+
+
+
+  // 
+  function setDeleteFormAction(brandId) {
+    document.getElementById(
+      "deleteBrandForm"
+    ).action = `/admin/brands/delete/${brandId}`;
+  }
  </script>
 </body>
 </html>

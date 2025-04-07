@@ -8,8 +8,6 @@
     <input type="hidden" name="id" value="<%= brand ? brand._id : '' %>" />
 
     <div class="row mb-3">
-      <input type="hidden" name="id" />
-
       <div class="col-md-12">
         <label for="brandName" class="form-label">Brand Name</label>
         <input
@@ -24,20 +22,18 @@
 
       <div class="col-md-12">
         <label for="brandImage" class="form-label">Brand Image</label>
-        <input
-          type="file"
-          class="form-control"
-          id="brandImage"
-          name="img"
-          <%
-          if(brand
-          &&
-          brand.img)
-          {
-          %
+        <input type="file" class="form-control" id="brandImage" name="img" />
+
+        <% if (brand && brand.img) { %>
+        <img
+          src="/public/uploads/<%= brand.img %>"
+          alt="Brand Image"
+          class="my-2"
+          width="50"
+          height="50"
+          style="height: 200px; width: 200px; object-fit: fill"
         />
-        <img src="/uploads/<%= brand.img %>" alt="Brand Image" />
-        <% } %> />
+        <% } %>
       </div>
     </div>
 

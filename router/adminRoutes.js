@@ -4,7 +4,9 @@ const router = express.Router();
 const sidebar = require("../sidebar.json");
 
 // Middleware for CRUD functions
-const instrumentCRUD = require("../model/admin/instrument_crud");
+const instrumentCRUD = require("../model/admin/productModel");
+
+const brandController = require("../controller/admin/brandController");
 const Brand = require("../model/admin/brandModel");
 
 // Dashboard route
@@ -130,21 +132,13 @@ router.post("/products/delete/:id", async (req, res) => {
   }
 });
 
-// Users management route
-router.get("/brands", (req, res) => {
-  try {
-    res.render("admin/index", {
-      title: "Admin Management",
-      pageTitle: "Brand Management",
-      page: "brands/index",
-      sidebar,
-    });
-  } catch (error) {
-    console.error("Error rendering users page:", error);
-    res.status(500).send("Internal Server Error");
-  }
-});
+// admin management route
+router.get("/brands", brandController.getBrand);
 
+// add brand (form submission)
+router.post("/brands", brandController.upload, brandController.addBrand);
+
+// Add brand page
 router.get("/brands/add", (req, res) => {
   try {
     res.render("admin/index", {
@@ -152,28 +146,21 @@ router.get("/brands/add", (req, res) => {
       pageTitle: "Add Brand",
       page: "brands/add",
       brand: null,
+      sidebar,
     });
   } catch (error) {
     res.status(500).send("Internal Server Error");
   }
 });
 
-// edit
-router.get("/brands/edit/:id", async (req, res) => {
-  try {
-    const brand = await Brand.findById(req.params.id);
-    if (!brand) return res.status(404).send("Brand not found");
+// Edit brand page
+router.get("/brands/edit/:id", brandController.editBrandPage);
 
-    res.render("admin/index", {
-      title: "Admin Management",
-      pageTitle: "Edit Brand",
-      page: "brands/add",
-      brand,
-    });
-  } catch (error) {
-    res.status(500).send("Internal Server Error");
-  }
-});
+// Update brand
+router.put("/brands/:id", brandController.upload, brandController.updateBrand);
+
+// Delete brand
+router.post("/brands/:id", brandController.deleteBrand);
 
 // Users management route
 router.get("/users", (req, res) => {
@@ -206,11 +193,11 @@ router.get("/settings", (req, res) => {
 });
 
 // 404 handler for admin routes
-router.use((req, res) => {
-  res.status(404).render("admin/404", {
-    title: "Admin | Page Not Found",
-    sidebar,
-  });
-});
+// router.use((req, res) => {
+//   res.status(404).render("admin/404", {
+//     title: "Admin | Page Not Found",
+//     sidebar,
+//   });
+// });
 
 module.exports = router;
