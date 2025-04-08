@@ -20,9 +20,6 @@ const upload = multer({ storage });
 // Add brand
 exports.addBrand = async (req, res) => {
   try {
-    console.log("Form Data:", req.body);
-    console.log("Uploaded File:", req.file);
-
     const { name } = req.body;
     const img = req.file ? req.file.filename : null;
 
@@ -30,11 +27,21 @@ exports.addBrand = async (req, res) => {
       return res.status(400).json({ message: "All fields are required" });
     }
 
+    // Check if brand already exists
+    const existingBrand = await Brand.findOne({ name });
+    if (existingBrand) {
+      return res.status(400).json({ message: "Brand name already exists" });
+    }
+
     const newBrand = new Brand({ name, img });
     await newBrand.save();
 
     res.redirect("/admin/brands");
   } catch (error) {
+    if (error.code === 11000) {
+      // 11000 = duplicate key error (unique constraint violation)
+      return res.status(400).json({ message: "Brand name already exists" });
+    }
     console.error("Error adding brand:", error);
     res.status(500).json({ error: error.message });
   }
@@ -71,7 +78,7 @@ exports.editBrandPage = async (req, res) => {
       pageTitle: "Edit Brand",
       page: "brands/add",
       sidebar,
-      brand: brand,
+      brand,
     });
   } catch (error) {
     console.error("Error fetching brand:", error);
@@ -82,11 +89,15 @@ exports.editBrandPage = async (req, res) => {
 // update
 exports.updateBrand = async (req, res) => {
   try {
-    console.log("Updating Brand:", req.body);
-
     const { id } = req.params;
     const { name } = req.body;
     const img = req.file ? req.file.filename : req.body.oldImg;
+
+    // Check if brand with the new name already exists (excluding the current brand)
+    const existingBrand = await Brand.findOne({ name, _id: { $ne: id } });
+    if (existingBrand) {
+      return res.status(400).json({ message: "Brand name already exists" });
+    }
 
     const updatedBrand = await Brand.findByIdAndUpdate(
       id,
@@ -99,6 +110,7 @@ exports.updateBrand = async (req, res) => {
 
     res.redirect("/admin/brands");
   } catch (error) {
+    console.error("Error updating brand:", error);
     res.status(500).json({ error: error.message });
   }
 };
@@ -107,7 +119,7 @@ exports.updateBrand = async (req, res) => {
 exports.deleteBrand = async (req, res) => {
   try {
     const { id } = req.params;
-    console.log("Updating Brand:", id);
+    console.log("Deleting Brand with ID:", id);
 
     // Find the brand and retrieve the image filename
     const brand = await Brand.findById(id);
