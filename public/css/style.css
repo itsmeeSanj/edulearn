@@ -12511,9 +12511,9 @@ header nav .hamburger i {
   border-radius: 6px;
 }
 .partners .partners_wrap .partners_wrap_carousel .partners_block a img {
-  height: 50px;
+  height: 70px;
   width: 100%;
-  object-fit: cover;
+  object-fit: contain;
 }
 
 /* events */

@@ -20,10 +20,10 @@ const upload = multer({ storage });
 // Add brand
 exports.addBrand = async (req, res) => {
   try {
-    const { name } = req.body;
+    const { name, shortdesc } = req.body;
     const img = req.file ? req.file.filename : null;
 
-    if (!name || !img) {
+    if (!name || !img || !shortdesc) {
       return res.status(400).json({ message: "All fields are required" });
     }
 
@@ -33,7 +33,7 @@ exports.addBrand = async (req, res) => {
       return res.status(400).json({ message: "Brand name already exists" });
     }
 
-    const newBrand = new Brand({ name, img });
+    const newBrand = new Brand({ name, img, shortdesc });
     await newBrand.save();
 
     res.redirect("/admin/brands");
@@ -90,7 +90,7 @@ exports.editBrandPage = async (req, res) => {
 exports.updateBrand = async (req, res) => {
   try {
     const { id } = req.params;
-    const { name } = req.body;
+    const { name, shortdesc } = req.body;
     const img = req.file ? req.file.filename : req.body.oldImg;
 
     // Check if brand with the new name already exists (excluding the current brand)
@@ -101,7 +101,7 @@ exports.updateBrand = async (req, res) => {
 
     const updatedBrand = await Brand.findByIdAndUpdate(
       id,
-      { name, img },
+      { name, img, shortdesc },
       { new: true }
     );
 

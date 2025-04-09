@@ -1,5 +1,5 @@
 $(".partners_wrap_carousel").owlCarousel({
-  loop: true,
+  loop: false,
   dots: false,
   margin: 15,
   autoplay: true,

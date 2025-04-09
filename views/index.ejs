@@ -25,44 +25,11 @@
         <div class="partners_wrap_carousel rounded p-3 owl-carousel">
           <% brands.forEach((brand) => { %>
           <div class="partners_block">
-            <a href="/list">
+            <a href="/product-category/<%= brand.name  %>">
               <img src="/uploads/<%= brand.img %>" alt="<%= brand.name %>" />
             </a>
           </div>
           <% }); %>
-
-          <!-- <div class="partners_block">
-            <a href="#">
-              <img
-                src="https://lambtoncollege.ca/assets/images/lambton-college-logo-256.webp"
-                alt=""
-              />
-            </a>
-          </div>
-          <div class="partners_block">
-            <a href="#">
-              <img
-                src="https://www.centennialcollege.ca/media/hg5nrxf4/centennialcollege_logo_horizontal_rgb.jpg"
-                alt=""
-              />
-            </a>
-          </div>
-          <div class="partners_block">
-            <a href="#">
-              <img
-                src="https://www.senecapolytechnic.ca/content/dam/projects/seneca/seneca-logo.svg"
-                alt=""
-              />
-            </a>
-          </div>
-          <div class="partners_block">
-            <a href="#">
-              <img
-                src="https://www.fanshawec.ca/themes/custom/de_theme/logo.png"
-                alt=""
-              />
-            </a>
-          </div> -->
         </div>
       </div>
     </div>
@@ -80,55 +47,22 @@
         </p>
       </div>
 
-      <!-- <div class="hot_courses owl-carousel">
-        <% instruments.forEach((instrument, index) => { %>
-        <div class="course_block" data-id="<%= index + 1 %>">
-          <img
-            src="<%= instrument.InstrumentImage %>"
-            alt="<%= instrument.InstrumentName %>"
-          />
-          <div class="course_time">New</div>
-          <div class="course_content">
-            <h3>
-              <a href="details.html"><%= instrument.InstrumentName %></a>
-            </h3>
-            <p><%= instrument.InstrumentShortDesc %></p>
-
-            <div class="info_course_block">
-              <div class="price">
-                <span>CA$59</span>
-                <span class="price_deduct">CA$59</span>
-              </div>
-
-              <button
-                class="add_cart btn btn-primary mt-2 btn-sm"
-                id="add_cart"
-              >
-                Add to cart
-                <i class="las la-shopping-cart"></i>
-              </button>
-            </div>
-          </div>
-        </div>
-        <% }) %>
-      </div> -->
-
       <div class="hot_courses owl-carousel">
-        <% if (instruments.length > 0) { %> <% instruments.forEach((instrument,
+        <% if (productsData.length > 0) { %> <% productsData.forEach((product,
         index) => { %>
 
         <div class="course_block" data-id="<%= index + 1 %>">
-          <img src="<%= instrument.image %>" alt="<%= instrument.name %>" />
+          <img src="/uploads/<%= product.img %>" alt="<%= product.title %>" />
           <div class="course_time">New</div>
           <div class="course_content">
             <h3>
-              <a href="details.html"><%= instrument.InstrumentName %></a>
+              <a href="details.html"><%= product.title %></a>
             </h3>
-            <p><%= instrument.description %></p>
+            <p><%= product.description %></p>
             <div class="info_course_block">
               <div class="price">
-                <span>CA$<%= instrument.price %></span>
-                <span class="price_deduct">CA$<%= instrument.price %></span>
+                <span>CA$<%= product.price %></span>
+                <span class="price_deduct">CA$<%= product.price %></span>
               </div>
 
               <button class="add_cart btn btn-primary mt-2 btn-sm">

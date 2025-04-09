@@ -2,53 +2,24 @@
 
 <!-- main starts here -->
 <main>
-  <!-- <div class="common_banner"></div> -->
-
-  <!-- contact_page -->
   <section class="details_page pb-3">
     <div class="details_info">
       <div class="container">
         <div class="details_block">
-          <div class="meta-item d-flex">
-            <div class="meta-item__image me-2">
-              <img
-                alt="User Avatar"
-                class="avatar"
-                src="https://secure.gravatar.com/avatar/ff7411aa595f41253c93a296342c5d9d?s=96&amp;d=mm&amp;r=g"
-              />
-            </div>
-            <div class="meta-item__value">
-              <label>Instructor</label>
-              <div>
-                <span class="instructor-display-name">Jonas Darius</span>
-              </div>
-            </div>
-          </div>
-          <h2>Crash Course: Build a Full-Stack Web App in a Weekend!</h2>
+          <h2><%= product.title %></h2>
 
           <div
             class="course_items d-flex flex-wrap column-gap-3 gap-md-3 gap-lg-4"
           >
             <div class="course_item">
-              <i class="las la-clock"></i>
-              <div>08 hr 15 mins</div>
+              <i class="las la-tag"></i>
+              <div><%= product.brand %></div>
             </div>
-            <div class="course_item">
+            <!-- <div class="course_item">
               <i class="las la-signal"></i>
               <div>All Levels</div>
             </div>
-            <div class="course_item">
-              <i class="las la-book"></i>
-              <div>6 Lessons</div>
-            </div>
-            <div class="course_item">
-              <i class="las la-clock"></i>
-              <div>0 Quizes</div>
-            </div>
-            <div class="course_item d-none d-md-flex">
-              <i class="las la-user-graduate"></i>
-              <div>21,784 Students</div>
-            </div>
+            -->
           </div>
         </div>
       </div>
@@ -58,6 +29,29 @@
         <div class="row">
           <div class="col-12 col-md-8 col-lg-9">
             <div class="details_page_left">
+              <div class="row">
+                <div class="col-lg-5">
+                  <img src="/uploads/<%= product.img  %>" alt="" />
+                </div>
+                <div class="col-lg-7">
+                  <%= product.description %>
+                  <div class="price mt-4">$11.99</div>
+
+                  <div class="buy mt-3 gap-2">
+                    <button class="btn btn-primary" type="button">
+                      Buy now
+                    </button>
+                    <button
+                      class="btn btn-primary add_cart mt-0 mt-md-2 mt-lg-0"
+                      type="button"
+                    >
+                      Add to cart
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="details_page_left mt-4">
               <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
                 <li class="nav-item" role="presentation">
                   <button
@@ -368,7 +362,7 @@
               </div>
             </div>
 
-            <section class="spacing">
+            <!-- <section class="spacing">
               <div class="container">
                 <div class="heading inbetween">
                   <h1>Recommended Courses</h1>
@@ -504,11 +498,11 @@
                   </div>
                 </div>
               </div>
-            </section>
+            </section> -->
           </div>
           <div class="col-12 col-md-4 col-lg-3">
             <div class="details_page_right_wrap">
-              <div class="details_page_right_block">
+              <!-- <div class="details_page_right_block">
                 <div class="details_page_right_top">
                   <div class="video_wrap">
                     <iframe
@@ -560,7 +554,7 @@
                   <i class="las la-calendar"></i>
                   <span>Certificate of completion</span>
                 </div>
-              </div>
+              </div> -->
 
               <div class="details_page_right_block">
                 <h3>Share this Course</h3>

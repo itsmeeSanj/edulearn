@@ -2,15 +2,60 @@ const express = require("express");
 const router = express.Router();
 
 const Brand = require("../model/admin/brandModel");
+const products = require("../model/admin/productModel");
 
 // Home Route
 router.get("/", async (req, res) => {
   try {
     const instruments = require("../data.json"); // Fetch data from JSON
     const brands = await Brand.find(); // or limit/filter as needed
-    res.render("index", { title: "Home", instruments, brands });
+    const productsData = await products.find();
+
+    res.render("index", {
+      title: "Home",
+      instruments,
+      brands,
+      productsData,
+    });
   } catch (error) {
     res.status(500).send("Error Fetching: " + error.message);
+  }
+});
+
+// page-category
+router.get("/product-category/:brandName", async (req, res) => {
+  try {
+    const brandName = req.params.brandName;
+    const brands = await Brand.findOne({ name: brandName });
+
+    console.log("brandss", brands);
+
+    if (!brands) return res.status(404).send("Brand not found");
+
+    const productsData = await products.find({ brand: brandName });
+
+    res.render("pages/list", {
+      title: "Product",
+      productsData,
+      brands,
+      brandName: brands.name,
+      brandDesc: brands.shortdesc,
+    });
+  } catch (error) {
+    res.status(500).send("Error Fetching: " + error.message);
+  }
+});
+
+// page-desc
+router.get("/products/:id", async (req, res) => {
+  try {
+    const product = await products.findById(req.params.id);
+    res.render("pages/details", {
+      title: "Product",
+      product,
+    });
+  } catch (error) {
+    res.status(500).send("Product not found" + error.message);
   }
 });
 

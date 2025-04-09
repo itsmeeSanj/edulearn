@@ -745,9 +745,9 @@ header nav .hamburger {
         border-radius: 6px;
         a {
           img {
-            height: 50px;
+            height: 70px;
             width: 100%;
-            object-fit: cover;
+            object-fit: contain;
           }
         }
       }

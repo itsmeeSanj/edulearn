@@ -12,6 +12,10 @@ const brandSchema = mongoose.Schema({
     type: String,
     required: true,
   },
+
+  shortdesc: {
+    type: String,
+  },
 });
 
 module.exports = mongoose.model("Brand", brandSchema);

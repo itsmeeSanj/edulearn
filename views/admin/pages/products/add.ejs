@@ -1,10 +1,9 @@
 <div class="container">
   <form
-  action="<%= product ? `/admin/products/${product._id}?_method=PUT` : '/admin/products' %>"
+  action="<%= product ? `/admin/products/edit/${product._id}` : '/admin/products/add' %>"
     method="POST"
     enctype="multipart/form-data"
   >
-    <input type="hidden" name="_method" value="<%= product ? 'PUT' : 'POST' %>" />
     <input type="hidden" name="id" value="<%= product ? product._id : '' %>" />
 
 
