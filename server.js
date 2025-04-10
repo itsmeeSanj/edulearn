@@ -34,10 +34,6 @@ app.use("/", homePage);
 app.use("/user", userPage);
 app.use("/admin", adminPage);
 
-// Import and use API Route Files
-// const brandApiRoutes = require("./router/api/brandApiRoutes");
-// app.use("/api/brands", brandApiRoutes);
-
 // Start Server
 app.listen(PORT, () => {
   console.log(`Server running on http://localhost:${PORT}`);

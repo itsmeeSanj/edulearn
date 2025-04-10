@@ -3,6 +3,7 @@ const router = express.Router();
 
 const Brand = require("../model/admin/brandModel");
 const products = require("../model/admin/productModel");
+const contactController = require("../controller/admin/contactController");
 
 // Home Route
 router.get("/", async (req, res) => {
@@ -28,11 +29,10 @@ router.get("/product-category/:brandName", async (req, res) => {
     const brandName = req.params.brandName;
     const brands = await Brand.findOne({ name: brandName });
 
-    console.log("brandss", brands);
-
     if (!brands) return res.status(404).send("Brand not found");
 
     const productsData = await products.find({ brand: brandName });
+    const productCount = productsData.length;
 
     res.render("pages/list", {
       title: "Product",
@@ -40,6 +40,7 @@ router.get("/product-category/:brandName", async (req, res) => {
       brands,
       brandName: brands.name,
       brandDesc: brands.shortdesc,
+      productCount,
     });
   } catch (error) {
     res.status(500).send("Error Fetching: " + error.message);
@@ -59,44 +60,42 @@ router.get("/products/:id", async (req, res) => {
   }
 });
 
+router.get("/contact", async (req, res) => {
+  try {
+    res.render("pages/contact", {
+      title: "Contact",
+    });
+  } catch (error) {
+    res.status(500).send("Error Fetching: " + error.message);
+  }
+});
+router.post("/contact", contactController.submitContactForm);
+
 // Login Page
 router.get("/login", (req, res) =>
-  res.render("login", {
+  res.render("pages/login", {
     title: "Login",
   })
 );
 
 // Register Page
 router.get("/register", (req, res) =>
-  res.render("register", {
+  res.render("pages/register", {
     title: "List",
   })
 );
 
 router.get("/about", (req, res) =>
-  res.render("about", {
+  res.render("pages/about", {
     title: "List",
   })
 );
-
-// List Page
-router.get("/list", (req, res) =>
-  res.render("pages/list", {
-    title: "List",
-  })
-);
-
-router.get("/details", (req, res) =>
-  res.render("pages/details", { title: "Details" })
-);
-
-// cart
 
 // cart
 router.get("/cart", async (req, res) => {
   try {
     const cartItems = require("../cart-items.json"); // Fetch data from JSON
-    res.render("cart", { cartItems });
+    res.render("pages/cart", { cartItems });
   } catch (error) {
     res.status(500).send("Error Fetching: " + error.message);
   }
@@ -105,7 +104,7 @@ router.get("/cart", async (req, res) => {
 // Route for the checkout page
 router.get("/checkout", (req, res) => {
   // You can load additional data like user info if necessary
-  res.render("checkout");
+  res.render("pages/checkout");
 });
 
 // Route to handle order completion
@@ -126,7 +125,7 @@ router.post("/order-complete", (req, res) => {
   // You can handle the order processing here (e.g., store in database, send email confirmation)
 
   // Render the order complete page
-  res.render("order-complete", {
+  res.render("pages/order-complete", {
     firstName,
     lastName,
     email,

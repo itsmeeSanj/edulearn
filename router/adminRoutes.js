@@ -5,6 +5,8 @@ const sidebar = require("../sidebar.json");
 
 const productController = require("../controller/admin/productController");
 const brandController = require("../controller/admin/brandController");
+const contactController = require("../controller/admin/contactController");
+const authController = require("../controller/user/authController");
 
 // Dashboard route
 router.get("/", (req, res) => {
@@ -58,6 +60,9 @@ router.get("/brands/edit/:id", brandController.editBrandPage);
 router.put("/brands/:id", brandController.upload, brandController.updateBrand);
 router.post("/brands/delete/:id", brandController.deleteBrand);
 
+// contact page
+router.get("/contacts", contactController.getAllContacts);
+
 // Users management route
 router.get("/users", (req, res) => {
   try {
@@ -88,12 +93,8 @@ router.get("/settings", (req, res) => {
   }
 });
 
-// 404 handler for admin routes
-// router.use((req, res) => {
-//   res.status(404).render("admin/404", {
-//     title: "Admin | Page Not Found",
-//     sidebar,
-//   });
-// });
+router.post("/register", authController.registerUser);
+
+router.post("/login", authController.loginUser);
 
 module.exports = router;
