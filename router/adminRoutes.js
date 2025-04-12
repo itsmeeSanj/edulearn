@@ -62,6 +62,7 @@ router.post("/brands/delete/:id", brandController.deleteBrand);
 
 // contact page
 router.get("/contacts", contactController.getAllContacts);
+router.post("/contacts/delete/:id", contactController.deleteContact);
 
 // Users management route
 router.get("/users", (req, res) => {

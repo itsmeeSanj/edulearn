@@ -44,15 +44,16 @@
               <a
                 href="/admin/brands/edit/<%= brand._id %>"
                 class="btn btn-warning"
-                >Edit</a
               >
+                <i class="las la-edit"></i>
+              </a>
               <button
                 class="btn btn-danger delete-btn"
                 data-id="<%= brand._id %>"
                 data-bs-toggle="modal"
                 data-bs-target="#deleteBrandModal-<%= brand._id %>"
               >
-                Delete
+                <i class="las la-trash-alt"></i>
               </button>
             </td>
           </tr>

@@ -14,8 +14,8 @@
             <th>Full Name</th>
             <th>Email</th>
             <th>Phone</th>
-            <th>Message</th>
             <th>Date</th>
+            <th>Actions</th>
           </tr>
         </thead>
         <tbody>
@@ -25,9 +25,157 @@
             <td><%= contact.fullName %></td>
             <td><%= contact.email %></td>
             <td><%= contact.phone %></td>
-            <td><%= contact.msg %></td>
-            <td><%= contact.createdAt.toLocaleString() %></td>
+            <td><%= date %></td>
+            <td>
+              <button
+                class="btn btn-sm btn-warning"
+                data-id="<%= contact._id %>"
+                data-bs-toggle="modal"
+                data-bs-target="#editContactModal-<%= contact._id %>"
+              >
+                <i class="las la-eye"></i>
+              </button>
+
+              <button
+                class="btn btn-sm btn-danger"
+                data-id="<%= contact._id %>"
+                data-bs-toggle="modal"
+                data-bs-target="#deleteContactModal-<%= contact._id %>"
+              >
+                <i class="las la-trash-alt"></i>
+              </button>
+            </td>
           </tr>
+
+          <!-- contact_edit -->
+          <div
+            class="modal fade"
+            id="editContactModal-<%= contact._id %>"
+            tabindex="-1"
+            aria-labelledby="editContactModal-<%= contact._id %>"
+            aria-hidden="true"
+          >
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5
+                    class="modal-title"
+                    id="editContactModal-<%= contact._id %>"
+                  >
+                    View Contact
+                  </h5>
+                  <button
+                    type="button"
+                    class="btn-close"
+                    data-bs-dismiss="modal"
+                    aria-label="Close"
+                  ></button>
+                </div>
+                <div class="modal-body">
+                  <form>
+                    <div class="mb-3">
+                      <label for="name" class="form-label">FullName</label>
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="name"
+                        value="<%= contact.fullName %>"
+                        disabled
+                      />
+                    </div>
+                    <div class="mb-3">
+                      <label for="email" class="form-label">Email</label>
+                      <input
+                        type="email"
+                        class="form-control"
+                        id="email"
+                        value="<%= contact.email %>"
+                        disabled
+                      />
+                    </div>
+                    <div class="mb-3">
+                      <label for="phone" class="form-label">Phone</label>
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="phone"
+                        value="<%= contact.phone %>"
+                        disabled
+                      />
+                    </div>
+                    <div class="mb-3">
+                      <label for="date" class="form-label">Date</label>
+                      <input
+                        type="date"
+                        class="form-control"
+                        id="date"
+                        value="<%= date %>"
+                        disabled
+                      />
+                    </div>
+                    <div class="mb-3">
+                      <label for="msg" class="form-label">Message</label>
+                      <textarea class="form-control" id="msg" disabled>
+                        <%= contact.msg %>
+                      </textarea>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- contact_delete -->
+          <div
+            class="modal fade"
+            id="deleteContactModal-<%= contact._id %>"
+            tabindex="-1"
+            aria-labelledby="deleteContactModal-<%= contact._id %>"
+            aria-hidden="true"
+          >
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5
+                    class="modal-title"
+                    id="deleteContactModal-<%= contact._id %>"
+                  >
+                    Confirm Delete
+                  </h5>
+                  <button
+                    type="button"
+                    class="btn-close"
+                    data-bs-dismiss="modal"
+                    aria-label="Close"
+                  ></button>
+                </div>
+                <div class="modal-body">
+                  <p>
+                    Are you sure you want to delete
+                    <strong><%= contact.fullName %></strong>?
+                  </p>
+                </div>
+                <div class="modal-footer">
+                  <form
+                    action="/admin/contacts/delete/<%= contact._id %>"
+                    method="post"
+                  >
+                    <button
+                      type="button"
+                      class="btn btn-secondary"
+                      data-bs-dismiss="modal"
+                    >
+                      Cancel
+                    </button>
+                    <button type="submit" class="btn btn-danger">
+                      Delete Contact
+                    </button>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+
           <% }) %>
         </tbody>
       </table>
