@@ -1,6 +1,8 @@
 const contact = require("../../model/admin/contactModel");
 const sidebar = require("../../sidebar.json");
 
+const { successMessage, errorMessage } = require("../../utils/message");
+
 // usercontact
 exports.submitContactForm = async (req, res) => {
   try {
