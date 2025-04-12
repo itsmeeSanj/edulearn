@@ -23,13 +23,10 @@
     <div class="container">
       <div class="partners_wrap">
         <div class="partners_wrap_carousel rounded p-3 owl-carousel">
-          <% brands.forEach((brand) => { %>
-          <div class="partners_block">
-            <a href="/product-category/<%= brand.name  %>">
-              <img src="/uploads/<%= brand.img %>" alt="<%= brand.name %>" />
-            </a>
-          </div>
-          <% }); %>
+          <% if (brands.length > 0) { %> <% brands.forEach((brand) => { %> <%-
+          include('./components/brandCard', {brand}) %> <% }) %> <% } else { %>
+          <p>No brands found.</p>
+          <% } %>
         </div>
       </div>
     </div>
@@ -49,29 +46,8 @@
 
       <div class="hot_courses owl-carousel">
         <% if (productsData.length > 0) { %> <% productsData.forEach((product,
-        index) => { %>
-
-        <div class="course_block" data-id="<%= index + 1 %>">
-          <img src="/uploads/<%= product.img %>" alt="<%= product.title %>" />
-          <div class="course_time">New</div>
-          <div class="course_content">
-            <h3>
-              <a href="/products/<%= product.id %>"><%= product.title %></a>
-            </h3>
-            <p><%= product.description %></p>
-            <div class="info_course_block">
-              <div class="price">
-                <span>CA$<%= product.price %></span>
-                <span class="price_deduct">CA$<%= product.price %></span>
-              </div>
-
-              <button class="add_cart btn btn-primary mt-2 btn-sm">
-                Add to cart <i class="las la-shopping-cart"></i>
-              </button>
-            </div>
-          </div>
-        </div>
-        <% }) %> <% } else { %>
+        index) => { %> <%- include('./components/productCard', {product}) %> <%
+        }) %> <% } else { %>
         <p>No instruments found.</p>
         <% } %>
       </div>
@@ -87,7 +63,7 @@
     </div>
   </section>
 
-  <!-- editors -->
+  //<!-- editors -->
   <section class="events_section spacing desc_sec">
     <div class="container">
       <div class="row">
@@ -119,7 +95,7 @@
     </div>
   </section>
 
-  <!-- news -->
+  //<!-- news -->
   <section class="events_near_section spacing">
     <div class="container">
       <div class="heading center">
@@ -132,7 +108,6 @@
       </div>
 
       <div class="recomended_course owl-carousel">
-        <!--  -->
         <% instruments.forEach((instrument, index) => { %>
         <div class="course_block" data-id="<%= index + 1 %>">
           <img
@@ -176,7 +151,7 @@
     </div>
   </section>
 
-  <!-- new -->
+  //<!-- new -->
   <section class="events_section spacing desc_sec">
     <div class="container">
       <div class="row">
@@ -340,7 +315,7 @@
     </div>
   </section>
 
-  <!-- testimonial -->
+  //<!-- testimonial -->
   <section class="sponser_section spacing border-top">
     <div class="container">
       <div class="heading center">
@@ -403,10 +378,9 @@
     </div>
   </section>
 
-  <!-- scroll-up -->
-  <button class="scroll_up button" id="scrollUp">
-    <i class="las la-long-arrow-alt-up"></i>
+  //<!-- scroll-up -->
+  <button class="scroll_up btn btn-primary" id="scrollUp">
+    <i class="las la-long-arrow-alt-up la-2x"></i>
   </button>
 </main>
-<!-- main ends here -->
 <%- include('partial/footer') %>

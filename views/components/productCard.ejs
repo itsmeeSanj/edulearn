@@ -1,0 +1,19 @@
+<div class="course_block" data-id="<%= product.id %>">
+  <img src="/uploads/<%= product.img %>" alt="<%= product.title %>" />
+  <div class="course_time">New</div>
+  <div class="course_content">
+    <h3>
+      <a href="/products/<%= product.id %>"><%= product.title %></a>
+    </h3>
+    <p><%= product.description %></p>
+    <div class="info_course_block">
+      <div class="price">
+        <span>CA$<%= product.price %></span>
+        <span class="price_deduct">CA$<%= product.price %></span>
+      </div>
+      <button class="add_cart btn btn-primary mt-2 btn-sm">
+        Add to cart <i class="las la-shopping-cart"></i>
+      </button>
+    </div>
+  </div>
+</div>
