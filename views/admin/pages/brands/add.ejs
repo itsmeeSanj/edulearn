@@ -1,60 +1,56 @@
-<div class="container">
-  <form
-    action="<%= brand ? `/admin/brands/${brand._id}?_method=PUT` : 
+<form
+  action="<%= brand ? `/admin/brands/${brand._id}?_method=PUT` : 
     '/admin/brands' %>"
-    method="POST"
-    enctype="multipart/form-data"
-  >
-    <input type="hidden" name="_method" value="<%= brand ? 'PUT' : 'POST' %>" />
-    <input type="hidden" name="id" value="<%= brand ? brand._id : '' %>" />
+  method="POST"
+  enctype="multipart/form-data"
+>
+  <input type="hidden" name="_method" value="<%= brand ? 'PUT' : 'POST' %>" />
+  <input type="hidden" name="id" value="<%= brand ? brand._id : '' %>" />
 
-    <div class="row mb-3">
-      <div class="col-md-12">
-        <label for="brandName" class="form-label">Brand Name</label>
-        <input
-          type="text"
-          class="form-control"
-          id="brandName"
-          name="name"
-          value="<%= brand ? brand.name : ''  %>"
-          required
-        />
-      </div>
-
-      <div class="col-md-12">
-        <label for="brandImage" class="form-label">Brand Image</label>
-        <input type="file" class="form-control" id="brandImage" name="img" />
-
-        <% if (brand && brand.img) { %>
-        <img
-          src="/public/uploads/<%= brand.img %>"
-          alt="Brand Image"
-          class="my-2"
-          width="50"
-          height="50"
-          style="height: 200px; width: 200px; object-fit: fill"
-        />
-        <% } %>
-      </div>
-
-      <div class="col-md-12">
-        <label for="shortdesc" class="form-label"
-          >Brand Short Description</label
-        >
-        <input
-          type="text"
-          class="form-control"
-          id="shortdesc"
-          name="shortdesc"
-          value="<%= brand ? brand.shortdesc : ''  %>"
-          required
-        />
-      </div>
+  <div class="row mb-3">
+    <div class="col-md-12">
+      <label for="brandName" class="form-label">Brand Name</label>
+      <input
+        type="text"
+        class="form-control"
+        id="brandName"
+        name="name"
+        value="<%= brand ? brand.name : ''  %>"
+        required
+      />
     </div>
 
-    <button type="submit" class="btn btn-primary">
-      <%= brand ? 'Update' : 'Submit' %>
-    </button>
-    <a href="/admin/brands" class="btn btn-secondary">Cancel</a>
-  </form>
-</div>
+    <div class="col-md-12">
+      <label for="brandImage" class="form-label">Brand Image</label>
+      <input type="file" class="form-control" id="brandImage" name="img" />
+
+      <% if (brand && brand.img) { %>
+      <img
+        src="/public/uploads/<%= brand.img %>"
+        alt="Brand Image"
+        class="my-2"
+        width="50"
+        height="50"
+        style="height: 200px; width: 200px; object-fit: fill"
+      />
+      <% } %>
+    </div>
+
+    <div class="col-md-12">
+      <label for="shortdesc" class="form-label">Brand Short Description</label>
+      <input
+        type="text"
+        class="form-control"
+        id="shortdesc"
+        name="shortdesc"
+        value="<%= brand ? brand.shortdesc : ''  %>"
+        required
+      />
+    </div>
+  </div>
+
+  <button type="submit" class="btn btn-primary">
+    <%= brand ? 'Update' : 'Submit' %>
+  </button>
+  <a href="/admin/brands" class="btn btn-secondary">Cancel</a>
+</form>

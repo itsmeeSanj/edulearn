@@ -34,7 +34,7 @@ exports.getAllContacts = async (req, res) => {
 
     res.render("admin/index", {
       title: "Contact Management",
-      pageTitle: "Contact Management",
+      pageTitle: "All Contacts",
       page: "contacts/index",
       sidebar,
       contacts,
@@ -57,6 +57,8 @@ exports.deleteContact = async (req, res) => {
 
     // Delete the brand from the database
     await contact.findByIdAndDelete(id);
+
+    console.log("deletred");
     res.redirect("/admin/contacts");
   } catch (error) {
     console.error("Error deleting Contact:", error);

@@ -56,7 +56,7 @@ exports.getBrand = async (req, res) => {
     // res.status(200).json(brands);
     res.render("admin/index", {
       title: "Brand Management",
-      pageTitle: "Brand Management",
+      pageTitle: "All Brands",
       page: "brands/index",
       sidebar,
       brands,
@@ -74,7 +74,7 @@ exports.editBrandPage = async (req, res) => {
     if (!brand) return res.status(404).send("Brand not found");
 
     res.render("admin/index", {
-      title: "Admin Management",
+      title: "Brand Management",
       pageTitle: "Edit Brand",
       page: "brands/add",
       sidebar,
