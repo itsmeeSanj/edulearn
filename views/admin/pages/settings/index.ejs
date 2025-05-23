@@ -1,0 +1,81 @@
+<form method="POST" enctype="multipart/form-data">
+  <!-- <input type="hidden" name="id" value="<%= product ? product._id : '' %>" /> -->
+
+  <div class="row mb-3">
+    <div class="col-md-6">
+      <label for="title" class="form-label">Product Title</label>
+      <input
+        type="text"
+        class="form-control"
+        id="title"
+        name="title"
+        <!--
+        value="<%= product ? product.title : '' %>"
+        --
+      />
+      required />
+    </div>
+
+    <div class="col-md-3">
+      <label for="price" class="form-label">Current Price ($)</label>
+      <input
+        type="number"
+        class="form-control"
+        id="price"
+        name="price"
+        step="0.01"
+        <!--
+        value="<%= product ? product.price : '' %>"
+        --
+      />
+      required />
+    </div>
+
+    <div class="col-md-3">
+      <label for="prevPrice" class="form-label">Previous Price ($)</label>
+      <input
+        type="number"
+        class="form-control"
+        id="prevPrice"
+        name="prevPrice"
+        step="0.01"
+        <!--
+        value="<%= product ? product.prevPrice : '' %>"
+        --
+      />
+      required />
+    </div>
+  </div>
+
+  <div class="mb-3">
+    <label for="shortdesc" class="form-label">Short Description</label>
+    <input
+      type="text"
+      class="form-control"
+      id="shortdesc"
+      name="shortdesc"
+      <!--
+      value="<%= product ? product.shortdesc : '' %>"
+      --
+    />
+    required />
+  </div>
+
+  <!-- <div class="mb-3">
+    <label for="img" class="form-label">Product Image</label>
+    <input class="form-control" type="file" id="img" name="img" />
+    <% if (product && product.img) { %>
+    <p class="mt-2">
+      <strong>Current Image:</strong><br />
+      <img
+        src="/uploads/<%= product.img %>"
+        alt="Current Image"
+        style="width: 100px; height: 100px; object-fit: cover"
+      />
+    </p>
+    <% } %>
+  </div> -->
+
+  <button type="submit" class="btn btn-primary">Save Product</button>
+  <a href="/admin/products" class="btn btn-secondary">Cancel</a>
+</form>

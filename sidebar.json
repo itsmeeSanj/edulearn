@@ -31,6 +31,12 @@
     "type": "item"
   },
   {
+    "title": "Setting",
+    "icon": "las la-cogs",
+    "link": "/admin/setting",
+    "type": "item"
+  },
+  {
     "title": "Settings",
     "icon": "las la-cogs",
     "type": "collapse",
